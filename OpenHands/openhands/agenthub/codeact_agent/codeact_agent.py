@@ -237,9 +237,15 @@ class CodeActAgent(Agent):
             # Be resilient if State implementation changes
             pass
 
-        params['extra_body'] = {
-            'metadata': metadata,
-        }
+        extra_body: dict = {'metadata': metadata}
+        job_id_str = os.environ.get('OPENHANDS_EVAL_JOB_ID')
+        if job_id_str:
+            # For OpenAI-compatible servers (e.g., vLLM), forward a per-instance job id
+            # in the request body so downstream systems can correlate requests.
+            # NOTE: LiteLLM's OpenAI request schema validates `job_id` as a string,
+            # so keep it as a string even if it contains digits.
+            extra_body['job_id'] = str(job_id_str)
+        params['extra_body'] = extra_body
         response = self.llm.completion(**params)
         logger.debug(f'Response from LLM: {response}')
         actions = self.response_to_actions(response)

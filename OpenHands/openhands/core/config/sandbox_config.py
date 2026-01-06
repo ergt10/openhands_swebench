@@ -44,6 +44,9 @@ class SandboxConfig(BaseModel):
         trusted_dirs: List of directories that can be trusted to run the OpenHands CLI.
         vscode_port: The port to use for VSCode. If None, a random port will be chosen.
             This is useful when deploying OpenHands in a remote machine where you need to expose a specific port.
+        cleanup_runtime_image: Whether to remove the per-session runtime container and
+            runtime image when closing the runtime. Useful for evaluation runs to
+            reduce disk usage, but forces rebuilding the runtime image on subsequent runs.
     """
 
     remote_runtime_api_url: str | None = Field(default='http://localhost:8000')
@@ -51,6 +54,7 @@ class SandboxConfig(BaseModel):
     keep_runtime_alive: bool = Field(default=False)
     pause_closed_runtimes: bool = Field(default=True)
     rm_all_containers: bool = Field(default=False)
+    cleanup_runtime_image: bool = Field(default=False)
     api_key: str | None = Field(default=None)
     base_container_image: str | None = Field(
         default='nikolaik/python-nodejs:python3.12-nodejs22'

@@ -4,6 +4,7 @@ import json
 import os
 import tempfile
 import time
+import zlib
 from typing import Any, Literal
 
 import pandas as pd
@@ -98,6 +99,21 @@ def set_dataset_type(dataset_name: str) -> str:
 AGENT_CLS_TO_FAKE_USER_RESPONSE_FN = {
     'CodeActAgent': codeact_user_response,
 }
+
+
+def _make_instance_job_id(instance_id: str, runtime_failure_count: int) -> int:
+    """Create a per-instance, per-attempt identifier for tracing.
+
+    This is intended for correlating logs across:
+    - host-side evaluation logs
+    - runtime/container logs
+    - LLM request logs (when supported)
+    """
+    # For SWE-bench, a stable per-instance identifier is sufficient.
+    #
+    # vLLM expects `job_id` to be an integer. Use a deterministic 32-bit hash so
+    # the same instance_id maps to the same job_id across runs.
+    return int(zlib.crc32(instance_id.encode('utf-8')) & 0xFFFFFFFF)
 
 
 def _get_swebench_workspace_dir_name(instance: pd.Series) -> str:
@@ -240,6 +256,8 @@ def get_config(
     sandbox_config.base_container_image = base_container_image
     sandbox_config.enable_auto_lint = True
     sandbox_config.use_host_network = False
+    # Clean up per-instance container and runtime image after completion to reduce disk usage.
+    sandbox_config.cleanup_runtime_image = True
     # Add platform to the sandbox config to solve issue 4401
     sandbox_config.platform = 'linux/amd64'
     sandbox_config.remote_runtime_resource_factor = get_instance_resource_factor(
@@ -630,8 +648,11 @@ def process_instance(
 ) -> EvalOutput:
     config = get_config(instance, metadata)
     instance_id = instance.instance_id
+    job_id = _make_instance_job_id(instance_id, runtime_failure_count)
+    job_id_str = str(job_id)
     timing_dir = os.path.join(metadata.eval_output_dir, 'timing')
     os.environ['OPENHANDS_EVAL_INSTANCE_ID'] = instance_id
+    os.environ['OPENHANDS_EVAL_JOB_ID'] = job_id_str
     os.environ['OPENHANDS_TIMING_DIR'] = timing_dir
 
     # Setup the logger properly, so you can run multi-processing to parallelize the evaluation
@@ -652,10 +673,19 @@ def process_instance(
         )
 
     metadata = copy.deepcopy(metadata)
+    metadata.details['job_id'] = job_id
     metadata.details['runtime_failure_count'] = runtime_failure_count
     metadata.details['remote_runtime_resource_factor'] = (
         config.sandbox.remote_runtime_resource_factor
     )
+
+    # Make the job_id available inside the runtime container from the start.
+    config.sandbox.runtime_startup_env_vars = {
+        **(config.sandbox.runtime_startup_env_vars or {}),
+        'OPENHANDS_EVAL_INSTANCE_ID': instance_id,
+        'OPENHANDS_EVAL_JOB_ID': job_id_str,
+        'OPENHANDS_TIMING_DIR': timing_dir,
+    }
 
     env_prepare_start = time.time()
     os.environ['OPENHANDS_ENV_PREPARE_STEP'] = '1'
@@ -836,6 +866,10 @@ if __name__ == '__main__':
     llm_config = None
     if args.llm_config:
         llm_config = get_llm_config_arg(args.llm_config, args.config_file)
+        if llm_config is None:
+            raise ValueError(
+                f'Could not find LLM config: --llm_config {args.llm_config} (config file: {args.config_file})'
+            )
         llm_config.log_completions = True
         # modify_params must be False for evaluation purpose, for reproducibility and accurancy of results
         llm_config.modify_params = False

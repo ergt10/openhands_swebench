@@ -325,8 +325,18 @@ class LLM(RetryMixin, DebugMixin):
             # Capture metadata for timing before we potentially strip extra_body.
             extra_body_for_timing = kwargs.get('extra_body')
 
-            # if we're not using litellm proxy, remove the extra_body
-            if 'litellm_proxy' not in self.config.model:
+            # Historically we only forwarded `extra_body` when using LiteLLM proxy.
+            # For evaluation/tracing (e.g., vLLM OpenAI-compatible servers), we may
+            # want to pass through additional top-level request fields such as
+            # `job_id`. To minimize blast radius, only keep `extra_body` when it
+            # includes a non-metadata field we explicitly need.
+            should_forward_extra_body = False
+            if isinstance(extra_body_for_timing, dict):
+                # Forward job_id when present (used for per-instance request tracing).
+                if 'job_id' in extra_body_for_timing:
+                    should_forward_extra_body = True
+
+            if 'litellm_proxy' not in self.config.model and not should_forward_extra_body:
                 kwargs.pop('extra_body', None)
 
             # ---- Optional evaluation timing (JSONL) ---------------------------------

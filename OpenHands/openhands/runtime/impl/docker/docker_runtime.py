@@ -26,6 +26,7 @@ from openhands.runtime.impl.action_execution.action_execution_client import (
     ActionExecutionClient,
 )
 from openhands.runtime.impl.docker.containers import stop_all_containers
+from openhands.runtime.impl.docker.containers import stop_and_remove_containers
 from openhands.runtime.plugins import PluginRequirement
 from openhands.runtime.runtime_status import RuntimeStatus
 from openhands.runtime.utils import find_available_tcp_port
@@ -35,7 +36,14 @@ from openhands.runtime.utils.command import (
 )
 from openhands.runtime.utils.log_streamer import LogStreamer
 from openhands.runtime.utils.port_lock import PortLock, find_available_port_with_lock
-from openhands.runtime.utils.runtime_build import build_runtime_image
+from openhands.runtime.utils.runtime_build import (
+    build_runtime_image,
+    get_hash_for_lock_files,
+    get_runtime_image_repo,
+    get_runtime_image_repo_and_tag,
+    get_tag_for_versioned_image,
+)
+from openhands.version import get_version
 from openhands.utils.async_utils import call_sync_from_async
 from openhands.utils.shutdown_listener import add_shutdown_listener
 from openhands.utils.tenacity_stop import stop_if_should_exit
@@ -609,7 +617,51 @@ class DockerRuntime(ActionExecutionClient):
         close_prefix = (
             CONTAINER_NAME_PREFIX if rm_all_containers else self.container_name
         )
-        stop_all_containers(close_prefix)
+        if self.config.sandbox.cleanup_runtime_image:
+            stop_and_remove_containers(close_prefix)
+            # Also remove the runtime image and related cache tags to reclaim disk space.
+            # NOTE: this forces rebuilding the runtime image next time.
+            try:
+                tags_to_remove: set[str] = set()
+                if self.runtime_container_image:
+                    tags_to_remove.add(self.runtime_container_image)
+
+                # The runtime build process tags images with:
+                # - source tag: oh_v{version}_{lock_hash}_{source_hash}
+                # - lock tag:   oh_v{version}_{lock_hash}
+                # - versioned:  oh_v{version}_{base_image_tag} (only when built from scratch)
+                #
+                # Delete all of them best-effort so disk usage doesn't grow across instances.
+                if self.base_container_image:
+                    runtime_repo, _ = get_runtime_image_repo_and_tag(
+                        self.base_container_image
+                    )
+                    # Only derive tags when base image is not already a runtime image.
+                    if get_runtime_image_repo() not in self.base_container_image:
+                        lock_tag = (
+                            f'oh_v{get_version()}_'
+                            f'{get_hash_for_lock_files(self.base_container_image, self.config.enable_browser)}'
+                        )
+                        tags_to_remove.add(f'{runtime_repo}:{lock_tag}')
+
+                        versioned_tag = (
+                            f'oh_v{get_version()}_'
+                            f'{get_tag_for_versioned_image(self.base_container_image)}'
+                        )
+                        tags_to_remove.add(f'{runtime_repo}:{versioned_tag}')
+
+                for image_ref in sorted(tags_to_remove):
+                    try:
+                        self.docker_client.images.remove(image_ref, force=True)
+                    except docker.errors.ImageNotFound:
+                        continue
+            except Exception as e:
+                self.log(
+                    'warning',
+                    f'Failed to remove runtime image {self.runtime_container_image}: {e}',
+                )
+        else:
+            stop_all_containers(close_prefix)
         self._release_port_locks()
 
     def _release_port_locks(self) -> None:
