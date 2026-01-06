@@ -1,0 +1,917 @@
+2026-01-06 15:29:30,205 - INFO - [LLM registry 7f255dd1-67c3-4860-bf68-f48a848a4008]: Registering service for agent
+2026-01-06 15:29:30,246 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_fpvetu42l2ni1ydx_v008aov5t6vw3gr5
+2026-01-06 15:42:50,535 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_fpvetu42l2ni1ydx_v008aov5t6vw3gr5] build finished.
+2026-01-06 15:42:50,542 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_fpvetu42l2ni1ydx_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_fpvetu42l2ni1ydx]
+2026-01-06 15:42:50,544 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_fpvetu42l2ni1ydx_v008aov5t6vw3gr5, oh_v1.0.0_fpvetu42l2ni1ydx] built successfully
+2026-01-06 15:42:50,582 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_fpvetu42l2ni1ydx_v008aov5t6vw3gr5
+2026-01-06 15:42:51,713 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '37065', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 15:42:52,107 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Container started: openhands-runtime-97cc18ed-91d0-40-5c3a060df9cf634. VSCode URL: None
+2026-01-06 15:42:52,107 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Waiting for client to become ready at http://localhost:37065...
+2026-01-06 15:43:24,230 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Runtime is ready.
+2026-01-06 15:43:27,357 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 15:43:27,363 - INFO - ------------------------------
+2026-01-06 15:43:27,377 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 15:43:27,377 - INFO - ------------------------------
+2026-01-06 15:43:27,396 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=matplotlib__matplotlib-23913' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 15:43:28,035 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:28,038 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 15:43:28,677 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:28,678 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 15:43:29,308 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:29,316 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 15:43:29,939 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=matplotlib__matplotlib-23913
+export OPENHANDS_EVAL_JOB_ID=3290836546
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=matplotlib__matplotlib-23913
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:29,941 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 15:43:30,561 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:30,561 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 15:43:35,205 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: matplotlib__matplotlib__3.6
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:35,205 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/matplotlib__matplotlib__3.6
+2026-01-06 15:43:35,823 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:35,823 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 15:43:37,447 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (4510/4510), done.
+HEAD is now at 5c4595267c Merge pull request #23896 from anntzer/uof
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:37,447 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 15:43:38,068 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:38,068 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 15:43:38,687 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:43:38,687 - INFO - ------------------------------
+2026-01-06 15:43:38,687 - INFO - END Runtime Initialization Fn
+2026-01-06 15:43:38,687 - INFO - ------------------------------
+2026-01-06 15:43:38,690 - INFO - [LLM registry 81829843-bba6-441d-b0b1-fe757e8f9381]: Registering service for agent
+2026-01-06 15:43:38,708 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 15:43:38,715 - INFO - [runtime 97cc18ed-91d0-40-5c3a060df9cf634] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 15:43:38,717 - INFO - Loading user workspace microagents: []
+2026-01-06 15:43:38,718 - INFO - AgentController 97cc18ed-91d0-40-5c3a060df9cf634 - created new state. start_id: 0
+2026-01-06 15:43:38,725 - INFO - [Agent Controller 97cc18ed-91d0-40-5c3a060df9cf634] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 15:43:38,727 - INFO - Saved conversation stats
+2026-01-06 15:50:16,190 - INFO - [Agent Controller 97cc18ed-91d0-40-5c3a060df9cf634] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 15:50:16,192 - INFO - Saved conversation stats
+2026-01-06 15:50:17,177 - INFO - ------------------------------
+2026-01-06 15:50:17,177 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:50:17,177 - INFO - ------------------------------
+2026-01-06 15:50:17,177 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/matplotlib__matplotlib__3.6
+2026-01-06 15:50:17,805 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:17,806 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:50:18,430 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:18,430 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:50:19,047 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:19,050 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:50:19,666 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:19,667 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:50:20,312 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:20,312 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 5c4595267ccd3daf78f5fd05693b7ecbcd575c1e > patch.diff
+2026-01-06 15:50:20,930 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "ad9f22814a45",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.6",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.6]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:50:20,930 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:50:20,932 - INFO - [Read from /workspace/matplotlib__matplotlib__3.6/patch.diff is successful.]
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 9e5b903d59..72b4e128d1 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -286,6 +286,12 @@ handler_map : dict or None
+     The custom dictionary mapping instances or types to a legend
+     handler. This *handler_map* updates the default handler map
+     found at `matplotlib.legend.Legend.get_legend_handler_map`.
++
++draggable : bool, optional
++    Whether the legend can be dragged with the mouse. If ``True``,
++    the legend will be draggable. If ``False``, the legend will not be
++    draggable. If ``None`` (default), the legend will not be draggable
++    unless explicitly set via the ``set_draggable`` method.
+ """)
+ 
+ 
+@@ -341,6 +347,7 @@ class Legend(Artist):
+         handler_map=None,
+         title_fontproperties=None,  # properties for the legend title
+         alignment="center",       # control the alignment within the legend box
++        draggable=None,           # whether the legend can be dragged with the mouse
+         *,
+         ncol=1  # synonym for ncols (backward compatibility)
+     ):
+@@ -574,6 +581,10 @@ class Legend(Artist):
+         else:
+             raise ValueError(f"Invalid labelcolor: {labelcolor!r}")
+ 
++        # Set draggable state if specified
++        if draggable is not None:
++            self.set_draggable(draggable)
++
+     def _set_artist_props(self, a):
+         """
+         Set the boilerplate props for artists added to axes.
+diff --git a/test_draggable_edge_cases.py b/test_draggable_edge_cases.py
+new file mode 100644
+index 0000000000..5ed61e1f7c
+--- /dev/null
++++ b/test_draggable_edge_cases.py
+@@ -0,0 +1,103 @@
++#!/usr/bin/env python3
++"""
++Test edge cases for the draggable legend functionality.
++"""
++
++import sys
++sys.path.insert(0, '/workspace/matplotlib__matplotlib__3.6/lib')
++
++import matplotlib.pyplot as plt
++import numpy as np
++
++def test_draggable_with_other_params():
++    """Test draggable parameter combined with other legend parameters."""
++    print("Testing draggable with other parameters...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable with other parameters
++        legend = ax.legend(
++            draggable=True,
++            title='Trigonometric Functions',
++            loc='upper right',
++            fancybox=True,
++            shadow=True,
++            fontsize=12
++        )
++        print(f"SUCCESS: Legend is draggable: {legend.get_draggable()}")
++        print(f"Title: {legend.get_title().get_text()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_override():
++    """Test that set_draggable can still override the initial setting."""
++    print("Testing draggable override...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    
++    try:
++        # Start with draggable=True
++        legend = ax.legend(draggable=True)
++        print(f"Initial state - Legend is draggable: {legend.get_draggable()}")
++        
++        # Override with draggable=False
++        legend.set_draggable(False)
++        print(f"After override - Legend is draggable: {legend.get_draggable()}")
++        
++        # Override again with draggable=True
++        legend.set_draggable(True)
++        print(f"After second override - Legend is draggable: {legend.get_draggable()}")
++        
++        print("SUCCESS: Draggable override works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_figure_legend():
++    """Test draggable parameter with figure.legend()."""
++    print("Testing figure legend with draggable...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test with figure.legend
++        legend = fig.legend(draggable=True, loc='upper right')
++        print(f"SUCCESS: Figure legend is draggable: {legend.get_draggable()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_no_legend_items():
++    """Test draggable parameter when no legend items are provided."""
++    print("Testing draggable with no legend items...")
++    
++    fig, ax = plt.subplots()
++    
++    try:
++        # This should create an empty legend
++        legend = ax.legend(draggable=True)
++        print(f"SUCCESS: Empty legend is draggable: {legend.get_draggable()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++if __name__ == "__main__":
++    test_draggable_with_other_params()
++    test_draggable_override()
++    test_figure_legend()
++    test_no_legend_items()
++    print("All edge case tests completed!")
+diff --git a/test_draggable_legend.py b/test_draggable_legend.py
+new file mode 100644
+index 0000000000..f613272f9d
+--- /dev/null
++++ b/test_draggable_legend.py
+@@ -0,0 +1,115 @@
++#!/usr/bin/env python3
++"""
++Test script to verify the draggable legend functionality.
++"""
++
++import sys
++sys.path.insert(0, '/workspace/matplotlib__matplotlib__3.6/lib')
++
++import matplotlib.pyplot as plt
++import numpy as np
++
++def test_current_behavior():
++    """Test the current way of making a legend draggable."""
++    print("Testing current behavior...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    # Current way: create legend, then make it draggable
++    legend = ax.legend()
++    legend.set_draggable(True)
++    
++    print(f"Legend is draggable: {legend.get_draggable()}")
++    plt.close(fig)
++
++def test_new_behavior():
++    """Test the new way of making a legend draggable (should work after fix)."""
++    print("Testing new behavior...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # New way: create legend with draggable=True
++        legend = ax.legend(draggable=True)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable parameter works!")
++    except TypeError as e:
++        print(f"EXPECTED ERROR (before fix): {e}")
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_false():
++    """Test draggable=False parameter."""
++    print("Testing draggable=False...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable=False
++        legend = ax.legend(draggable=False)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable=False works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_none():
++    """Test draggable=None parameter (default behavior)."""
++    print("Testing draggable=None...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable=None (default)
++        legend = ax.legend(draggable=None)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable=None works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_direct_legend_creation():
++    """Test creating Legend directly with draggable parameter."""
++    print("Testing direct Legend creation...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    line1, = ax.plot(x, np.sin(x), label='sin(x)')
++    line2, = ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        from matplotlib.legend import Legend
++        # Create Legend directly with draggable=True
++        legend = Legend(ax, [line1, line2], ['sin(x)', 'cos(x)'], draggable=True)
++        ax.add_artist(legend)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable parameter works in direct Legend creation!")
++    except TypeError as e:
++        print(f"EXPECTED ERROR (before fix): {e}")
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++    
++    plt.close(fig)
++
++if __name__ == "__main__":
++    test_current_behavior()
++    test_new_behavior()
++    test_draggable_false()
++    test_draggable_none()
++    test_direct_legend_creation()
+
+2026-01-06 15:50:20,933 - INFO - ------------------------------
+2026-01-06 15:50:20,933 - INFO - END Runtime Completion Fn
+2026-01-06 15:50:20,933 - INFO - ------------------------------
+2026-01-06 15:50:20,933 - INFO - Got git diff for instance matplotlib__matplotlib-23913:
+--------
+diff --git a/lib/matplotlib/legend.py b/lib/matplotlib/legend.py
+index 9e5b903d59..72b4e128d1 100644
+--- a/lib/matplotlib/legend.py
++++ b/lib/matplotlib/legend.py
+@@ -286,6 +286,12 @@ handler_map : dict or None
+     The custom dictionary mapping instances or types to a legend
+     handler. This *handler_map* updates the default handler map
+     found at `matplotlib.legend.Legend.get_legend_handler_map`.
++
++draggable : bool, optional
++    Whether the legend can be dragged with the mouse. If ``True``,
++    the legend will be draggable. If ``False``, the legend will not be
++    draggable. If ``None`` (default), the legend will not be draggable
++    unless explicitly set via the ``set_draggable`` method.
+ """)
+ 
+ 
+@@ -341,6 +347,7 @@ class Legend(Artist):
+         handler_map=None,
+         title_fontproperties=None,  # properties for the legend title
+         alignment="center",       # control the alignment within the legend box
++        draggable=None,           # whether the legend can be dragged with the mouse
+         *,
+         ncol=1  # synonym for ncols (backward compatibility)
+     ):
+@@ -574,6 +581,10 @@ class Legend(Artist):
+         else:
+             raise ValueError(f"Invalid labelcolor: {labelcolor!r}")
+ 
++        # Set draggable state if specified
++        if draggable is not None:
++            self.set_draggable(draggable)
++
+     def _set_artist_props(self, a):
+         """
+         Set the boilerplate props for artists added to axes.
+diff --git a/test_draggable_edge_cases.py b/test_draggable_edge_cases.py
+new file mode 100644
+index 0000000000..5ed61e1f7c
+--- /dev/null
++++ b/test_draggable_edge_cases.py
+@@ -0,0 +1,103 @@
++#!/usr/bin/env python3
++"""
++Test edge cases for the draggable legend functionality.
++"""
++
++import sys
++sys.path.insert(0, '/workspace/matplotlib__matplotlib__3.6/lib')
++
++import matplotlib.pyplot as plt
++import numpy as np
++
++def test_draggable_with_other_params():
++    """Test draggable parameter combined with other legend parameters."""
++    print("Testing draggable with other parameters...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable with other parameters
++        legend = ax.legend(
++            draggable=True,
++            title='Trigonometric Functions',
++            loc='upper right',
++            fancybox=True,
++            shadow=True,
++            fontsize=12
++        )
++        print(f"SUCCESS: Legend is draggable: {legend.get_draggable()}")
++        print(f"Title: {legend.get_title().get_text()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_override():
++    """Test that set_draggable can still override the initial setting."""
++    print("Testing draggable override...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    
++    try:
++        # Start with draggable=True
++        legend = ax.legend(draggable=True)
++        print(f"Initial state - Legend is draggable: {legend.get_draggable()}")
++        
++        # Override with draggable=False
++        legend.set_draggable(False)
++        print(f"After override - Legend is draggable: {legend.get_draggable()}")
++        
++        # Override again with draggable=True
++        legend.set_draggable(True)
++        print(f"After second override - Legend is draggable: {legend.get_draggable()}")
++        
++        print("SUCCESS: Draggable override works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_figure_legend():
++    """Test draggable parameter with figure.legend()."""
++    print("Testing figure legend with draggable...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test with figure.legend
++        legend = fig.legend(draggable=True, loc='upper right')
++        print(f"SUCCESS: Figure legend is draggable: {legend.get_draggable()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_no_legend_items():
++    """Test draggable parameter when no legend items are provided."""
++    print("Testing draggable with no legend items...")
++    
++    fig, ax = plt.subplots()
++    
++    try:
++        # This should create an empty legend
++        legend = ax.legend(draggable=True)
++        print(f"SUCCESS: Empty legend is draggable: {legend.get_draggable()}")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++if __name__ == "__main__":
++    test_draggable_with_other_params()
++    test_draggable_override()
++    test_figure_legend()
++    test_no_legend_items()
++    print("All edge case tests completed!")
+diff --git a/test_draggable_legend.py b/test_draggable_legend.py
+new file mode 100644
+index 0000000000..f613272f9d
+--- /dev/null
++++ b/test_draggable_legend.py
+@@ -0,0 +1,115 @@
++#!/usr/bin/env python3
++"""
++Test script to verify the draggable legend functionality.
++"""
++
++import sys
++sys.path.insert(0, '/workspace/matplotlib__matplotlib__3.6/lib')
++
++import matplotlib.pyplot as plt
++import numpy as np
++
++def test_current_behavior():
++    """Test the current way of making a legend draggable."""
++    print("Testing current behavior...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    # Current way: create legend, then make it draggable
++    legend = ax.legend()
++    legend.set_draggable(True)
++    
++    print(f"Legend is draggable: {legend.get_draggable()}")
++    plt.close(fig)
++
++def test_new_behavior():
++    """Test the new way of making a legend draggable (should work after fix)."""
++    print("Testing new behavior...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # New way: create legend with draggable=True
++        legend = ax.legend(draggable=True)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable parameter works!")
++    except TypeError as e:
++        print(f"EXPECTED ERROR (before fix): {e}")
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_false():
++    """Test draggable=False parameter."""
++    print("Testing draggable=False...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable=False
++        legend = ax.legend(draggable=False)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable=False works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_draggable_none():
++    """Test draggable=None parameter (default behavior)."""
++    print("Testing draggable=None...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    ax.plot(x, np.sin(x), label='sin(x)')
++    ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        # Test draggable=None (default)
++        legend = ax.legend(draggable=None)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable=None works!")
++    except Exception as e:
++        print(f"ERROR: {e}")
++    
++    plt.close(fig)
++
++def test_direct_legend_creation():
++    """Test creating Legend directly with draggable parameter."""
++    print("Testing direct Legend creation...")
++    
++    fig, ax = plt.subplots()
++    x = np.linspace(0, 10, 100)
++    line1, = ax.plot(x, np.sin(x), label='sin(x)')
++    line2, = ax.plot(x, np.cos(x), label='cos(x)')
++    
++    try:
++        from matplotlib.legend import Legend
++        # Create Legend directly with draggable=True
++        legend = Legend(ax, [line1, line2], ['sin(x)', 'cos(x)'], draggable=True)
++        ax.add_artist(legend)
++        print(f"Legend is draggable: {legend.get_draggable()}")
++        print("SUCCESS: draggable parameter works in direct Legend creation!")
++    except TypeError as e:
++        print(f"EXPECTED ERROR (before fix): {e}")
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++    
++    plt.close(fig)
++
++if __name__ == "__main__":
++    test_current_behavior()
++    test_new_behavior()
++    test_draggable_false()
++    test_draggable_none()
++    test_direct_legend_creation()
+--------
+2026-01-06 15:50:22,563 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.pydata_1776_xarray-4094:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:50:22,563 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:50:22,563 - INFO - Logging LLM completions for instance pydata__xarray-4094 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/pydata__xarray-4094
+2026-01-06 15:50:22,563 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:50:22,564 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

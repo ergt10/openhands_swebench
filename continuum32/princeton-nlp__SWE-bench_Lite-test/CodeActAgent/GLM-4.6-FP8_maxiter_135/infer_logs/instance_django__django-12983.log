@@ -1,0 +1,426 @@
+2026-01-06 14:42:37,478 - INFO - [LLM registry 4c550c83-19f5-4082-81a6-3d158a894dc1]: Registering service for agent
+2026-01-06 14:42:37,516 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_uyl6jy1u41f5e5wj_v008aov5t6vw3gr5
+2026-01-06 14:53:55,123 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_uyl6jy1u41f5e5wj_v008aov5t6vw3gr5] build finished.
+2026-01-06 14:53:55,129 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_uyl6jy1u41f5e5wj_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_uyl6jy1u41f5e5wj]
+2026-01-06 14:53:55,131 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_uyl6jy1u41f5e5wj_v008aov5t6vw3gr5, oh_v1.0.0_uyl6jy1u41f5e5wj] built successfully
+2026-01-06 14:53:55,208 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_uyl6jy1u41f5e5wj_v008aov5t6vw3gr5
+2026-01-06 14:53:55,268 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '32608', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 14:53:55,542 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Container started: openhands-runtime-15a33367-c7fd-4e-42d22ae25c2625a. VSCode URL: None
+2026-01-06 14:53:55,542 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Waiting for client to become ready at http://localhost:32608...
+2026-01-06 14:54:27,623 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Runtime is ready.
+2026-01-06 14:54:30,731 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 14:54:30,733 - INFO - ------------------------------
+2026-01-06 14:54:30,733 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 14:54:30,733 - INFO - ------------------------------
+2026-01-06 14:54:30,733 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-12983' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 14:54:31,354 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:31,354 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 14:54:31,973 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:31,974 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 14:54:32,591 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:32,598 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 14:54:33,215 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-12983
+export OPENHANDS_EVAL_JOB_ID=2773037840
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-12983
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:33,216 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 14:54:33,835 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:33,835 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 14:54:35,465 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__3.2
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:35,466 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.2
+2026-01-06 14:54:36,084 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:36,084 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 14:54:37,204 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+HEAD is now at 3bc4240d97 Removed unused admin:jsi18n <script> element from change_password.html.
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:37,205 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 14:54:37,824 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:37,825 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 14:54:38,444 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:54:38,444 - INFO - ------------------------------
+2026-01-06 14:54:38,444 - INFO - END Runtime Initialization Fn
+2026-01-06 14:54:38,444 - INFO - ------------------------------
+2026-01-06 14:54:38,447 - INFO - [LLM registry ddc03790-eb22-4f76-999c-077a289db4c9]: Registering service for agent
+2026-01-06 14:54:38,457 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 14:54:38,459 - INFO - [runtime 15a33367-c7fd-4e-42d22ae25c2625a] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 14:54:38,461 - INFO - Loading user workspace microagents: []
+2026-01-06 14:54:38,461 - INFO - AgentController 15a33367-c7fd-4e-42d22ae25c2625a - created new state. start_id: 0
+2026-01-06 14:54:38,475 - INFO - [Agent Controller 15a33367-c7fd-4e-42d22ae25c2625a] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 14:54:38,476 - INFO - Saved conversation stats
+2026-01-06 14:58:47,892 - INFO - [Agent Controller 15a33367-c7fd-4e-42d22ae25c2625a] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 14:58:47,894 - INFO - Saved conversation stats
+2026-01-06 14:58:48,714 - INFO - ------------------------------
+2026-01-06 14:58:48,714 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 14:58:48,714 - INFO - ------------------------------
+2026-01-06 14:58:48,714 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.2
+2026-01-06 14:58:49,334 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:49,335 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 14:58:49,958 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:49,958 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 14:58:50,578 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:50,579 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 14:58:51,198 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:51,198 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 14:58:51,823 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:51,823 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 3bc4240d979812bd11365ede04c028ea13fdc8c6 > patch.diff
+2026-01-06 14:58:52,444 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "928dab787694",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:52,444 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 14:58:52,448 - INFO - [Read from /workspace/django__django__3.2/patch.diff is successful.]
+diff --git a/django/utils/text.py b/django/utils/text.py
+index fb5f6298c4..b8c536ffbc 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -395,7 +395,7 @@ def slugify(value, allow_unicode=False):
+     """
+     Convert to ASCII if 'allow_unicode' is False. Convert spaces to hyphens.
+     Remove characters that aren't alphanumerics, underscores, or hyphens.
+-    Convert to lowercase. Also strip leading and trailing whitespace.
++    Convert to lowercase. Also strip leading and trailing whitespace, dashes, and underscores.
+     """
+     value = str(value)
+     if allow_unicode:
+@@ -403,7 +403,7 @@ def slugify(value, allow_unicode=False):
+     else:
+         value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+     value = re.sub(r'[^\w\s-]', '', value.lower()).strip()
+-    return re.sub(r'[-\s]+', '-', value)
++    return re.sub(r'[-_\s]+', '-', value).strip('-_')
+ 
+ 
+ def camel_case_to_spaces(value):
+
+2026-01-06 14:58:52,448 - INFO - ------------------------------
+2026-01-06 14:58:52,449 - INFO - END Runtime Completion Fn
+2026-01-06 14:58:52,449 - INFO - ------------------------------
+2026-01-06 14:58:52,449 - INFO - Got git diff for instance django__django-12983:
+--------
+diff --git a/django/utils/text.py b/django/utils/text.py
+index fb5f6298c4..b8c536ffbc 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -395,7 +395,7 @@ def slugify(value, allow_unicode=False):
+     """
+     Convert to ASCII if 'allow_unicode' is False. Convert spaces to hyphens.
+     Remove characters that aren't alphanumerics, underscores, or hyphens.
+-    Convert to lowercase. Also strip leading and trailing whitespace.
++    Convert to lowercase. Also strip leading and trailing whitespace, dashes, and underscores.
+     """
+     value = str(value)
+     if allow_unicode:
+@@ -403,7 +403,7 @@ def slugify(value, allow_unicode=False):
+     else:
+         value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+     value = re.sub(r'[^\w\s-]', '', value.lower()).strip()
+-    return re.sub(r'[-\s]+', '-', value)
++    return re.sub(r'[-_\s]+', '-', value).strip('-_')
+ 
+ 
+ def camel_case_to_spaces(value):
+--------
+2026-01-06 14:58:54,115 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-14411:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 14:58:54,116 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 14:58:54,116 - INFO - Logging LLM completions for instance django__django-14411 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/django__django-14411
+2026-01-06 14:58:54,116 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 14:58:54,116 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

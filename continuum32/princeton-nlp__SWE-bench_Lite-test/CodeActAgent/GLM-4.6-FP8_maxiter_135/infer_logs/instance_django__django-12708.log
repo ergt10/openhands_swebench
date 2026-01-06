@@ -1,0 +1,1728 @@
+2026-01-06 14:41:15,157 - INFO - [LLM registry 8eb28aa2-55c2-4749-b9ec-c68028b87801]: Registering service for agent
+2026-01-06 14:41:15,192 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_bbqhjs6fgsi5oo78_v008aov5t6vw3gr5
+2026-01-06 14:50:49,981 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_bbqhjs6fgsi5oo78_v008aov5t6vw3gr5] build finished.
+2026-01-06 14:50:49,987 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_bbqhjs6fgsi5oo78_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_bbqhjs6fgsi5oo78]
+2026-01-06 14:50:49,989 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_bbqhjs6fgsi5oo78_v008aov5t6vw3gr5, oh_v1.0.0_bbqhjs6fgsi5oo78] built successfully
+2026-01-06 14:50:50,051 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_bbqhjs6fgsi5oo78_v008aov5t6vw3gr5
+2026-01-06 14:50:50,125 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '35642', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 14:50:50,796 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Container started: openhands-runtime-e1000895-f360-43-f16a5d8ee2ddf8a. VSCode URL: None
+2026-01-06 14:50:50,796 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Waiting for client to become ready at http://localhost:35642...
+2026-01-06 14:51:24,892 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Runtime is ready.
+2026-01-06 14:51:28,005 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 14:51:28,006 - INFO - ------------------------------
+2026-01-06 14:51:28,006 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 14:51:28,007 - INFO - ------------------------------
+2026-01-06 14:51:28,007 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-12708' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 14:51:28,627 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:28,628 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 14:51:29,246 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:29,246 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 14:51:29,864 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:30,001 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 14:51:30,622 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-12708
+export OPENHANDS_EVAL_JOB_ID=4040969626
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-12708
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:30,622 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 14:51:31,240 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:31,241 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 14:51:34,372 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__3.1
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:34,372 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.1
+2026-01-06 14:51:34,990 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:34,991 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 14:51:36,111 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+HEAD is now at ea64869782 SWE-bench
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:36,112 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 14:51:36,730 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:36,730 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 14:51:37,350 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:51:37,351 - INFO - ------------------------------
+2026-01-06 14:51:37,351 - INFO - END Runtime Initialization Fn
+2026-01-06 14:51:37,351 - INFO - ------------------------------
+2026-01-06 14:51:37,354 - INFO - [LLM registry 38600765-a1c5-4631-bd98-76b7bd3339b4]: Registering service for agent
+2026-01-06 14:51:37,367 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 14:51:37,369 - INFO - [runtime e1000895-f360-43-f16a5d8ee2ddf8a] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 14:51:37,371 - INFO - Loading user workspace microagents: []
+2026-01-06 14:51:37,372 - INFO - AgentController e1000895-f360-43-f16a5d8ee2ddf8a - created new state. start_id: 0
+2026-01-06 14:51:37,377 - INFO - [Agent Controller e1000895-f360-43-f16a5d8ee2ddf8a] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 14:51:37,379 - INFO - Saved conversation stats
+2026-01-06 14:58:49,400 - INFO - [Agent Controller e1000895-f360-43-f16a5d8ee2ddf8a] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 14:58:49,402 - INFO - Saved conversation stats
+2026-01-06 14:58:49,940 - INFO - ------------------------------
+2026-01-06 14:58:49,941 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 14:58:49,941 - INFO - ------------------------------
+2026-01-06 14:58:49,941 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.1
+2026-01-06 14:58:50,572 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:50,572 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 14:58:51,190 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:51,191 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 14:58:51,809 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:51,809 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 14:58:52,428 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:52,429 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 14:58:53,050 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:53,051 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 447980e72ac01da1594dd3373a03ba40b7ee6f80 > patch.diff
+2026-01-06 14:58:53,669 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "543d91af241a",
+  "working_dir": "/workspace/django__django__3.1",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.1]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:53,669 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 14:58:53,674 - INFO - [Read from /workspace/django__django__3.1/patch.diff is successful.]
+diff --git a/comprehensive_test.py b/comprehensive_test.py
+new file mode 100644
+index 0000000000..e38a0ca9c7
+--- /dev/null
++++ b/comprehensive_test.py
+@@ -0,0 +1,211 @@
++#!/usr/bin/env python
++"""
++Comprehensive test for the migration crash fix:
++Tests various scenarios to ensure the fix works correctly and doesn't break existing functionality
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, SlugField, IntegerField
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++def create_model_with_both(name_suffix):
++    class ModelWithBoth(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithboth_{name_suffix}'
++            unique_together = [['field1', 'field2']]
++            index_together = [['field1', 'field2']]
++    return ModelWithBoth
++
++def create_model_with_only_unique(name_suffix):
++    class ModelWithOnlyUnique(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithonlyunique_{name_suffix}'
++            unique_together = [['field1', 'field2']]
++    return ModelWithOnlyUnique
++
++def create_model_with_only_index(name_suffix):
++    class ModelWithOnlyIndex(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithonlyindex_{name_suffix}'
++            index_together = [['field1', 'field2']]
++    return ModelWithOnlyIndex
++
++def test_delete_index_with_unique_present():
++    """Test deleting index_together when unique_together exists on same fields"""
++    print("Test 1: Delete index_together when unique_together exists...")
++    
++    ModelWithBoth = create_model_with_both("test1")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBoth)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithBoth, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_unique_with_index_present():
++    """Test deleting unique_together when index_together exists on same fields"""
++    print("Test 2: Delete unique_together when index_together exists...")
++    
++    ModelWithBoth = create_model_with_both("test2")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBoth)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithBoth, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_only_index():
++    """Test deleting index_together when no unique_together exists"""
++    print("Test 3: Delete index_together when no unique_together exists...")
++    
++    ModelWithOnlyIndex = create_model_with_only_index("test3")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithOnlyIndex)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithOnlyIndex, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_only_unique():
++    """Test deleting unique_together when no index_together exists"""
++    print("Test 4: Delete unique_together when no index_together exists...")
++    
++    ModelWithOnlyUnique = create_model_with_only_unique("test4")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithOnlyUnique)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithOnlyUnique, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_add_and_delete_both():
++    """Test adding and then deleting both constraints"""
++    print("Test 5: Add and delete both constraints...")
++    
++    class ModelWithNeither(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithneither_test5'
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithNeither)
++    
++    try:
++        # Add both constraints
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithNeither, [], [['field1', 'field2']])
++            editor.alter_index_together(ModelWithNeither, [], [['field1', 'field2']])
++        
++        # Delete both constraints
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithNeither, [['field1', 'field2']], [])
++            editor.alter_unique_together(ModelWithNeither, [['field1', 'field2']], [])
++        
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def run_all_tests():
++    """Run all tests and report results"""
++    print("Running comprehensive tests for index/unique constraint fix...\n")
++    
++    tests = [
++        test_delete_index_with_unique_present,
++        test_delete_unique_with_index_present,
++        test_delete_only_index,
++        test_delete_only_unique,
++        test_add_and_delete_both,
++    ]
++    
++    results = []
++    for test in tests:
++        results.append(test())
++        print()  # Add spacing between tests
++    
++    passed = sum(results)
++    total = len(results)
++    
++    print(f"Results: {passed}/{total} tests passed")
++    
++    if passed == total:
++        print("🎉 All tests passed!")
++        return True
++    else:
++        print("❌ Some tests failed!")
++        return False
++
++if __name__ == '__main__':
++    success = run_all_tests()
++    sys.exit(0 if success else 1)
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 61f88401ab..efb71a5e79 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -403,8 +403,22 @@ class BaseDatabaseSchemaEditor:
+         meta_constraint_names = {constraint.name for constraint in model._meta.constraints}
+         meta_index_names = {constraint.name for constraint in model._meta.indexes}
+         columns = [model._meta.get_field(field).column for field in fields]
++        
++        # When deleting an index (not a unique constraint), exclude unique constraints
++        # to avoid conflicts when both unique_together and index_together exist on same fields
++        if constraint_kwargs.get('index') and not constraint_kwargs.get('unique'):
++            with self.connection.cursor() as cursor:
++                constraints = self.connection.introspection.get_constraints(cursor, model._meta.db_table)
++            unique_constraint_names = {
++                name for name, infodict in constraints.items()
++                if infodict['columns'] == columns and infodict['unique']
++            }
++            exclude_names = meta_constraint_names | meta_index_names | unique_constraint_names
++        else:
++            exclude_names = meta_constraint_names | meta_index_names
++        
+         constraint_names = self._constraint_names(
+-            model, columns, exclude=meta_constraint_names | meta_index_names,
++            model, columns, exclude=exclude_names,
+             **constraint_kwargs
+         )
+         if len(constraint_names) != 1:
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..4b4784d9e0
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,89 @@
++#!/usr/bin/env python
++"""
++Reproduction script for the migration crash issue:
++Migration crashes deleting an index_together if there is a unique_together on the same fields
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, SlugField, IntegerField
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class TestModel(models.Model):
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        unique_together = [['field1', 'field2']]
++        index_together = [['field1', 'field2']]
++
++def test_issue():
++    """Test the issue where deleting index_together fails when unique_together exists on same fields"""
++    print("Creating model with both unique_together and index_together on same fields...")
++    
++    # Create the table
++    with connection.schema_editor() as editor:
++        editor.create_model(TestModel)
++    
++    print("Model created successfully.")
++    
++    # Check constraints
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, TestModel._meta.db_table)
++        print(f"Constraints found: {list(constraints.keys())}")
++        for name, info in constraints.items():
++            if info['columns'] == ['field1', 'field2']:
++                print(f"  - {name}: {info}")
++    
++    print("\nAttempting to delete index_together (this should fail)...")
++    
++    try:
++        # This should fail with ValueError: Found wrong number (2) of constraints
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(TestModel, [['field1', 'field2']], [])
++        print("SUCCESS: index_together deleted without error!")
++    except ValueError as e:
++        print(f"ERROR: {e}")
++        return False
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++        return False
++    
++    return True
++
++if __name__ == '__main__':
++    success = test_issue()
++    if success:
++        print("\nTest passed - issue appears to be fixed!")
++        sys.exit(0)
++    else:
++        print("\nTest failed - issue reproduced!")
++        sys.exit(1)
+diff --git a/test_indexes_refactor.py b/test_indexes_refactor.py
+new file mode 100644
+index 0000000000..2669adb5d0
+--- /dev/null
++++ b/test_indexes_refactor.py
+@@ -0,0 +1,191 @@
++#!/usr/bin/env python
++"""
++Test for the second part of the issue:
++Moving the declaration of an index should not result in an index re-creation
++
++This tests refactoring from index_together to Options.indexes feature.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, Index
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class ModelWithIndexTogether(models.Model):
++    """Model using old index_together syntax"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithindextogether'
++        index_together = [['field1', 'field2']]
++
++class ModelWithIndexes(models.Model):
++    """Model using new Options.indexes syntax"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithindexes'
++        indexes = [
++            models.Index(fields=['field1', 'field2'])
++        ]
++
++def test_refactor_from_index_together_to_indexes():
++    """
++    Test that refactoring from index_together to Options.indexes works correctly.
++    This simulates the user's scenario of moving to the "new" (Dj 1.11) Options.indexes feature.
++    """
++    print("Testing refactor from index_together to Options.indexes...")
++    
++    # Create model with index_together
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithIndexTogether)
++    
++    # Get the index name created by index_together
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithIndexTogether._meta.db_table)
++        index_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2'] and info['index'] and not info['unique']
++        ]
++        original_index_name = index_constraints[0] if index_constraints else None
++    
++    print(f"  Original index created: {original_index_name}")
++    
++    # Delete the old index_together
++    with connection.schema_editor() as editor:
++        editor.alter_index_together(ModelWithIndexTogether, [['field1', 'field2']], [])
++    
++    # Create model with new indexes syntax
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithIndexes)
++    
++    # Verify the new index exists
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithIndexes._meta.db_table)
++        index_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2'] and info['index'] and not info['unique']
++        ]
++        new_index_name = index_constraints[0] if index_constraints else None
++    
++    print(f"  New index created: {new_index_name}")
++    
++    if original_index_name and new_index_name:
++        if original_index_name != new_index_name:
++            print("  ⚠️  Index was recreated with different name (this is expected behavior)")
++        else:
++            print("  ✓ Index reused same name")
++    
++    print("  ✓ Refactor completed successfully")
++    return True
++
++def test_unique_together_with_indexes_refactor():
++    """
++    Test the specific scenario: unique_together + index_together -> unique_together + indexes
++    """
++    print("\nTesting refactor with both unique_together and index_together...")
++    
++    class ModelWithBothOld(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithbothold'
++            unique_together = [['field1', 'field2']]
++            index_together = [['field1', 'field2']]
++    
++    class ModelWithBothNew(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithbothnew'
++            unique_together = [['field1', 'field2']]
++            indexes = [
++                models.Index(fields=['field1', 'field2'])
++            ]
++    
++    # Create model with both old-style constraints
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBothOld)
++    
++    # Verify both constraints exist
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithBothOld._meta.db_table)
++        field_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2']
++        ]
++        print(f"  Constraints with old syntax: {len(field_constraints)} (should be 2)")
++    
++    # Delete the index_together (this is where the original bug occurred)
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithBothOld, [['field1', 'field2']], [])
++        print("  ✓ Successfully deleted index_together")
++    except ValueError as e:
++        print(f"  ✗ Failed to delete index_together: {e}")
++        return False
++    
++    # Create model with new syntax
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBothNew)
++    
++    # Verify both constraints exist with new syntax
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithBothNew._meta.db_table)
++        field_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2']
++        ]
++        print(f"  Constraints with new syntax: {len(field_constraints)} (should be 2)")
++    
++    print("  ✓ Refactor from old to new syntax completed successfully")
++    return True
++
++if __name__ == '__main__':
++    success1 = test_refactor_from_index_together_to_indexes()
++    success2 = test_unique_together_with_indexes_refactor()
++    
++    if success1 and success2:
++        print("\n🎉 All refactor tests passed!")
++        sys.exit(0)
++    else:
++        print("\n❌ Some refactor tests failed!")
++        sys.exit(1)
+diff --git a/test_regression.py b/test_regression.py
+new file mode 100644
+index 0000000000..836dce3b84
+--- /dev/null
++++ b/test_regression.py
+@@ -0,0 +1,128 @@
++#!/usr/bin/env python
++"""
++Regression test for the specific issue:
++Migration crashes deleting an index_together if there is a unique_together on the same fields
++
++This test should be added to the Django test suite to prevent regression.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField
++from django.apps.registry import Apps
++from django.test import TransactionTestCase
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class ModelWithBothConstraints(models.Model):
++    """Model with both unique_together and index_together on same fields"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithbothconstraints'
++        unique_together = [['field1', 'field2']]
++        index_together = [['field1', 'field2']]
++
++class TestIndexTogetherWithUniqueTogetherRegression(TransactionTestCase):
++    """
++    Regression test for issue where deleting index_together fails 
++    when unique_together exists on the same fields.
++    
++    This addresses the specific problem described in the issue:
++    "Migration crashes deleting an index_together if there is a unique_together on the same fields"
++    """
++    
++    def test_delete_index_together_with_unique_together_present(self):
++        """
++        Test that deleting index_together works when unique_together exists on same fields.
++        
++        This reproduces the exact scenario from the issue:
++        1) Create models with 2 fields, add 2 same fields to unique_together and to index_together
++        2) Delete index_together -> Should not fail
++        """
++        # Create the model with both constraints
++        with connection.schema_editor() as editor:
++            editor.create_model(ModelWithBothConstraints)
++        
++        # Verify both constraints exist
++        with connection.cursor() as cursor:
++            constraints = connection.introspection.get_constraints(cursor, ModelWithBothConstraints._meta.db_table)
++            
++            # Should have both unique and index constraints for the same columns
++            constraints_for_fields = [
++                name for name, info in constraints.items()
++                if info['columns'] == ['field1', 'field2']
++            ]
++            
++            self.assertEqual(len(constraints_for_fields), 2, 
++                "Should have both unique and index constraints for the same fields")
++        
++        # This should not raise ValueError: Found wrong number (2) of constraints
++        try:
++            with connection.schema_editor() as editor:
++                editor.alter_index_together(ModelWithBothConstraints, [['field1', 'field2']], [])
++        except ValueError as e:
++            if "Found wrong number" in str(e):
++                self.fail(f"Regression detected: {e}")
++            else:
++                raise
++        
++        # Verify only unique constraint remains
++        with connection.cursor() as cursor:
++            constraints = connection.introspection.get_constraints(cursor, ModelWithBothConstraints._meta.db_table)
++            
++            # Should have only the unique constraint now
++            constraints_for_fields = [
++                name for name, info in constraints.items()
++                if info['columns'] == ['field1', 'field2']
++            ]
++            
++            self.assertEqual(len(constraints_for_fields), 1, 
++                "Should have only unique constraint after deleting index_together")
++            
++            # Verify the remaining constraint is unique
++            remaining_constraint = constraints[constraints_for_fields[0]]
++            self.assertTrue(remaining_constraint['unique'], 
++                "Remaining constraint should be unique")
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the test
++    suite = unittest.TestLoader().loadTestsFromTestCase(TestIndexTogetherWithUniqueTogetherRegression)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    if result.wasSuccessful():
++        print("\n✅ Regression test passed!")
++        sys.exit(0)
++    else:
++        print("\n❌ Regression test failed!")
++        sys.exit(1)
+
+2026-01-06 14:58:53,675 - INFO - ------------------------------
+2026-01-06 14:58:53,675 - INFO - END Runtime Completion Fn
+2026-01-06 14:58:53,675 - INFO - ------------------------------
+2026-01-06 14:58:53,675 - INFO - Got git diff for instance django__django-12708:
+--------
+diff --git a/comprehensive_test.py b/comprehensive_test.py
+new file mode 100644
+index 0000000000..e38a0ca9c7
+--- /dev/null
++++ b/comprehensive_test.py
+@@ -0,0 +1,211 @@
++#!/usr/bin/env python
++"""
++Comprehensive test for the migration crash fix:
++Tests various scenarios to ensure the fix works correctly and doesn't break existing functionality
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, SlugField, IntegerField
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++def create_model_with_both(name_suffix):
++    class ModelWithBoth(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithboth_{name_suffix}'
++            unique_together = [['field1', 'field2']]
++            index_together = [['field1', 'field2']]
++    return ModelWithBoth
++
++def create_model_with_only_unique(name_suffix):
++    class ModelWithOnlyUnique(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithonlyunique_{name_suffix}'
++            unique_together = [['field1', 'field2']]
++    return ModelWithOnlyUnique
++
++def create_model_with_only_index(name_suffix):
++    class ModelWithOnlyIndex(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = f'test_app_modelwithonlyindex_{name_suffix}'
++            index_together = [['field1', 'field2']]
++    return ModelWithOnlyIndex
++
++def test_delete_index_with_unique_present():
++    """Test deleting index_together when unique_together exists on same fields"""
++    print("Test 1: Delete index_together when unique_together exists...")
++    
++    ModelWithBoth = create_model_with_both("test1")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBoth)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithBoth, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_unique_with_index_present():
++    """Test deleting unique_together when index_together exists on same fields"""
++    print("Test 2: Delete unique_together when index_together exists...")
++    
++    ModelWithBoth = create_model_with_both("test2")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBoth)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithBoth, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_only_index():
++    """Test deleting index_together when no unique_together exists"""
++    print("Test 3: Delete index_together when no unique_together exists...")
++    
++    ModelWithOnlyIndex = create_model_with_only_index("test3")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithOnlyIndex)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithOnlyIndex, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_delete_only_unique():
++    """Test deleting unique_together when no index_together exists"""
++    print("Test 4: Delete unique_together when no index_together exists...")
++    
++    ModelWithOnlyUnique = create_model_with_only_unique("test4")
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithOnlyUnique)
++    
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithOnlyUnique, [['field1', 'field2']], [])
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def test_add_and_delete_both():
++    """Test adding and then deleting both constraints"""
++    print("Test 5: Add and delete both constraints...")
++    
++    class ModelWithNeither(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithneither_test5'
++    
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithNeither)
++    
++    try:
++        # Add both constraints
++        with connection.schema_editor() as editor:
++            editor.alter_unique_together(ModelWithNeither, [], [['field1', 'field2']])
++            editor.alter_index_together(ModelWithNeither, [], [['field1', 'field2']])
++        
++        # Delete both constraints
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithNeither, [['field1', 'field2']], [])
++            editor.alter_unique_together(ModelWithNeither, [['field1', 'field2']], [])
++        
++        print("  ✓ SUCCESS")
++        return True
++    except Exception as e:
++        print(f"  ✗ FAILED: {e}")
++        return False
++
++def run_all_tests():
++    """Run all tests and report results"""
++    print("Running comprehensive tests for index/unique constraint fix...\n")
++    
++    tests = [
++        test_delete_index_with_unique_present,
++        test_delete_unique_with_index_present,
++        test_delete_only_index,
++        test_delete_only_unique,
++        test_add_and_delete_both,
++    ]
++    
++    results = []
++    for test in tests:
++        results.append(test())
++        print()  # Add spacing between tests
++    
++    passed = sum(results)
++    total = len(results)
++    
++    print(f"Results: {passed}/{total} tests passed")
++    
++    if passed == total:
++        print("🎉 All tests passed!")
++        return True
++    else:
++        print("❌ Some tests failed!")
++        return False
++
++if __name__ == '__main__':
++    success = run_all_tests()
++    sys.exit(0 if success else 1)
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 61f88401ab..efb71a5e79 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -403,8 +403,22 @@ class BaseDatabaseSchemaEditor:
+         meta_constraint_names = {constraint.name for constraint in model._meta.constraints}
+         meta_index_names = {constraint.name for constraint in model._meta.indexes}
+         columns = [model._meta.get_field(field).column for field in fields]
++        
++        # When deleting an index (not a unique constraint), exclude unique constraints
++        # to avoid conflicts when both unique_together and index_together exist on same fields
++        if constraint_kwargs.get('index') and not constraint_kwargs.get('unique'):
++            with self.connection.cursor() as cursor:
++                constraints = self.connection.introspection.get_constraints(cursor, model._meta.db_table)
++            unique_constraint_names = {
++                name for name, infodict in constraints.items()
++                if infodict['columns'] == columns and infodict['unique']
++            }
++            exclude_names = meta_constraint_names | meta_index_names | unique_constraint_names
++        else:
++            exclude_names = meta_constraint_names | meta_index_names
++        
+         constraint_names = self._constraint_names(
+-            model, columns, exclude=meta_constraint_names | meta_index_names,
++            model, columns, exclude=exclude_names,
+             **constraint_kwargs
+         )
+         if len(constraint_names) != 1:
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..4b4784d9e0
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,89 @@
++#!/usr/bin/env python
++"""
++Reproduction script for the migration crash issue:
++Migration crashes deleting an index_together if there is a unique_together on the same fields
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, SlugField, IntegerField
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class TestModel(models.Model):
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        unique_together = [['field1', 'field2']]
++        index_together = [['field1', 'field2']]
++
++def test_issue():
++    """Test the issue where deleting index_together fails when unique_together exists on same fields"""
++    print("Creating model with both unique_together and index_together on same fields...")
++    
++    # Create the table
++    with connection.schema_editor() as editor:
++        editor.create_model(TestModel)
++    
++    print("Model created successfully.")
++    
++    # Check constraints
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, TestModel._meta.db_table)
++        print(f"Constraints found: {list(constraints.keys())}")
++        for name, info in constraints.items():
++            if info['columns'] == ['field1', 'field2']:
++                print(f"  - {name}: {info}")
++    
++    print("\nAttempting to delete index_together (this should fail)...")
++    
++    try:
++        # This should fail with ValueError: Found wrong number (2) of constraints
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(TestModel, [['field1', 'field2']], [])
++        print("SUCCESS: index_together deleted without error!")
++    except ValueError as e:
++        print(f"ERROR: {e}")
++        return False
++    except Exception as e:
++        print(f"UNEXPECTED ERROR: {e}")
++        return False
++    
++    return True
++
++if __name__ == '__main__':
++    success = test_issue()
++    if success:
++        print("\nTest passed - issue appears to be fixed!")
++        sys.exit(0)
++    else:
++        print("\nTest failed - issue reproduced!")
++        sys.exit(1)
+diff --git a/test_indexes_refactor.py b/test_indexes_refactor.py
+new file mode 100644
+index 0000000000..2669adb5d0
+--- /dev/null
++++ b/test_indexes_refactor.py
+@@ -0,0 +1,191 @@
++#!/usr/bin/env python
++"""
++Test for the second part of the issue:
++Moving the declaration of an index should not result in an index re-creation
++
++This tests refactoring from index_together to Options.indexes feature.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField, Index
++from django.apps.registry import Apps
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class ModelWithIndexTogether(models.Model):
++    """Model using old index_together syntax"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithindextogether'
++        index_together = [['field1', 'field2']]
++
++class ModelWithIndexes(models.Model):
++    """Model using new Options.indexes syntax"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithindexes'
++        indexes = [
++            models.Index(fields=['field1', 'field2'])
++        ]
++
++def test_refactor_from_index_together_to_indexes():
++    """
++    Test that refactoring from index_together to Options.indexes works correctly.
++    This simulates the user's scenario of moving to the "new" (Dj 1.11) Options.indexes feature.
++    """
++    print("Testing refactor from index_together to Options.indexes...")
++    
++    # Create model with index_together
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithIndexTogether)
++    
++    # Get the index name created by index_together
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithIndexTogether._meta.db_table)
++        index_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2'] and info['index'] and not info['unique']
++        ]
++        original_index_name = index_constraints[0] if index_constraints else None
++    
++    print(f"  Original index created: {original_index_name}")
++    
++    # Delete the old index_together
++    with connection.schema_editor() as editor:
++        editor.alter_index_together(ModelWithIndexTogether, [['field1', 'field2']], [])
++    
++    # Create model with new indexes syntax
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithIndexes)
++    
++    # Verify the new index exists
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithIndexes._meta.db_table)
++        index_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2'] and info['index'] and not info['unique']
++        ]
++        new_index_name = index_constraints[0] if index_constraints else None
++    
++    print(f"  New index created: {new_index_name}")
++    
++    if original_index_name and new_index_name:
++        if original_index_name != new_index_name:
++            print("  ⚠️  Index was recreated with different name (this is expected behavior)")
++        else:
++            print("  ✓ Index reused same name")
++    
++    print("  ✓ Refactor completed successfully")
++    return True
++
++def test_unique_together_with_indexes_refactor():
++    """
++    Test the specific scenario: unique_together + index_together -> unique_together + indexes
++    """
++    print("\nTesting refactor with both unique_together and index_together...")
++    
++    class ModelWithBothOld(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithbothold'
++            unique_together = [['field1', 'field2']]
++            index_together = [['field1', 'field2']]
++    
++    class ModelWithBothNew(models.Model):
++        field1 = CharField(max_length=50)
++        field2 = CharField(max_length=50)
++        
++        class Meta:
++            app_label = 'test_app'
++            apps = test_apps
++            db_table = 'test_app_modelwithbothnew'
++            unique_together = [['field1', 'field2']]
++            indexes = [
++                models.Index(fields=['field1', 'field2'])
++            ]
++    
++    # Create model with both old-style constraints
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBothOld)
++    
++    # Verify both constraints exist
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithBothOld._meta.db_table)
++        field_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2']
++        ]
++        print(f"  Constraints with old syntax: {len(field_constraints)} (should be 2)")
++    
++    # Delete the index_together (this is where the original bug occurred)
++    try:
++        with connection.schema_editor() as editor:
++            editor.alter_index_together(ModelWithBothOld, [['field1', 'field2']], [])
++        print("  ✓ Successfully deleted index_together")
++    except ValueError as e:
++        print(f"  ✗ Failed to delete index_together: {e}")
++        return False
++    
++    # Create model with new syntax
++    with connection.schema_editor() as editor:
++        editor.create_model(ModelWithBothNew)
++    
++    # Verify both constraints exist with new syntax
++    with connection.cursor() as cursor:
++        constraints = connection.introspection.get_constraints(cursor, ModelWithBothNew._meta.db_table)
++        field_constraints = [
++            name for name, info in constraints.items()
++            if info['columns'] == ['field1', 'field2']
++        ]
++        print(f"  Constraints with new syntax: {len(field_constraints)} (should be 2)")
++    
++    print("  ✓ Refactor from old to new syntax completed successfully")
++    return True
++
++if __name__ == '__main__':
++    success1 = test_refactor_from_index_together_to_indexes()
++    success2 = test_unique_together_with_indexes_refactor()
++    
++    if success1 and success2:
++        print("\n🎉 All refactor tests passed!")
++        sys.exit(0)
++    else:
++        print("\n❌ Some refactor tests failed!")
++        sys.exit(1)
+diff --git a/test_regression.py b/test_regression.py
+new file mode 100644
+index 0000000000..836dce3b84
+--- /dev/null
++++ b/test_regression.py
+@@ -0,0 +1,128 @@
++#!/usr/bin/env python
++"""
++Regression test for the specific issue:
++Migration crashes deleting an index_together if there is a unique_together on the same fields
++
++This test should be added to the Django test suite to prevent regression.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++
++django.setup()
++
++from django.db import models, connection
++from django.db.models import CharField
++from django.apps.registry import Apps
++from django.test import TransactionTestCase
++
++# Create a separate Apps registry for our test models
++test_apps = Apps()
++
++class ModelWithBothConstraints(models.Model):
++    """Model with both unique_together and index_together on same fields"""
++    field1 = CharField(max_length=50)
++    field2 = CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        apps = test_apps
++        db_table = 'test_app_modelwithbothconstraints'
++        unique_together = [['field1', 'field2']]
++        index_together = [['field1', 'field2']]
++
++class TestIndexTogetherWithUniqueTogetherRegression(TransactionTestCase):
++    """
++    Regression test for issue where deleting index_together fails 
++    when unique_together exists on the same fields.
++    
++    This addresses the specific problem described in the issue:
++    "Migration crashes deleting an index_together if there is a unique_together on the same fields"
++    """
++    
++    def test_delete_index_together_with_unique_together_present(self):
++        """
++        Test that deleting index_together works when unique_together exists on same fields.
++        
++        This reproduces the exact scenario from the issue:
++        1) Create models with 2 fields, add 2 same fields to unique_together and to index_together
++        2) Delete index_together -> Should not fail
++        """
++        # Create the model with both constraints
++        with connection.schema_editor() as editor:
++            editor.create_model(ModelWithBothConstraints)
++        
++        # Verify both constraints exist
++        with connection.cursor() as cursor:
++            constraints = connection.introspection.get_constraints(cursor, ModelWithBothConstraints._meta.db_table)
++            
++            # Should have both unique and index constraints for the same columns
++            constraints_for_fields = [
++                name for name, info in constraints.items()
++                if info['columns'] == ['field1', 'field2']
++            ]
++            
++            self.assertEqual(len(constraints_for_fields), 2, 
++                "Should have both unique and index constraints for the same fields")
++        
++        # This should not raise ValueError: Found wrong number (2) of constraints
++        try:
++            with connection.schema_editor() as editor:
++                editor.alter_index_together(ModelWithBothConstraints, [['field1', 'field2']], [])
++        except ValueError as e:
++            if "Found wrong number" in str(e):
++                self.fail(f"Regression detected: {e}")
++            else:
++                raise
++        
++        # Verify only unique constraint remains
++        with connection.cursor() as cursor:
++            constraints = connection.introspection.get_constraints(cursor, ModelWithBothConstraints._meta.db_table)
++            
++            # Should have only the unique constraint now
++            constraints_for_fields = [
++                name for name, info in constraints.items()
++                if info['columns'] == ['field1', 'field2']
++            ]
++            
++            self.assertEqual(len(constraints_for_fields), 1, 
++                "Should have only unique constraint after deleting index_together")
++            
++            # Verify the remaining constraint is unique
++            remaining_constraint = constraints[constraints_for_fields[0]]
++            self.assertTrue(remaining_constraint['unique'], 
++                "Remaining constraint should be unique")
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the test
++    suite = unittest.TestLoader().loadTestsFromTestCase(TestIndexTogetherWithUniqueTogetherRegression)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    if result.wasSuccessful():
++        print("\n✅ Regression test passed!")
++        sys.exit(0)
++    else:
++        print("\n❌ Regression test failed!")
++        sys.exit(1)
+--------
+2026-01-06 14:58:55,404 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-14534:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 14:58:55,405 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 14:58:55,405 - INFO - Logging LLM completions for instance django__django-14534 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/django__django-14534
+2026-01-06 14:58:55,405 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 14:58:55,406 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

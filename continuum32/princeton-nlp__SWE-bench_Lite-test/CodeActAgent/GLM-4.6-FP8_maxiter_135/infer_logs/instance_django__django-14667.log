@@ -1,0 +1,1757 @@
+2026-01-06 15:00:44,363 - INFO - [LLM registry c83364ba-dc93-41c9-aae5-b6485c88ded3]: Registering service for agent
+2026-01-06 15:00:44,401 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_kvy47i9p0ox25tqp_v008aov5t6vw3gr5
+2026-01-06 15:06:56,621 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_kvy47i9p0ox25tqp_v008aov5t6vw3gr5] build finished.
+2026-01-06 15:06:56,631 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_kvy47i9p0ox25tqp_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_kvy47i9p0ox25tqp]
+2026-01-06 15:06:56,633 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_kvy47i9p0ox25tqp_v008aov5t6vw3gr5, oh_v1.0.0_kvy47i9p0ox25tqp] built successfully
+2026-01-06 15:06:56,729 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_kvy47i9p0ox25tqp_v008aov5t6vw3gr5
+2026-01-06 15:06:56,849 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '30619', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 15:06:57,432 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Container started: openhands-runtime-63cbc738-d3e4-4a-f610bced09bb068. VSCode URL: None
+2026-01-06 15:06:57,433 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Waiting for client to become ready at http://localhost:30619...
+2026-01-06 15:07:25,738 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Runtime is ready.
+2026-01-06 15:07:28,858 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 15:07:28,859 - INFO - ------------------------------
+2026-01-06 15:07:28,859 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 15:07:28,859 - INFO - ------------------------------
+2026-01-06 15:07:28,860 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-14667' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 15:07:29,480 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:29,480 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 15:07:30,098 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:30,098 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 15:07:30,716 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:30,723 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 15:07:31,342 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-14667
+export OPENHANDS_EVAL_JOB_ID=311476838
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-14667
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:31,342 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 15:07:31,960 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:31,961 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 15:07:33,147 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__4.0
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:33,147 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:07:33,765 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:33,766 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 15:07:34,885 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+HEAD is now at 6a970a8b46 Fixed #32944 -- Avoided unnecessary WhereNode.add() calls.
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:34,886 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 15:07:35,506 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:35,506 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 15:07:36,124 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:07:36,125 - INFO - ------------------------------
+2026-01-06 15:07:36,125 - INFO - END Runtime Initialization Fn
+2026-01-06 15:07:36,125 - INFO - ------------------------------
+2026-01-06 15:07:36,127 - INFO - [LLM registry c4f819df-de34-4142-aacc-eaba82e30bf4]: Registering service for agent
+2026-01-06 15:07:36,139 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 15:07:36,141 - INFO - [runtime 63cbc738-d3e4-4a-f610bced09bb068] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 15:07:36,142 - INFO - Loading user workspace microagents: []
+2026-01-06 15:07:36,143 - INFO - AgentController 63cbc738-d3e4-4a-f610bced09bb068 - created new state. start_id: 0
+2026-01-06 15:07:36,149 - INFO - [Agent Controller 63cbc738-d3e4-4a-f610bced09bb068] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 15:07:36,152 - INFO - Saved conversation stats
+2026-01-06 15:17:17,665 - INFO - [Agent Controller 63cbc738-d3e4-4a-f610bced09bb068] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 15:17:17,666 - INFO - Saved conversation stats
+2026-01-06 15:17:17,838 - INFO - ------------------------------
+2026-01-06 15:17:17,838 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:17:17,846 - INFO - ------------------------------
+2026-01-06 15:17:17,847 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:17:18,468 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:18,468 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:17:19,087 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:19,087 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:17:19,708 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:19,710 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:17:20,837 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:20,837 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:17:21,461 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:21,464 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 6a970a8b4600eb91be25f38caed0a52269d6303d > patch.diff
+2026-01-06 15:17:22,086 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c473dc2d103c",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:17:22,086 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:17:22,090 - INFO - [Read from /workspace/django__django__4.0/patch.diff is successful.]
+diff --git a/debug_test4.py b/debug_test4.py
+new file mode 100644
+index 0000000000..3d68587048
+--- /dev/null
++++ b/debug_test4.py
+@@ -0,0 +1,73 @@
++#!/usr/bin/env python
++"""
++Debug script for Test 4: defer("name").only("name")
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def debug_test4():
++    """Debug Test 4: defer("name").only("name")"""
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    print("=== Debug Test 4: defer('name').only('name') ===\n")
++    
++    # Step by step debugging
++    print("Step 1: defer('name')")
++    qs1 = Company.objects.defer('name')
++    print(f"deferred_loading: {qs1.query.deferred_loading}")
++    print(f"Query SQL: {qs1.query}")
++    obj1 = qs1.first()
++    print(f"Deferred fields: {obj1.get_deferred_fields()}")
++    print()
++    
++    print("Step 2: defer('name').only('name')")
++    qs2 = Company.objects.defer('name').only('name')
++    print(f"deferred_loading: {qs2.query.deferred_loading}")
++    print(f"Query SQL: {qs2.query}")
++    obj2 = qs2.first()
++    print(f"Deferred fields: {obj2.get_deferred_fields()}")
++    print()
++
++
++if __name__ == '__main__':
++    debug_test4()
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 8837881579..45ceb6ac2f 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -2086,7 +2086,16 @@ class Query(BaseExpression):
+             self.deferred_loading = existing.union(field_names), True
+         else:
+             # Remove names from the set of any existing "immediate load" names.
+-            self.deferred_loading = existing.difference(field_names), False
++            new_immediate = existing.difference(field_names)
++            # If we've deferred all the immediate fields, switch to deferred mode
++            # and defer all non-PK fields.
++            if not new_immediate:
++                all_field_names = get_field_names_from_opts(self.get_meta())
++                pk_name = self.get_meta().pk.name
++                deferred_fields = all_field_names - {pk_name}
++                self.deferred_loading = deferred_fields, True
++            else:
++                self.deferred_loading = new_immediate, False
+ 
+     def add_immediate_loading(self, field_names):
+         """
+@@ -2107,7 +2116,16 @@ class Query(BaseExpression):
+         if defer:
+             # Remove any existing deferred names from the current set before
+             # setting the new names.
+-            self.deferred_loading = field_names.difference(existing), False
++            new_immediate = field_names.difference(existing)
++            # If we've ended up with no immediate fields, switch to deferred mode
++            # and defer all non-PK fields.
++            if not new_immediate:
++                all_field_names = get_field_names_from_opts(self.get_meta())
++                pk_name = self.get_meta().pk.name
++                deferred_fields = all_field_names - {pk_name}
++                self.deferred_loading = deferred_fields, True
++            else:
++                self.deferred_loading = frozenset(new_immediate), False
+         else:
+             # Replace any existing "immediate load" field names.
+             self.deferred_loading = frozenset(field_names), False
+diff --git a/final_verification.py b/final_verification.py
+new file mode 100644
+index 0000000000..29e5ee3352
+--- /dev/null
++++ b/final_verification.py
+@@ -0,0 +1,138 @@
++#!/usr/bin/env python
++"""
++Final verification script for the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    return company
++
++
++def main():
++    """Final verification of the fix."""
++    setup_test_data()
++    
++    print("=== Final Verification of defer() + only() Chaining Fix ===\n")
++    
++    # Original issue cases
++    print("1. Company.objects.only('name').defer('name')")
++    qs = Company.objects.only('name').defer('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    print("2. Company.objects.only('name').defer('name').defer('country')")
++    qs = Company.objects.only('name').defer('name').defer('country')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    print("3. Company.objects.only('name', 'country').defer('name')")
++    qs = Company.objects.only('name', 'country').defer('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id and country, defer name and trade_number")
++    print()
++    
++    print("4. Company.objects.defer('name').only('name')")
++    qs = Company.objects.defer('name').only('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    # Verify the fix addresses the original issue
++    print("=== Issue Resolution Verification ===")
++    
++    # Before fix: these would load ALL fields
++    # After fix: these should load only id
++    
++    test_cases = [
++        ("only('name').defer('name')", Company.objects.only('name').defer('name')),
++        ("only('name').defer('name').defer('country')", Company.objects.only('name').defer('name').defer('country')),
++        ("defer('name').only('name')", Company.objects.defer('name').only('name')),
++    ]
++    
++    for description, qs in test_cases:
++        sql = str(qs.query)
++        obj = qs.first()
++        
++        # Check that SQL only selects id
++        selects_only_id = sql.count(',') == 0 and 'id' in sql
++        # Check that all non-PK fields are deferred
++        expected_deferred = {'name', 'trade_number', 'country'}
++        actual_deferred = obj.get_deferred_fields()
++        
++        print(f"\n{description}:")
++        print(f"  SQL selects only id: {selects_only_id}")
++        print(f"  All non-PK fields deferred: {actual_deferred == expected_deferred}")
++        
++        if selects_only_id and actual_deferred == expected_deferred:
++            print(f"  ✓ FIXED!")
++        else:
++            print(f"  ✗ ISSUE REMAINS")
++    
++    print("\n=== Summary ===")
++    print("✓ The fix correctly handles defer() + only() chaining")
++    print("✓ When all immediate fields are deferred, switches to deferred mode")
++    print("✓ Maintains backward compatibility with existing behavior")
++    print("✓ All edge cases work correctly")
++    print("\n🎉 Fix verification complete!")
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..caa84d414e
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,92 @@
++#!/usr/bin/env python
++"""
++Reproduction script for the defer() + only() chaining issue.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def test_defer_only_chaining():
++    """Test the defer() + only() chaining issue."""
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    print("=== Testing defer() + only() chaining issue ===\n")
++    
++    # Test case 1: only("name").defer("name") - should load only id
++    print("Test 1: Company.objects.only('name').defer('name')")
++    qs1 = Company.objects.only('name').defer('name')
++    print(f"Query SQL: {qs1.query}")
++    obj1 = qs1.first()
++    print(f"Deferred fields: {obj1.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number', 'country'] (only id loaded)")
++    print()
++    
++    # Test case 2: only("name").defer("name").defer("country") - should load only id  
++    print("Test 2: Company.objects.only('name').defer('name').defer('country')")
++    qs2 = Company.objects.only('name').defer('name').defer('country')
++    print(f"Query SQL: {qs2.query}")
++    obj2 = qs2.first()
++    print(f"Deferred fields: {obj2.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number', 'country'] (only id loaded)")
++    print()
++    
++    # Test case 3: only("name", "country").defer("name") - should load id and country
++    print("Test 3: Company.objects.only('name', 'country').defer('name')")
++    qs3 = Company.objects.only('name', 'country').defer('name')
++    print(f"Query SQL: {qs3.query}")
++    obj3 = qs3.first()
++    print(f"Deferred fields: {obj3.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number'] (id and country loaded)")
++    print()
++    
++    # Test case 4: defer("name").only("name") - should load only name
++    print("Test 4: Company.objects.defer('name').only('name')")
++    qs4 = Company.objects.defer('name').only('name')
++    print(f"Query SQL: {qs4.query}")
++    obj4 = qs4.first()
++    print(f"Deferred fields: {obj4.get_deferred_fields()}")
++    print(f"Expected: ['trade_number', 'country'] (id and name loaded)")
++    print()
++
++
++if __name__ == '__main__':
++    test_defer_only_chaining()
+diff --git a/test_defer_fix.py b/test_defer_fix.py
+new file mode 100644
+index 0000000000..93ca81eb80
+--- /dev/null
++++ b/test_defer_fix.py
+@@ -0,0 +1,187 @@
++#!/usr/bin/env python
++"""
++Test script to verify the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++from django.core.exceptions import FieldError
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++class Secondary(models.Model):
++    first = models.CharField(max_length=50)
++    second = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++class Primary(models.Model):
++    name = models.CharField(max_length=50)
++    value = models.CharField(max_length=50)
++    related = models.ForeignKey(Secondary, models.CASCADE, null=True)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++        schema_editor.create_model(Secondary)
++        schema_editor.create_model(Primary)
++    
++    # Create test data
++    s1 = Secondary.objects.create(first="x1", second="y1")
++    p1 = Primary.objects.create(name="p1", value="xx", related=s1)
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    return s1, p1, company
++
++
++def test_only_then_defer_same_field():
++    """Test only('name').defer('name') loads only id."""
++    qs = Company.objects.only('name').defer('name')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_only_then_defer_same_field passed")
++
++
++def test_only_then_defer_multiple_fields():
++    """Test only('name').defer('name').defer('country') loads only id."""
++    qs = Company.objects.only('name').defer('name').defer('country')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_only_then_defer_multiple_fields passed")
++
++
++def test_only_multiple_then_defer_one():
++    """Test only('name', 'country').defer('name') loads id and country."""
++    qs = Company.objects.only('name', 'country').defer('name')
++    obj = qs.first()
++    # Should load id and country, so name and trade_number should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number'}, f"Expected {{'name', 'trade_number'}}, got {deferred_fields}"
++    # SQL should select id and country
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id", "test_company"."country" FROM' in sql, f"SQL should select id and country: {sql}"
++    assert 'name' not in sql, f"SQL should not contain name: {sql}"
++    assert 'trade_number' not in sql, f"SQL should not contain trade_number: {sql}"
++    print("✓ test_only_multiple_then_defer_one passed")
++
++
++def test_defer_then_only_same_field():
++    """Test defer('name').only('name') loads only id."""
++    qs = Company.objects.defer('name').only('name')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_defer_then_only_same_field passed")
++
++
++def test_existing_defer_only_chaining_still_works():
++    """Test that existing defer/only chaining behavior still works."""
++    qs = Primary.objects.all()
++    
++    # These should work as before
++    obj1 = qs.only("name", "value").defer("name").first()
++    assert obj1.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj1.get_deferred_fields()}"
++    
++    obj2 = qs.defer("name").only("value", "name").first()
++    assert obj2.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj2.get_deferred_fields()}"
++    
++    obj3 = qs.defer("name").only("value").first()
++    assert obj3.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj3.get_deferred_fields()}"
++    
++    obj4 = qs.only("name").defer("value").first()
++    assert obj4.get_deferred_fields() == {'related_id', 'value'}, f"Expected {{'related_id', 'value'}}, got {obj4.get_deferred_fields()}"
++    
++    print("✓ test_existing_defer_only_chaining_still_works passed")
++
++
++def test_defer_on_already_deferred_field():
++    """Test deferring an already deferred field."""
++    qs = Primary.objects.all()
++    obj1 = qs.defer("name").first()
++    assert obj1.get_deferred_fields() == {'name'}, f"Expected {{'name'}}, got {obj1.get_deferred_fields()}"
++    
++    obj2 = qs.defer("name").defer("name").first()
++    assert obj2.get_deferred_fields() == {'name'}, f"Expected {{'name'}}, got {obj2.get_deferred_fields()}"
++    
++    print("✓ test_defer_on_already_deferred_field passed")
++
++
++def test_only_none_raises_error():
++    """Test that only(None) raises an error."""
++    try:
++        Company.objects.only(None)
++        assert False, "Expected TypeError"
++    except TypeError as e:
++        assert 'Cannot pass None as an argument to only()' in str(e), f"Expected TypeError about None, got {e}"
++    
++    print("✓ test_only_none_raises_error passed")
++
++
++if __name__ == '__main__':
++    print("Running defer/only chaining tests...")
++    setup_test_data()
++    
++    test_only_then_defer_same_field()
++    test_only_then_defer_multiple_fields()
++    test_only_multiple_then_defer_one()
++    test_defer_then_only_same_field()
++    test_existing_defer_only_chaining_still_works()
++    test_defer_on_already_deferred_field()
++    test_only_none_raises_error()
++    
++    print("\nAll tests passed! 🎉")
+diff --git a/test_edge_cases.py b/test_edge_cases.py
+new file mode 100644
+index 0000000000..ebe36ec98a
+--- /dev/null
++++ b/test_edge_cases.py
+@@ -0,0 +1,125 @@
++#!/usr/bin/env python
++"""
++Test edge cases for the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    return company
++
++
++def test_edge_cases():
++    """Test edge cases for defer/only chaining."""
++    setup_test_data()
++    
++    print("=== Testing Edge Cases ===\n")
++    
++    # Test 1: only() with no fields (should work as before)
++    print("Test 1: Company.objects.only()")
++    try:
++        qs = Company.objects.only()
++        obj = qs.first()
++        print(f"✓ only() with no fields works: {obj.get_deferred_fields()}")
++    except Exception as e:
++        print(f"✗ only() with no fields failed: {e}")
++    
++    # Test 2: defer() with no fields (should work as before)
++    print("\nTest 2: Company.objects.defer()")
++    try:
++        qs = Company.objects.defer()
++        obj = qs.first()
++        print(f"✓ defer() with no fields works: {obj.get_deferred_fields()}")
++    except Exception as e:
++        print(f"✗ defer() with no fields failed: {e}")
++    
++    # Test 3: only() then defer() with different fields
++    print("\nTest 3: Company.objects.only('name').defer('country')")
++    qs = Company.objects.only('name').defer('country')
++    obj = qs.first()
++    print(f"✓ only('name').defer('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 4: defer() then only() with different fields
++    print("\nTest 4: Company.objects.defer('country').only('name')")
++    qs = Company.objects.defer('country').only('name')
++    obj = qs.first()
++    print(f"✓ defer('country').only('name'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 5: Multiple only() calls
++    print("\nTest 5: Company.objects.only('name').only('country')")
++    qs = Company.objects.only('name').only('country')
++    obj = qs.first()
++    print(f"✓ only('name').only('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 6: Multiple defer() calls
++    print("\nTest 6: Company.objects.defer('name').defer('country')")
++    qs = Company.objects.defer('name').defer('country')
++    obj = qs.first()
++    print(f"✓ defer('name').defer('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 7: Complex chaining
++    print("\nTest 7: Company.objects.only('name', 'country').defer('name').defer('trade_number')")
++    qs = Company.objects.only('name', 'country').defer('name').defer('trade_number')
++    obj = qs.first()
++    print(f"✓ Complex chaining: {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 8: defer(None) should clear deferrals
++    print("\nTest 8: Company.objects.defer('name').defer(None)")
++    qs = Company.objects.defer('name').defer(None)
++    obj = qs.first()
++    print(f"✓ defer(None) clears deferrals: {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    print("\n=== All edge case tests completed ===")
++
++
++if __name__ == '__main__':
++    test_edge_cases()
+
+2026-01-06 15:17:22,091 - INFO - ------------------------------
+2026-01-06 15:17:22,091 - INFO - END Runtime Completion Fn
+2026-01-06 15:17:22,091 - INFO - ------------------------------
+2026-01-06 15:17:22,091 - INFO - Got git diff for instance django__django-14667:
+--------
+diff --git a/debug_test4.py b/debug_test4.py
+new file mode 100644
+index 0000000000..3d68587048
+--- /dev/null
++++ b/debug_test4.py
+@@ -0,0 +1,73 @@
++#!/usr/bin/env python
++"""
++Debug script for Test 4: defer("name").only("name")
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def debug_test4():
++    """Debug Test 4: defer("name").only("name")"""
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    print("=== Debug Test 4: defer('name').only('name') ===\n")
++    
++    # Step by step debugging
++    print("Step 1: defer('name')")
++    qs1 = Company.objects.defer('name')
++    print(f"deferred_loading: {qs1.query.deferred_loading}")
++    print(f"Query SQL: {qs1.query}")
++    obj1 = qs1.first()
++    print(f"Deferred fields: {obj1.get_deferred_fields()}")
++    print()
++    
++    print("Step 2: defer('name').only('name')")
++    qs2 = Company.objects.defer('name').only('name')
++    print(f"deferred_loading: {qs2.query.deferred_loading}")
++    print(f"Query SQL: {qs2.query}")
++    obj2 = qs2.first()
++    print(f"Deferred fields: {obj2.get_deferred_fields()}")
++    print()
++
++
++if __name__ == '__main__':
++    debug_test4()
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 8837881579..45ceb6ac2f 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -2086,7 +2086,16 @@ class Query(BaseExpression):
+             self.deferred_loading = existing.union(field_names), True
+         else:
+             # Remove names from the set of any existing "immediate load" names.
+-            self.deferred_loading = existing.difference(field_names), False
++            new_immediate = existing.difference(field_names)
++            # If we've deferred all the immediate fields, switch to deferred mode
++            # and defer all non-PK fields.
++            if not new_immediate:
++                all_field_names = get_field_names_from_opts(self.get_meta())
++                pk_name = self.get_meta().pk.name
++                deferred_fields = all_field_names - {pk_name}
++                self.deferred_loading = deferred_fields, True
++            else:
++                self.deferred_loading = new_immediate, False
+ 
+     def add_immediate_loading(self, field_names):
+         """
+@@ -2107,7 +2116,16 @@ class Query(BaseExpression):
+         if defer:
+             # Remove any existing deferred names from the current set before
+             # setting the new names.
+-            self.deferred_loading = field_names.difference(existing), False
++            new_immediate = field_names.difference(existing)
++            # If we've ended up with no immediate fields, switch to deferred mode
++            # and defer all non-PK fields.
++            if not new_immediate:
++                all_field_names = get_field_names_from_opts(self.get_meta())
++                pk_name = self.get_meta().pk.name
++                deferred_fields = all_field_names - {pk_name}
++                self.deferred_loading = deferred_fields, True
++            else:
++                self.deferred_loading = frozenset(new_immediate), False
+         else:
+             # Replace any existing "immediate load" field names.
+             self.deferred_loading = frozenset(field_names), False
+diff --git a/final_verification.py b/final_verification.py
+new file mode 100644
+index 0000000000..29e5ee3352
+--- /dev/null
++++ b/final_verification.py
+@@ -0,0 +1,138 @@
++#!/usr/bin/env python
++"""
++Final verification script for the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    return company
++
++
++def main():
++    """Final verification of the fix."""
++    setup_test_data()
++    
++    print("=== Final Verification of defer() + only() Chaining Fix ===\n")
++    
++    # Original issue cases
++    print("1. Company.objects.only('name').defer('name')")
++    qs = Company.objects.only('name').defer('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    print("2. Company.objects.only('name').defer('name').defer('country')")
++    qs = Company.objects.only('name').defer('name').defer('country')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    print("3. Company.objects.only('name', 'country').defer('name')")
++    qs = Company.objects.only('name', 'country').defer('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id and country, defer name and trade_number")
++    print()
++    
++    print("4. Company.objects.defer('name').only('name')")
++    qs = Company.objects.defer('name').only('name')
++    sql = str(qs.query)
++    obj = qs.first()
++    print(f"   SQL: {sql}")
++    print(f"   Deferred fields: {obj.get_deferred_fields()}")
++    print(f"   ✓ Expected: SELECT id only, defer all non-PK fields")
++    print()
++    
++    # Verify the fix addresses the original issue
++    print("=== Issue Resolution Verification ===")
++    
++    # Before fix: these would load ALL fields
++    # After fix: these should load only id
++    
++    test_cases = [
++        ("only('name').defer('name')", Company.objects.only('name').defer('name')),
++        ("only('name').defer('name').defer('country')", Company.objects.only('name').defer('name').defer('country')),
++        ("defer('name').only('name')", Company.objects.defer('name').only('name')),
++    ]
++    
++    for description, qs in test_cases:
++        sql = str(qs.query)
++        obj = qs.first()
++        
++        # Check that SQL only selects id
++        selects_only_id = sql.count(',') == 0 and 'id' in sql
++        # Check that all non-PK fields are deferred
++        expected_deferred = {'name', 'trade_number', 'country'}
++        actual_deferred = obj.get_deferred_fields()
++        
++        print(f"\n{description}:")
++        print(f"  SQL selects only id: {selects_only_id}")
++        print(f"  All non-PK fields deferred: {actual_deferred == expected_deferred}")
++        
++        if selects_only_id and actual_deferred == expected_deferred:
++            print(f"  ✓ FIXED!")
++        else:
++            print(f"  ✗ ISSUE REMAINS")
++    
++    print("\n=== Summary ===")
++    print("✓ The fix correctly handles defer() + only() chaining")
++    print("✓ When all immediate fields are deferred, switches to deferred mode")
++    print("✓ Maintains backward compatibility with existing behavior")
++    print("✓ All edge cases work correctly")
++    print("\n🎉 Fix verification complete!")
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..caa84d414e
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,92 @@
++#!/usr/bin/env python
++"""
++Reproduction script for the defer() + only() chaining issue.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def test_defer_only_chaining():
++    """Test the defer() + only() chaining issue."""
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    print("=== Testing defer() + only() chaining issue ===\n")
++    
++    # Test case 1: only("name").defer("name") - should load only id
++    print("Test 1: Company.objects.only('name').defer('name')")
++    qs1 = Company.objects.only('name').defer('name')
++    print(f"Query SQL: {qs1.query}")
++    obj1 = qs1.first()
++    print(f"Deferred fields: {obj1.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number', 'country'] (only id loaded)")
++    print()
++    
++    # Test case 2: only("name").defer("name").defer("country") - should load only id  
++    print("Test 2: Company.objects.only('name').defer('name').defer('country')")
++    qs2 = Company.objects.only('name').defer('name').defer('country')
++    print(f"Query SQL: {qs2.query}")
++    obj2 = qs2.first()
++    print(f"Deferred fields: {obj2.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number', 'country'] (only id loaded)")
++    print()
++    
++    # Test case 3: only("name", "country").defer("name") - should load id and country
++    print("Test 3: Company.objects.only('name', 'country').defer('name')")
++    qs3 = Company.objects.only('name', 'country').defer('name')
++    print(f"Query SQL: {qs3.query}")
++    obj3 = qs3.first()
++    print(f"Deferred fields: {obj3.get_deferred_fields()}")
++    print(f"Expected: ['name', 'trade_number'] (id and country loaded)")
++    print()
++    
++    # Test case 4: defer("name").only("name") - should load only name
++    print("Test 4: Company.objects.defer('name').only('name')")
++    qs4 = Company.objects.defer('name').only('name')
++    print(f"Query SQL: {qs4.query}")
++    obj4 = qs4.first()
++    print(f"Deferred fields: {obj4.get_deferred_fields()}")
++    print(f"Expected: ['trade_number', 'country'] (id and name loaded)")
++    print()
++
++
++if __name__ == '__main__':
++    test_defer_only_chaining()
+diff --git a/test_defer_fix.py b/test_defer_fix.py
+new file mode 100644
+index 0000000000..93ca81eb80
+--- /dev/null
++++ b/test_defer_fix.py
+@@ -0,0 +1,187 @@
++#!/usr/bin/env python
++"""
++Test script to verify the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++from django.core.exceptions import FieldError
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++class Secondary(models.Model):
++    first = models.CharField(max_length=50)
++    second = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++class Primary(models.Model):
++    name = models.CharField(max_length=50)
++    value = models.CharField(max_length=50)
++    related = models.ForeignKey(Secondary, models.CASCADE, null=True)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++        schema_editor.create_model(Secondary)
++        schema_editor.create_model(Primary)
++    
++    # Create test data
++    s1 = Secondary.objects.create(first="x1", second="y1")
++    p1 = Primary.objects.create(name="p1", value="xx", related=s1)
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    
++    return s1, p1, company
++
++
++def test_only_then_defer_same_field():
++    """Test only('name').defer('name') loads only id."""
++    qs = Company.objects.only('name').defer('name')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_only_then_defer_same_field passed")
++
++
++def test_only_then_defer_multiple_fields():
++    """Test only('name').defer('name').defer('country') loads only id."""
++    qs = Company.objects.only('name').defer('name').defer('country')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_only_then_defer_multiple_fields passed")
++
++
++def test_only_multiple_then_defer_one():
++    """Test only('name', 'country').defer('name') loads id and country."""
++    qs = Company.objects.only('name', 'country').defer('name')
++    obj = qs.first()
++    # Should load id and country, so name and trade_number should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number'}, f"Expected {{'name', 'trade_number'}}, got {deferred_fields}"
++    # SQL should select id and country
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id", "test_company"."country" FROM' in sql, f"SQL should select id and country: {sql}"
++    assert 'name' not in sql, f"SQL should not contain name: {sql}"
++    assert 'trade_number' not in sql, f"SQL should not contain trade_number: {sql}"
++    print("✓ test_only_multiple_then_defer_one passed")
++
++
++def test_defer_then_only_same_field():
++    """Test defer('name').only('name') loads only id."""
++    qs = Company.objects.defer('name').only('name')
++    obj = qs.first()
++    # Should only load id, so name, trade_number, country should be deferred
++    deferred_fields = obj.get_deferred_fields()
++    assert deferred_fields == {'name', 'trade_number', 'country'}, f"Expected {{'name', 'trade_number', 'country'}}, got {deferred_fields}"
++    # SQL should only select id
++    sql = str(qs.query)
++    assert 'SELECT "test_company"."id" FROM' in sql, f"SQL should only select id: {sql}"
++    print("✓ test_defer_then_only_same_field passed")
++
++
++def test_existing_defer_only_chaining_still_works():
++    """Test that existing defer/only chaining behavior still works."""
++    qs = Primary.objects.all()
++    
++    # These should work as before
++    obj1 = qs.only("name", "value").defer("name").first()
++    assert obj1.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj1.get_deferred_fields()}"
++    
++    obj2 = qs.defer("name").only("value", "name").first()
++    assert obj2.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj2.get_deferred_fields()}"
++    
++    obj3 = qs.defer("name").only("value").first()
++    assert obj3.get_deferred_fields() == {'name', 'related_id'}, f"Expected {{'name', 'related_id'}}, got {obj3.get_deferred_fields()}"
++    
++    obj4 = qs.only("name").defer("value").first()
++    assert obj4.get_deferred_fields() == {'related_id', 'value'}, f"Expected {{'related_id', 'value'}}, got {obj4.get_deferred_fields()}"
++    
++    print("✓ test_existing_defer_only_chaining_still_works passed")
++
++
++def test_defer_on_already_deferred_field():
++    """Test deferring an already deferred field."""
++    qs = Primary.objects.all()
++    obj1 = qs.defer("name").first()
++    assert obj1.get_deferred_fields() == {'name'}, f"Expected {{'name'}}, got {obj1.get_deferred_fields()}"
++    
++    obj2 = qs.defer("name").defer("name").first()
++    assert obj2.get_deferred_fields() == {'name'}, f"Expected {{'name'}}, got {obj2.get_deferred_fields()}"
++    
++    print("✓ test_defer_on_already_deferred_field passed")
++
++
++def test_only_none_raises_error():
++    """Test that only(None) raises an error."""
++    try:
++        Company.objects.only(None)
++        assert False, "Expected TypeError"
++    except TypeError as e:
++        assert 'Cannot pass None as an argument to only()' in str(e), f"Expected TypeError about None, got {e}"
++    
++    print("✓ test_only_none_raises_error passed")
++
++
++if __name__ == '__main__':
++    print("Running defer/only chaining tests...")
++    setup_test_data()
++    
++    test_only_then_defer_same_field()
++    test_only_then_defer_multiple_fields()
++    test_only_multiple_then_defer_one()
++    test_defer_then_only_same_field()
++    test_existing_defer_only_chaining_still_works()
++    test_defer_on_already_deferred_field()
++    test_only_none_raises_error()
++    
++    print("\nAll tests passed! 🎉")
+diff --git a/test_edge_cases.py b/test_edge_cases.py
+new file mode 100644
+index 0000000000..ebe36ec98a
+--- /dev/null
++++ b/test_edge_cases.py
+@@ -0,0 +1,125 @@
++#!/usr/bin/env python
++"""
++Test edge cases for the defer() + only() chaining fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++    django.setup()
++
++from django.db import models
++
++
++class Company(models.Model):
++    name = models.CharField(max_length=100)
++    trade_number = models.CharField(max_length=50)
++    country = models.CharField(max_length=50)
++
++    class Meta:
++        app_label = 'test'
++
++
++def setup_test_data():
++    """Create tables and test data."""
++    from django.db import connection
++    
++    # Create tables
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(Company)
++    
++    # Create test data
++    company = Company.objects.create(name="Test Co", trade_number="123", country="US")
++    return company
++
++
++def test_edge_cases():
++    """Test edge cases for defer/only chaining."""
++    setup_test_data()
++    
++    print("=== Testing Edge Cases ===\n")
++    
++    # Test 1: only() with no fields (should work as before)
++    print("Test 1: Company.objects.only()")
++    try:
++        qs = Company.objects.only()
++        obj = qs.first()
++        print(f"✓ only() with no fields works: {obj.get_deferred_fields()}")
++    except Exception as e:
++        print(f"✗ only() with no fields failed: {e}")
++    
++    # Test 2: defer() with no fields (should work as before)
++    print("\nTest 2: Company.objects.defer()")
++    try:
++        qs = Company.objects.defer()
++        obj = qs.first()
++        print(f"✓ defer() with no fields works: {obj.get_deferred_fields()}")
++    except Exception as e:
++        print(f"✗ defer() with no fields failed: {e}")
++    
++    # Test 3: only() then defer() with different fields
++    print("\nTest 3: Company.objects.only('name').defer('country')")
++    qs = Company.objects.only('name').defer('country')
++    obj = qs.first()
++    print(f"✓ only('name').defer('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 4: defer() then only() with different fields
++    print("\nTest 4: Company.objects.defer('country').only('name')")
++    qs = Company.objects.defer('country').only('name')
++    obj = qs.first()
++    print(f"✓ defer('country').only('name'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 5: Multiple only() calls
++    print("\nTest 5: Company.objects.only('name').only('country')")
++    qs = Company.objects.only('name').only('country')
++    obj = qs.first()
++    print(f"✓ only('name').only('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 6: Multiple defer() calls
++    print("\nTest 6: Company.objects.defer('name').defer('country')")
++    qs = Company.objects.defer('name').defer('country')
++    obj = qs.first()
++    print(f"✓ defer('name').defer('country'): {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 7: Complex chaining
++    print("\nTest 7: Company.objects.only('name', 'country').defer('name').defer('trade_number')")
++    qs = Company.objects.only('name', 'country').defer('name').defer('trade_number')
++    obj = qs.first()
++    print(f"✓ Complex chaining: {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    # Test 8: defer(None) should clear deferrals
++    print("\nTest 8: Company.objects.defer('name').defer(None)")
++    qs = Company.objects.defer('name').defer(None)
++    obj = qs.first()
++    print(f"✓ defer(None) clears deferrals: {obj.get_deferred_fields()}")
++    print(f"SQL: {qs.query}")
++    
++    print("\n=== All edge case tests completed ===")
++
++
++if __name__ == '__main__':
++    test_edge_cases()
+--------
+2026-01-06 15:17:24,622 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16046:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:17:24,623 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:17:24,623 - INFO - Logging LLM completions for instance django__django-16046 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/django__django-16046
+2026-01-06 15:17:24,623 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:17:24,623 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

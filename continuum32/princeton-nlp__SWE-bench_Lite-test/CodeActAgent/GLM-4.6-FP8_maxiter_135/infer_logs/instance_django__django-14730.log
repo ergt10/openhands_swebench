@@ -1,0 +1,528 @@
+2026-01-06 15:01:53,331 - INFO - [LLM registry 116fe5f9-1565-49cb-8e0b-f41e5fffd7a5]: Registering service for agent
+2026-01-06 15:01:53,377 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_l8fk51zepok29rw9_v008aov5t6vw3gr5
+2026-01-06 15:09:08,279 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_l8fk51zepok29rw9_v008aov5t6vw3gr5] build finished.
+2026-01-06 15:09:08,286 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_l8fk51zepok29rw9_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_l8fk51zepok29rw9]
+2026-01-06 15:09:08,288 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_l8fk51zepok29rw9_v008aov5t6vw3gr5, oh_v1.0.0_l8fk51zepok29rw9] built successfully
+2026-01-06 15:09:08,317 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_l8fk51zepok29rw9_v008aov5t6vw3gr5
+2026-01-06 15:09:08,509 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '30194', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 15:09:09,236 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Container started: openhands-runtime-62372341-b7b4-48-cf4b6309118bd1a. VSCode URL: None
+2026-01-06 15:09:09,236 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Waiting for client to become ready at http://localhost:30194...
+2026-01-06 15:09:43,357 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Runtime is ready.
+2026-01-06 15:09:46,474 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 15:09:46,475 - INFO - ------------------------------
+2026-01-06 15:09:46,476 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 15:09:46,476 - INFO - ------------------------------
+2026-01-06 15:09:46,476 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-14730' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 15:09:47,144 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:47,144 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 15:09:47,763 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:47,763 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 15:09:48,381 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:48,387 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 15:09:49,007 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-14730
+export OPENHANDS_EVAL_JOB_ID=4030843319
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-14730
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:49,007 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 15:09:49,626 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:49,626 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 15:09:54,772 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__4.0
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:54,772 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:09:55,391 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:55,391 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 15:09:57,516 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (6484/6484), done.
+HEAD is now at 4fe3774c72 Refs #32986 -- Moved TRANSLATOR_COMMENT_MARK to django.utils.translation.template.
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:57,517 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 15:09:58,170 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:58,170 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 15:09:58,789 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:09:58,790 - INFO - ------------------------------
+2026-01-06 15:09:58,790 - INFO - END Runtime Initialization Fn
+2026-01-06 15:09:58,790 - INFO - ------------------------------
+2026-01-06 15:09:58,793 - INFO - [LLM registry 521d2e38-505a-4175-93b5-8db59fc36faa]: Registering service for agent
+2026-01-06 15:09:58,807 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 15:09:58,809 - INFO - [runtime 62372341-b7b4-48-cf4b6309118bd1a] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 15:09:58,811 - INFO - Loading user workspace microagents: []
+2026-01-06 15:09:58,811 - INFO - AgentController 62372341-b7b4-48-cf4b6309118bd1a - created new state. start_id: 0
+2026-01-06 15:09:58,819 - INFO - [Agent Controller 62372341-b7b4-48-cf4b6309118bd1a] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 15:09:58,822 - INFO - Saved conversation stats
+2026-01-06 15:32:29,920 - WARNING - Control flag limits hit
+2026-01-06 15:32:29,920 - ERROR - RuntimeError: Agent reached maximum iteration. Current iteration: 135, max iteration: 135
+2026-01-06 15:32:29,921 - INFO - [Agent Controller 62372341-b7b4-48-cf4b6309118bd1a] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.ERROR
+2026-01-06 15:32:29,923 - INFO - Saved conversation stats
+2026-01-06 15:32:29,923 - INFO - [Agent Controller 62372341-b7b4-48-cf4b6309118bd1a] Setting agent(CodeActAgent) state from AgentState.ERROR to AgentState.ERROR
+2026-01-06 15:32:30,203 - INFO - ------------------------------
+2026-01-06 15:32:30,203 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:32:30,203 - INFO - ------------------------------
+2026-01-06 15:32:30,204 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:32:30,825 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:30,825 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:32:31,444 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:31,447 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:32:32,067 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:32,067 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:32:32,695 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:32,695 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:32:33,323 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:33,324 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 4fe3774c729f3fd5105b3001fe69a70bdca95ac3 > patch.diff
+2026-01-06 15:32:34,017 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "1d58ed6f7ab6",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:32:34,018 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:32:34,022 - INFO - [Read from /workspace/django__django__4.0/patch.diff is successful.]
+diff --git a/django/db/models/fields/related.py b/django/db/models/fields/related.py
+index febaadbb5b..d00f2253f8 100644
+--- a/django/db/models/fields/related.py
++++ b/django/db/models/fields/related.py
+@@ -1197,6 +1197,9 @@ class ManyToManyField(RelatedField):
+         )
+         self.has_null_arg = 'null' in kwargs
+ 
++        # Store the original related_name to check in validation
++        self._original_related_name = related_name
++
+         super().__init__(
+             related_name=related_name,
+             related_query_name=related_query_name,
+@@ -1214,6 +1217,7 @@ class ManyToManyField(RelatedField):
+             *self._check_relationship_model(**kwargs),
+             *self._check_ignored_options(**kwargs),
+             *self._check_table_uniqueness(**kwargs),
++            *self._check_symmetrical_related_name(**kwargs),
+         ]
+ 
+     def _check_unique(self, **kwargs):
+@@ -1260,6 +1264,48 @@ class ManyToManyField(RelatedField):
+ 
+         return warnings
+ 
++    def _check_symmetrical_related_name(self, **kwargs):
++        errors = []
++        
++        # Check if this is a self-referential symmetrical relationship with related_name
++        # The model might be resolved to the actual model class by the time check() is called
++        from_model = kwargs.get('from_model')
++        is_self_referential = (
++            self.remote_field.model == RECURSIVE_RELATIONSHIP_CONSTANT or
++            (isinstance(self.remote_field.model, str) and 
++             self.remote_field.model == 'self') or
++            (from_model and self.remote_field.model == from_model)
++        )
++        
++        # Debug prints
++        print(f"DEBUG _check_symmetrical_related_name:")
++        print(f"  Field: {self}")
++        print(f"  is_self_referential: {is_self_referential}")
++        print(f"  symmetrical: {self.remote_field.symmetrical}")
++        print(f"  has _original_related_name: {hasattr(self, '_original_related_name')}")
++        if hasattr(self, '_original_related_name'):
++            print(f"  _original_related_name: {self._original_related_name}")
++        
++        # Use the original related_name that was provided by the user
++        # (not the one that might have been overridden in contribute_to_class)
++        if (is_self_referential and 
++            self.remote_field.symmetrical and 
++            hasattr(self, '_original_related_name') and 
++            self._original_related_name is not None):
++            print("  Adding error!")
++            errors.append(
++                checks.Error(
++                    'ManyToManyField cannot define a related_name on a '
++                    'symmetrical relationship.',
++                    hint='Remove related_name from the ManyToManyField, or set '
++                         'symmetrical=False.',
++                    obj=self,
++                    id='fields.E344',
++                )
++            )
++        
++        return errors
++
+     def _check_relationship_model(self, from_model=None, **kwargs):
+         if hasattr(self.remote_field.through, '_meta'):
+             qualified_model_name = "%s.%s" % (
+
+2026-01-06 15:32:34,022 - INFO - ------------------------------
+2026-01-06 15:32:34,022 - INFO - END Runtime Completion Fn
+2026-01-06 15:32:34,023 - INFO - ------------------------------
+2026-01-06 15:32:34,023 - INFO - Got git diff for instance django__django-14730:
+--------
+diff --git a/django/db/models/fields/related.py b/django/db/models/fields/related.py
+index febaadbb5b..d00f2253f8 100644
+--- a/django/db/models/fields/related.py
++++ b/django/db/models/fields/related.py
+@@ -1197,6 +1197,9 @@ class ManyToManyField(RelatedField):
+         )
+         self.has_null_arg = 'null' in kwargs
+ 
++        # Store the original related_name to check in validation
++        self._original_related_name = related_name
++
+         super().__init__(
+             related_name=related_name,
+             related_query_name=related_query_name,
+@@ -1214,6 +1217,7 @@ class ManyToManyField(RelatedField):
+             *self._check_relationship_model(**kwargs),
+             *self._check_ignored_options(**kwargs),
+             *self._check_table_uniqueness(**kwargs),
++            *self._check_symmetrical_related_name(**kwargs),
+         ]
+ 
+     def _check_unique(self, **kwargs):
+@@ -1260,6 +1264,48 @@ class ManyToManyField(RelatedField):
+ 
+         return warnings
+ 
++    def _check_symmetrical_related_name(self, **kwargs):
++        errors = []
++        
++        # Check if this is a self-referential symmetrical relationship with related_name
++        # The model might be resolved to the actual model class by the time check() is called
++        from_model = kwargs.get('from_model')
++        is_self_referential = (
++            self.remote_field.model == RECURSIVE_RELATIONSHIP_CONSTANT or
++            (isinstance(self.remote_field.model, str) and 
++             self.remote_field.model == 'self') or
++            (from_model and self.remote_field.model == from_model)
++        )
++        
++        # Debug prints
++        print(f"DEBUG _check_symmetrical_related_name:")
++        print(f"  Field: {self}")
++        print(f"  is_self_referential: {is_self_referential}")
++        print(f"  symmetrical: {self.remote_field.symmetrical}")
++        print(f"  has _original_related_name: {hasattr(self, '_original_related_name')}")
++        if hasattr(self, '_original_related_name'):
++            print(f"  _original_related_name: {self._original_related_name}")
++        
++        # Use the original related_name that was provided by the user
++        # (not the one that might have been overridden in contribute_to_class)
++        if (is_self_referential and 
++            self.remote_field.symmetrical and 
++            hasattr(self, '_original_related_name') and 
++            self._original_related_name is not None):
++            print("  Adding error!")
++            errors.append(
++                checks.Error(
++                    'ManyToManyField cannot define a related_name on a '
++                    'symmetrical relationship.',
++                    hint='Remove related_name from the ManyToManyField, or set '
++                         'symmetrical=False.',
++                    obj=self,
++                    id='fields.E344',
++                )
++            )
++        
++        return errors
++
+     def _check_relationship_model(self, from_model=None, **kwargs):
+         if hasattr(self.remote_field.through, '_meta'):
+             qualified_model_name = "%s.%s" % (
+--------
+2026-01-06 15:32:57,689 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-25079:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:32:57,693 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:32:57,694 - INFO - Logging LLM completions for instance matplotlib__matplotlib-25079 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/matplotlib__matplotlib-25079
+2026-01-06 15:32:57,694 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:32:57,695 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

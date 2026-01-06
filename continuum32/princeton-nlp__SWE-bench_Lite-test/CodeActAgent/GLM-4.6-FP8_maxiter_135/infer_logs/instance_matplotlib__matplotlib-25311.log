@@ -1,0 +1,686 @@
+2026-01-06 15:32:59,599 - INFO - [LLM registry 2ff1295e-5883-42de-b8b9-e11401a6f76e]: Registering service for agent
+2026-01-06 15:32:59,638 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_qu6t4nmrnfywpyhm_v008aov5t6vw3gr5
+2026-01-06 15:43:45,130 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_qu6t4nmrnfywpyhm_v008aov5t6vw3gr5] build finished.
+2026-01-06 15:43:45,149 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_qu6t4nmrnfywpyhm_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_qu6t4nmrnfywpyhm]
+2026-01-06 15:43:45,151 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_qu6t4nmrnfywpyhm_v008aov5t6vw3gr5, oh_v1.0.0_qu6t4nmrnfywpyhm] built successfully
+2026-01-06 15:43:45,215 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_qu6t4nmrnfywpyhm_v008aov5t6vw3gr5
+2026-01-06 15:43:45,371 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '31380', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 15:43:46,013 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Container started: openhands-runtime-960dcaa4-b06d-47-e9af0932af2c9b1. VSCode URL: None
+2026-01-06 15:43:46,014 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Waiting for client to become ready at http://localhost:31380...
+2026-01-06 15:44:14,114 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Runtime is ready.
+2026-01-06 15:44:17,224 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 15:44:17,225 - INFO - ------------------------------
+2026-01-06 15:44:17,225 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 15:44:17,226 - INFO - ------------------------------
+2026-01-06 15:44:17,226 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=matplotlib__matplotlib-25311' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 15:44:17,846 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:17,847 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 15:44:18,464 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:18,465 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 15:44:19,116 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:19,125 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 15:44:19,745 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=matplotlib__matplotlib-25311
+export OPENHANDS_EVAL_JOB_ID=47486308
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=matplotlib__matplotlib-25311
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:19,745 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 15:44:20,365 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:20,365 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 15:44:23,500 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: matplotlib__matplotlib__3.7
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:23,501 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/matplotlib__matplotlib__3.7
+2026-01-06 15:44:24,121 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:24,121 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 15:44:26,751 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (4401/4401), done.
+HEAD is now at d2da9d67fa SWE-bench
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:26,752 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 15:44:27,371 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:27,371 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 15:44:27,988 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:44:27,988 - INFO - ------------------------------
+2026-01-06 15:44:27,989 - INFO - END Runtime Initialization Fn
+2026-01-06 15:44:27,989 - INFO - ------------------------------
+2026-01-06 15:44:27,991 - INFO - [LLM registry 64e27586-e8b0-4ab6-85e7-03167e60ec65]: Registering service for agent
+2026-01-06 15:44:28,001 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 15:44:28,004 - INFO - [runtime 960dcaa4-b06d-47-e9af0932af2c9b1] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 15:44:28,005 - INFO - Loading user workspace microagents: []
+2026-01-06 15:44:28,006 - INFO - AgentController 960dcaa4-b06d-47-e9af0932af2c9b1 - created new state. start_id: 0
+2026-01-06 15:44:28,011 - INFO - [Agent Controller 960dcaa4-b06d-47-e9af0932af2c9b1] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 15:44:28,013 - INFO - Saved conversation stats
+2026-01-06 16:07:32,460 - WARNING - Control flag limits hit
+2026-01-06 16:07:32,461 - ERROR - RuntimeError: Agent reached maximum iteration. Current iteration: 135, max iteration: 135
+2026-01-06 16:07:32,461 - INFO - [Agent Controller 960dcaa4-b06d-47-e9af0932af2c9b1] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.ERROR
+2026-01-06 16:07:32,464 - INFO - Saved conversation stats
+2026-01-06 16:07:32,465 - INFO - [Agent Controller 960dcaa4-b06d-47-e9af0932af2c9b1] Setting agent(CodeActAgent) state from AgentState.ERROR to AgentState.ERROR
+2026-01-06 16:07:32,509 - INFO - ------------------------------
+2026-01-06 16:07:32,509 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 16:07:32,510 - INFO - ------------------------------
+2026-01-06 16:07:32,510 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/matplotlib__matplotlib__3.7
+2026-01-06 16:07:33,140 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:33,141 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 16:07:33,784 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:33,784 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 16:07:34,404 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:34,404 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 16:07:35,023 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:35,023 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 16:07:35,649 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:35,649 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 430fb1db88843300fb4baae3edc499bbfe073b0c > patch.diff
+2026-01-06 16:07:36,268 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a877ac304b58",
+  "working_dir": "/workspace/matplotlib__matplotlib__3.7",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/matplotlib__matplotlib__3.7]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:07:36,272 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 16:07:36,276 - INFO - [Read from /workspace/matplotlib__matplotlib__3.7/patch.diff is successful.]
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 7e2b64b630..362d4f50bc 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -214,6 +214,7 @@ class Artist:
+         self._in_layout = True
+ 
+     def __getstate__(self):
++        print(f"DEBUG: Artist.__getstate__ called for {type(self)}")
+         d = self.__dict__.copy()
+         # remove the unpicklable remove method, this will get re-added on load
+         # (by the Axes) if the artist lives on an Axes.
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 10a4072328..89c71f4099 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -3157,12 +3157,23 @@ None}, default: None
+         a.draw(self.canvas.get_renderer())
+ 
+     def __getstate__(self):
++        print("DEBUG: Figure.__getstate__ called")
+         state = super().__getstate__()
+ 
++        # check whether the figure manager (if any) is registered with pyplot
++        # before removing the canvas
++        from matplotlib import _pylab_helpers
++        restore_to_pylab = False
++        if (hasattr(self, 'canvas') and hasattr(self.canvas, 'manager') and 
++            self.canvas.manager in _pylab_helpers.Gcf.figs.values()):
++            restore_to_pylab = True
++
+         # The canvas cannot currently be pickled, but this has the benefit
+         # of meaning that a figure can be detached from one canvas, and
+         # re-attached to another.
+-        state.pop("canvas")
++        print(f"DEBUG: About to pop canvas from state: {hasattr(self, 'canvas')}")
++        state.pop("canvas", None)
++        print("DEBUG: Canvas popped successfully")
+ 
+         # discard any changes to the dpi due to pixel ratio changes
+         state["_dpi"] = state.get('_original_dpi', state['_dpi'])
+@@ -3170,9 +3181,7 @@ None}, default: None
+         # add version information to the state
+         state['__mpl_version__'] = mpl.__version__
+ 
+-        # check whether the figure manager (if any) is registered with pyplot
+-        from matplotlib import _pylab_helpers
+-        if self.canvas.manager in _pylab_helpers.Gcf.figs.values():
++        if restore_to_pylab:
+             state['_restore_to_pylab'] = True
+         return state
+ 
+diff --git a/lib/matplotlib/offsetbox.py b/lib/matplotlib/offsetbox.py
+index 1dee8a23d9..5af6b257a7 100644
+--- a/lib/matplotlib/offsetbox.py
++++ b/lib/matplotlib/offsetbox.py
+@@ -1505,14 +1505,29 @@ class DraggableBase:
+         if not ref_artist.pickable():
+             ref_artist.set_picker(True)
+         self.got_artist = False
+-        self.canvas = self.ref_artist.figure.canvas
+-        self._use_blit = use_blit and self.canvas.supports_blit
+-        self.cids = [
+-            self.canvas.callbacks._connect_picklable(
+-                'pick_event', self.on_pick),
+-            self.canvas.callbacks._connect_picklable(
+-                'button_release_event', self.on_release),
+-        ]
++        # Don't store canvas directly to avoid pickling issues
++        self._use_blit = False  # Will be set when canvas is accessed
++        self.cids = []
++        self._connect_events()
++
++    @property
++    def canvas(self):
++        """Get the canvas dynamically to avoid pickling issues."""
++        if hasattr(self.ref_artist, 'figure') and hasattr(self.ref_artist.figure, 'canvas'):
++            return self.ref_artist.figure.canvas
++        return None
++
++    def _connect_events(self):
++        """Connect event callbacks to the canvas."""
++        canvas = self.canvas
++        if canvas is not None:
++            self._use_blit = hasattr(canvas, 'supports_blit') and canvas.supports_blit
++            self.cids = [
++                canvas.callbacks._connect_picklable(
++                    'pick_event', self.on_pick),
++                canvas.callbacks._connect_picklable(
++                    'button_release_event', self.on_release),
++            ]
+ 
+     def on_motion(self, evt):
+         if self._check_still_parented() and self.got_artist:
+@@ -1562,14 +1577,47 @@ class DraggableBase:
+ 
+     def disconnect(self):
+         """Disconnect the callbacks."""
+-        for cid in self.cids:
+-            self.canvas.mpl_disconnect(cid)
+-        try:
+-            c1 = self._c1
+-        except AttributeError:
+-            pass
++        canvas = self.canvas
++        if canvas is not None:
++            for cid in self.cids:
++                canvas.mpl_disconnect(cid)
++            try:
++                c1 = self._c1
++            except AttributeError:
++                pass
++            else:
++                canvas.mpl_disconnect(c1)
++
++    def __getstate__(self):
++        """Return state for pickling, excluding unpicklable canvas references."""
++        print(f"DEBUG: DraggableBase.__getstate__ called for {type(self)}")
++        state = self.__dict__.copy()
++        # Remove unpicklable canvas reference and connection IDs
++        state.pop('canvas', None)
++        state.pop('cids', None)
++        # Mark that we need to reconnect after unpickling
++        state['_disconnected_for_pickle'] = True
++        return state
++
++    def __setstate__(self, state):
++        """Restore state after unpickling and reconnect to canvas."""
++        # Remove the marker that we added in __getstate__
++        state.pop('_disconnected_for_pickle', None)
++        self.__dict__ = state
++        # Reconnect to the canvas after unpickling
++        if hasattr(self.ref_artist, 'figure') and hasattr(self.ref_artist.figure, 'canvas'):
++            self.canvas = self.ref_artist.figure.canvas
++            self._use_blit = self._use_blit and self.canvas.supports_blit
++            self.cids = [
++                self.canvas.callbacks._connect_picklable(
++                    'pick_event', self.on_pick),
++                self.canvas.callbacks._connect_picklable(
++                    'button_release_event', self.on_release),
++            ]
+         else:
+-            self.canvas.mpl_disconnect(c1)
++            # Canvas not available, set to None
++            self.canvas = None
++            self.cids = []
+ 
+     def save_offset(self):
+         pass
+
+2026-01-06 16:07:36,276 - INFO - ------------------------------
+2026-01-06 16:07:36,276 - INFO - END Runtime Completion Fn
+2026-01-06 16:07:36,277 - INFO - ------------------------------
+2026-01-06 16:07:36,277 - INFO - Got git diff for instance matplotlib__matplotlib-25311:
+--------
+diff --git a/lib/matplotlib/artist.py b/lib/matplotlib/artist.py
+index 7e2b64b630..362d4f50bc 100644
+--- a/lib/matplotlib/artist.py
++++ b/lib/matplotlib/artist.py
+@@ -214,6 +214,7 @@ class Artist:
+         self._in_layout = True
+ 
+     def __getstate__(self):
++        print(f"DEBUG: Artist.__getstate__ called for {type(self)}")
+         d = self.__dict__.copy()
+         # remove the unpicklable remove method, this will get re-added on load
+         # (by the Axes) if the artist lives on an Axes.
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 10a4072328..89c71f4099 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -3157,12 +3157,23 @@ None}, default: None
+         a.draw(self.canvas.get_renderer())
+ 
+     def __getstate__(self):
++        print("DEBUG: Figure.__getstate__ called")
+         state = super().__getstate__()
+ 
++        # check whether the figure manager (if any) is registered with pyplot
++        # before removing the canvas
++        from matplotlib import _pylab_helpers
++        restore_to_pylab = False
++        if (hasattr(self, 'canvas') and hasattr(self.canvas, 'manager') and 
++            self.canvas.manager in _pylab_helpers.Gcf.figs.values()):
++            restore_to_pylab = True
++
+         # The canvas cannot currently be pickled, but this has the benefit
+         # of meaning that a figure can be detached from one canvas, and
+         # re-attached to another.
+-        state.pop("canvas")
++        print(f"DEBUG: About to pop canvas from state: {hasattr(self, 'canvas')}")
++        state.pop("canvas", None)
++        print("DEBUG: Canvas popped successfully")
+ 
+         # discard any changes to the dpi due to pixel ratio changes
+         state["_dpi"] = state.get('_original_dpi', state['_dpi'])
+@@ -3170,9 +3181,7 @@ None}, default: None
+         # add version information to the state
+         state['__mpl_version__'] = mpl.__version__
+ 
+-        # check whether the figure manager (if any) is registered with pyplot
+-        from matplotlib import _pylab_helpers
+-        if self.canvas.manager in _pylab_helpers.Gcf.figs.values():
++        if restore_to_pylab:
+             state['_restore_to_pylab'] = True
+         return state
+ 
+diff --git a/lib/matplotlib/offsetbox.py b/lib/matplotlib/offsetbox.py
+index 1dee8a23d9..5af6b257a7 100644
+--- a/lib/matplotlib/offsetbox.py
++++ b/lib/matplotlib/offsetbox.py
+@@ -1505,14 +1505,29 @@ class DraggableBase:
+         if not ref_artist.pickable():
+             ref_artist.set_picker(True)
+         self.got_artist = False
+-        self.canvas = self.ref_artist.figure.canvas
+-        self._use_blit = use_blit and self.canvas.supports_blit
+-        self.cids = [
+-            self.canvas.callbacks._connect_picklable(
+-                'pick_event', self.on_pick),
+-            self.canvas.callbacks._connect_picklable(
+-                'button_release_event', self.on_release),
+-        ]
++        # Don't store canvas directly to avoid pickling issues
++        self._use_blit = False  # Will be set when canvas is accessed
++        self.cids = []
++        self._connect_events()
++
++    @property
++    def canvas(self):
++        """Get the canvas dynamically to avoid pickling issues."""
++        if hasattr(self.ref_artist, 'figure') and hasattr(self.ref_artist.figure, 'canvas'):
++            return self.ref_artist.figure.canvas
++        return None
++
++    def _connect_events(self):
++        """Connect event callbacks to the canvas."""
++        canvas = self.canvas
++        if canvas is not None:
++            self._use_blit = hasattr(canvas, 'supports_blit') and canvas.supports_blit
++            self.cids = [
++                canvas.callbacks._connect_picklable(
++                    'pick_event', self.on_pick),
++                canvas.callbacks._connect_picklable(
++                    'button_release_event', self.on_release),
++            ]
+ 
+     def on_motion(self, evt):
+         if self._check_still_parented() and self.got_artist:
+@@ -1562,14 +1577,47 @@ class DraggableBase:
+ 
+     def disconnect(self):
+         """Disconnect the callbacks."""
+-        for cid in self.cids:
+-            self.canvas.mpl_disconnect(cid)
+-        try:
+-            c1 = self._c1
+-        except AttributeError:
+-            pass
++        canvas = self.canvas
++        if canvas is not None:
++            for cid in self.cids:
++                canvas.mpl_disconnect(cid)
++            try:
++                c1 = self._c1
++            except AttributeError:
++                pass
++            else:
++                canvas.mpl_disconnect(c1)
++
++    def __getstate__(self):
++        """Return state for pickling, excluding unpicklable canvas references."""
++        print(f"DEBUG: DraggableBase.__getstate__ called for {type(self)}")
++        state = self.__dict__.copy()
++        # Remove unpicklable canvas reference and connection IDs
++        state.pop('canvas', None)
++        state.pop('cids', None)
++        # Mark that we need to reconnect after unpickling
++        state['_disconnected_for_pickle'] = True
++        return state
++
++    def __setstate__(self, state):
++        """Restore state after unpickling and reconnect to canvas."""
++        # Remove the marker that we added in __getstate__
++        state.pop('_disconnected_for_pickle', None)
++        self.__dict__ = state
++        # Reconnect to the canvas after unpickling
++        if hasattr(self.ref_artist, 'figure') and hasattr(self.ref_artist.figure, 'canvas'):
++            self.canvas = self.ref_artist.figure.canvas
++            self._use_blit = self._use_blit and self.canvas.supports_blit
++            self.cids = [
++                self.canvas.callbacks._connect_picklable(
++                    'pick_event', self.on_pick),
++                self.canvas.callbacks._connect_picklable(
++                    'button_release_event', self.on_release),
++            ]
+         else:
+-            self.canvas.mpl_disconnect(c1)
++            # Canvas not available, set to None
++            self.canvas = None
++            self.cids = []
+ 
+     def save_offset(self):
+         pass
+--------
+2026-01-06 16:08:07,912 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13142:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 16:08:07,913 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 16:08:07,913 - INFO - Logging LLM completions for instance scikit-learn__scikit-learn-13142 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/scikit-learn__scikit-learn-13142
+2026-01-06 16:08:07,913 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 16:08:07,913 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

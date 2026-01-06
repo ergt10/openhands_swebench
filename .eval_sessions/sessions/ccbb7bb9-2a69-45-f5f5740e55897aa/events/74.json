@@ -1,0 +1,1 @@
+{"id": 74, "timestamp": "2026-01-06T15:39:07.898503", "source": "agent", "message": "Missing required argument \"task_list\" for \"plan\" command in tool call task_tracker", "observation": "error", "content": "Missing required argument \"task_list\" for \"plan\" command in tool call task_tracker", "extras": {"error_id": ""}}

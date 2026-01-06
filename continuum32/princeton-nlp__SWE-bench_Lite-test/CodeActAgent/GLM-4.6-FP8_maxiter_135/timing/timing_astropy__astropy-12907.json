@@ -1,0 +1,71 @@
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709981.894128, "tool_end": 1767709982.5167801, "tool_time": 0.6226520538330078}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709982.51746, "tool_end": 1767709983.1362233, "tool_time": 0.6187632083892822}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709983.1371331, "tool_end": 1767709983.75768, "tool_time": 0.620546817779541}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709983.8388631, "tool_end": 1767709984.4641016, "tool_time": 0.6252384185791016}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709984.4650664, "tool_end": 1767709985.0863287, "tool_time": 0.6212623119354248}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709985.087161, "tool_end": 1767709986.7131448, "tool_time": 1.625983715057373}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709986.7141497, "tool_end": 1767709987.342902, "tool_time": 0.6287522315979004}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709987.3436716, "tool_end": 1767709987.97008, "tool_time": 0.6264083385467529}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709987.9709103, "tool_end": 1767709988.6049783, "tool_time": 0.6340680122375488}
+{"instance_id": "astropy__astropy-12907", "step_id": 0, "tool_start": 1767709988.6062684, "tool_end": 1767709989.2253323, "tool_time": 0.6190638542175293}
+{"instance_id": "astropy__astropy-12907", "env_prepare_start": 1767709008.315938, "env_prepare_end": 1767709989.2271404, "env_prepare_time": 980.9112024307251}
+{"instance_id": "astropy__astropy-12907", "step_id": 1, "llm_start": 1767709989.2634704, "llm_first_chunk": 1767709989.719978, "llm_end": 1767709991.921437, "prefill_time": 0.45650768280029297, "decode_time": 2.2014589309692383, "llm_total_time": 2.6579666137695312}
+{"instance_id": "astropy__astropy-12907", "step_id": 2, "llm_start": 1767709991.925531, "llm_first_chunk": 1767709992.0523388, "llm_end": 1767709994.8121002, "prefill_time": 0.12680792808532715, "decode_time": 2.759761333465576, "llm_total_time": 2.8865692615509033}
+{"instance_id": "astropy__astropy-12907", "step_id": 1, "tool_start": 1767709994.8158555, "tool_end": 1767709994.8327386, "tool_time": 0.016883134841918945}
+{"instance_id": "astropy__astropy-12907", "step_id": 3, "llm_start": 1767709994.8370388, "llm_first_chunk": 1767709995.3963935, "llm_end": 1767709997.3877642, "prefill_time": 0.5593547821044922, "decode_time": 1.991370677947998, "llm_total_time": 2.5507254600524902}
+{"instance_id": "astropy__astropy-12907", "step_id": 2, "tool_start": 1767709997.3926876, "tool_end": 1767709997.4030323, "tool_time": 0.010344743728637695}
+{"instance_id": "astropy__astropy-12907", "step_id": 4, "llm_start": 1767709997.4084651, "llm_first_chunk": 1767709997.7149692, "llm_end": 1767709999.9908156, "prefill_time": 0.3065040111541748, "decode_time": 2.275846481323242, "llm_total_time": 2.582350492477417}
+{"instance_id": "astropy__astropy-12907", "step_id": 3, "tool_start": 1767709999.9930782, "tool_end": 1767710000.0093534, "tool_time": 0.01627516746520996}
+{"instance_id": "astropy__astropy-12907", "step_id": 5, "llm_start": 1767710000.01404, "llm_first_chunk": 1767710000.3632863, "llm_end": 1767710003.3797505, "prefill_time": 0.3492462635040283, "decode_time": 3.0164642333984375, "llm_total_time": 3.365710496902466}
+{"instance_id": "astropy__astropy-12907", "step_id": 4, "tool_start": 1767710003.3828018, "tool_end": 1767710003.4022648, "tool_time": 0.019463062286376953}
+{"instance_id": "astropy__astropy-12907", "step_id": 6, "llm_start": 1767710003.413944, "llm_first_chunk": 1767710003.8215685, "llm_end": 1767710005.5958292, "prefill_time": 0.4076244831085205, "decode_time": 1.7742607593536377, "llm_total_time": 2.181885242462158}
+{"instance_id": "astropy__astropy-12907", "step_id": 5, "tool_start": 1767710005.5986173, "tool_end": 1767710006.2170253, "tool_time": 0.6184079647064209}
+{"instance_id": "astropy__astropy-12907", "step_id": 7, "llm_start": 1767710006.2246346, "llm_first_chunk": 1767710006.3918524, "llm_end": 1767710008.4778943, "prefill_time": 0.16721773147583008, "decode_time": 2.0860419273376465, "llm_total_time": 2.2532596588134766}
+{"instance_id": "astropy__astropy-12907", "step_id": 6, "tool_start": 1767710008.4808726, "tool_end": 1767710008.4863946, "tool_time": 0.005522012710571289}
+{"instance_id": "astropy__astropy-12907", "step_id": 8, "llm_start": 1767710008.492124, "llm_first_chunk": 1767710008.7820742, "llm_end": 1767710012.200606, "prefill_time": 0.2899501323699951, "decode_time": 3.418531894683838, "llm_total_time": 3.708482027053833}
+{"instance_id": "astropy__astropy-12907", "step_id": 7, "tool_start": 1767710012.2042897, "tool_end": 1767710012.8234942, "tool_time": 0.6192045211791992}
+{"instance_id": "astropy__astropy-12907", "step_id": 9, "llm_start": 1767710012.8317435, "llm_first_chunk": 1767710013.0068521, "llm_end": 1767710015.4327774, "prefill_time": 0.1751086711883545, "decode_time": 2.4259252548217773, "llm_total_time": 2.601033926010132}
+{"instance_id": "astropy__astropy-12907", "step_id": 8, "tool_start": 1767710015.4352715, "tool_end": 1767710015.4396985, "tool_time": 0.0044269561767578125}
+{"instance_id": "astropy__astropy-12907", "step_id": 10, "llm_start": 1767710015.4458833, "llm_first_chunk": 1767710015.770785, "llm_end": 1767710058.9912379, "prefill_time": 0.324901819229126, "decode_time": 43.22045278549194, "llm_total_time": 43.54535460472107}
+{"instance_id": "astropy__astropy-12907", "step_id": 9, "tool_start": 1767710058.9943624, "tool_end": 1767710058.998949, "tool_time": 0.004586696624755859}
+{"instance_id": "astropy__astropy-12907", "step_id": 11, "llm_start": 1767710059.0073202, "llm_first_chunk": 1767710059.5369503, "llm_end": 1767710062.0714073, "prefill_time": 0.529630184173584, "decode_time": 2.534456968307495, "llm_total_time": 3.064087152481079}
+{"instance_id": "astropy__astropy-12907", "step_id": 10, "tool_start": 1767710062.0752933, "tool_end": 1767710063.1963966, "tool_time": 1.121103286743164}
+{"instance_id": "astropy__astropy-12907", "step_id": 12, "llm_start": 1767710063.203459, "llm_first_chunk": 1767710063.5316472, "llm_end": 1767710096.2188697, "prefill_time": 0.3281881809234619, "decode_time": 32.687222480773926, "llm_total_time": 33.01541066169739}
+{"instance_id": "astropy__astropy-12907", "step_id": 11, "tool_start": 1767710096.222648, "tool_end": 1767710096.228002, "tool_time": 0.005354166030883789}
+{"instance_id": "astropy__astropy-12907", "step_id": 13, "llm_start": 1767710096.23683, "llm_first_chunk": 1767710096.6260445, "llm_end": 1767710153.4182353, "prefill_time": 0.38921451568603516, "decode_time": 56.79219079017639, "llm_total_time": 57.18140530586243}
+{"instance_id": "astropy__astropy-12907", "step_id": 12, "tool_start": 1767710153.4237325, "tool_end": 1767710153.4292672, "tool_time": 0.005534648895263672}
+{"instance_id": "astropy__astropy-12907", "step_id": 14, "llm_start": 1767710153.440413, "llm_first_chunk": 1767710153.7029192, "llm_end": 1767710156.3973818, "prefill_time": 0.26250624656677246, "decode_time": 2.694462537765503, "llm_total_time": 2.9569687843322754}
+{"instance_id": "astropy__astropy-12907", "step_id": 13, "tool_start": 1767710156.4019048, "tool_end": 1767710157.0218801, "tool_time": 0.6199753284454346}
+{"instance_id": "astropy__astropy-12907", "step_id": 15, "llm_start": 1767710157.0348322, "llm_first_chunk": 1767710157.647271, "llm_end": 1767710183.2720394, "prefill_time": 0.6124386787414551, "decode_time": 25.624768495559692, "llm_total_time": 26.237207174301147}
+{"instance_id": "astropy__astropy-12907", "step_id": 16, "llm_start": 1767710183.2829225, "llm_first_chunk": 1767710183.561562, "llm_end": 1767710233.67527, "prefill_time": 0.278639554977417, "decode_time": 50.11370801925659, "llm_total_time": 50.39234757423401}
+{"instance_id": "astropy__astropy-12907", "step_id": 14, "tool_start": 1767710233.681129, "tool_end": 1767710233.6855812, "tool_time": 0.004452228546142578}
+{"instance_id": "astropy__astropy-12907", "step_id": 17, "llm_start": 1767710233.699448, "llm_first_chunk": 1767710233.9646304, "llm_end": 1767710236.4139917, "prefill_time": 0.2651822566986084, "decode_time": 2.4493613243103027, "llm_total_time": 2.714543581008911}
+{"instance_id": "astropy__astropy-12907", "step_id": 15, "tool_start": 1767710236.4184315, "tool_end": 1767710237.5389585, "tool_time": 1.1205270290374756}
+{"instance_id": "astropy__astropy-12907", "step_id": 18, "llm_start": 1767710237.548594, "llm_first_chunk": 1767710237.8775847, "llm_end": 1767710260.2358432, "prefill_time": 0.3289906978607178, "decode_time": 22.358258485794067, "llm_total_time": 22.687249183654785}
+{"instance_id": "astropy__astropy-12907", "step_id": 16, "tool_start": 1767710260.2413194, "tool_end": 1767710260.2522118, "tool_time": 0.010892391204833984}
+{"instance_id": "astropy__astropy-12907", "step_id": 19, "llm_start": 1767710260.2664607, "llm_first_chunk": 1767710260.5371213, "llm_end": 1767710264.6149335, "prefill_time": 0.2706606388092041, "decode_time": 4.077812194824219, "llm_total_time": 4.348472833633423}
+{"instance_id": "astropy__astropy-12907", "step_id": 17, "tool_start": 1767710264.6184063, "tool_end": 1767710265.2365596, "tool_time": 0.6181533336639404}
+{"instance_id": "astropy__astropy-12907", "step_id": 20, "llm_start": 1767710265.2472427, "llm_first_chunk": 1767710265.5433648, "llm_end": 1767710268.917321, "prefill_time": 0.29612207412719727, "decode_time": 3.3739562034606934, "llm_total_time": 3.6700782775878906}
+{"instance_id": "astropy__astropy-12907", "step_id": 18, "tool_start": 1767710268.9217975, "tool_end": 1767710270.0424895, "tool_time": 1.1206920146942139}
+{"instance_id": "astropy__astropy-12907", "step_id": 21, "llm_start": 1767710270.057141, "llm_first_chunk": 1767710270.3954904, "llm_end": 1767710274.6173134, "prefill_time": 0.3383493423461914, "decode_time": 4.22182297706604, "llm_total_time": 4.5601723194122314}
+{"instance_id": "astropy__astropy-12907", "step_id": 19, "tool_start": 1767710274.620872, "tool_end": 1767710276.244814, "tool_time": 1.6239418983459473}
+{"instance_id": "astropy__astropy-12907", "step_id": 22, "llm_start": 1767710276.2562797, "llm_first_chunk": 1767710276.6381385, "llm_end": 1767710281.2630599, "prefill_time": 0.38185882568359375, "decode_time": 4.6249213218688965, "llm_total_time": 5.00678014755249}
+{"instance_id": "astropy__astropy-12907", "step_id": 20, "tool_start": 1767710281.26721, "tool_end": 1767710284.4052744, "tool_time": 3.138064384460449}
+{"instance_id": "astropy__astropy-12907", "step_id": 23, "llm_start": 1767710284.4178457, "llm_first_chunk": 1767710285.1543446, "llm_end": 1767710297.4242566, "prefill_time": 0.7364988327026367, "decode_time": 12.269912004470825, "llm_total_time": 13.006410837173462}
+{"instance_id": "astropy__astropy-12907", "step_id": 21, "tool_start": 1767710297.4291937, "tool_end": 1767710298.5521324, "tool_time": 1.122938632965088}
+{"instance_id": "astropy__astropy-12907", "step_id": 24, "llm_start": 1767710298.5699692, "llm_first_chunk": 1767710298.860683, "llm_end": 1767710323.8974397, "prefill_time": 0.2907137870788574, "decode_time": 25.03675675392151, "llm_total_time": 25.327470541000366}
+{"instance_id": "astropy__astropy-12907", "step_id": 22, "tool_start": 1767710323.9025335, "tool_end": 1767710324.5227559, "tool_time": 0.6202223300933838}
+{"instance_id": "astropy__astropy-12907", "step_id": 25, "llm_start": 1767710324.5401177, "llm_first_chunk": 1767710324.873153, "llm_end": 1767710329.5110335, "prefill_time": 0.3330352306365967, "decode_time": 4.637880563735962, "llm_total_time": 4.970915794372559}
+{"instance_id": "astropy__astropy-12907", "step_id": 23, "tool_start": 1767710329.5161881, "tool_end": 1767710329.5202668, "tool_time": 0.00407862663269043}
+{"instance_id": "astropy__astropy-12907", "step_id": 26, "llm_start": 1767710329.5385911, "llm_first_chunk": 1767710329.8222203, "llm_end": 1767710357.1287878, "prefill_time": 0.2836291790008545, "decode_time": 27.306567430496216, "llm_total_time": 27.59019660949707}
+{"instance_id": "astropy__astropy-12907", "step_id": 24, "tool_start": 1767710357.1328049, "tool_end": 1767710358.2567356, "tool_time": 1.1239306926727295}
+{"instance_id": "astropy__astropy-12907", "step_id": 27, "llm_start": 1767710358.271823, "llm_first_chunk": 1767710358.655362, "llm_end": 1767710362.3949072, "prefill_time": 0.38353896141052246, "decode_time": 3.7395453453063965, "llm_total_time": 4.123084306716919}
+{"instance_id": "astropy__astropy-12907", "step_id": 25, "tool_start": 1767710362.4004028, "tool_end": 1767710363.0200956, "tool_time": 0.6196928024291992}
+{"instance_id": "astropy__astropy-12907", "step_id": 28, "llm_start": 1767710363.0336103, "llm_first_chunk": 1767710363.480629, "llm_end": 1767710386.835472, "prefill_time": 0.4470186233520508, "decode_time": 23.354843139648438, "llm_total_time": 23.80186176300049}
+{"instance_id": "astropy__astropy-12907", "step_id": 26, "tool_start": 1767710387.6403422, "tool_end": 1767710388.259044, "tool_time": 0.618701696395874}
+{"instance_id": "astropy__astropy-12907", "step_id": 27, "tool_start": 1767710388.2596364, "tool_end": 1767710388.8773763, "tool_time": 0.6177399158477783}
+{"instance_id": "astropy__astropy-12907", "step_id": 28, "tool_start": 1767710388.8781848, "tool_end": 1767710389.494615, "tool_time": 0.6164302825927734}
+{"instance_id": "astropy__astropy-12907", "step_id": 29, "tool_start": 1767710389.495251, "tool_end": 1767710390.1157937, "tool_time": 0.6205427646636963}
+{"instance_id": "astropy__astropy-12907", "step_id": 30, "tool_start": 1767710390.1166735, "tool_end": 1767710390.7394366, "tool_time": 0.6227631568908691}
+{"instance_id": "astropy__astropy-12907", "step_id": 31, "tool_start": 1767710390.7400925, "tool_end": 1767710391.3596647, "tool_time": 0.6195721626281738}
+{"instance_id": "astropy__astropy-12907", "step_id": 32, "tool_start": 1767710391.360788, "tool_end": 1767710391.3641737, "tool_time": 0.0033855438232421875}

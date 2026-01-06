@@ -1,0 +1,445 @@
+2026-01-06 15:55:05,844 - INFO - [LLM registry 2a11dbf1-a663-4067-b77c-a44f92599fd1]: Registering service for agent
+2026-01-06 15:55:05,889 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_q8esgouvx39a6bcn_v008aov5t6vw3gr5
+2026-01-06 16:04:43,220 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_q8esgouvx39a6bcn_v008aov5t6vw3gr5] build finished.
+2026-01-06 16:04:43,459 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_q8esgouvx39a6bcn_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_q8esgouvx39a6bcn]
+2026-01-06 16:04:43,473 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_q8esgouvx39a6bcn_v008aov5t6vw3gr5, oh_v1.0.0_q8esgouvx39a6bcn] built successfully
+2026-01-06 16:04:43,591 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_q8esgouvx39a6bcn_v008aov5t6vw3gr5
+2026-01-06 16:04:44,153 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '37126', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 16:04:49,997 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Container started: openhands-runtime-e71cc894-cd63-47-f6c70780afd574f. VSCode URL: None
+2026-01-06 16:04:49,998 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Waiting for client to become ready at http://localhost:37126...
+2026-01-06 16:05:28,127 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Runtime is ready.
+2026-01-06 16:05:31,261 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 16:05:31,264 - INFO - ------------------------------
+2026-01-06 16:05:31,264 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 16:05:31,264 - INFO - ------------------------------
+2026-01-06 16:05:31,265 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=pylint-dev__pylint-7993' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 16:05:31,893 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:31,894 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 16:05:32,514 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:32,515 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 16:05:33,139 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:33,146 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 16:05:33,770 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=pylint-dev__pylint-7993
+export OPENHANDS_EVAL_JOB_ID=1501796726
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=pylint-dev__pylint-7993
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:33,771 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 16:05:34,391 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:34,392 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 16:05:36,520 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: pylint-dev__pylint__2.15
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:36,520 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/pylint-dev__pylint__2.15
+2026-01-06 16:05:37,168 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:37,168 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 16:05:38,830 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (3393/3393), done.
+HEAD is now at e90702074 Fix `use-sequence-for-iteration` when unpacking a set with `*` (#7975) (#7988)
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:38,852 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 16:05:39,486 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:39,488 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 16:05:40,108 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:05:40,108 - INFO - ------------------------------
+2026-01-06 16:05:40,108 - INFO - END Runtime Initialization Fn
+2026-01-06 16:05:40,108 - INFO - ------------------------------
+2026-01-06 16:05:40,111 - INFO - [LLM registry 42583d19-646c-4108-8860-dd81bd4a427d]: Registering service for agent
+2026-01-06 16:05:40,124 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 16:05:40,127 - INFO - [runtime e71cc894-cd63-47-f6c70780afd574f] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 16:05:40,129 - INFO - Loading user workspace microagents: []
+2026-01-06 16:05:40,130 - INFO - AgentController e71cc894-cd63-47-f6c70780afd574f - created new state. start_id: 0
+2026-01-06 16:05:40,136 - INFO - [Agent Controller e71cc894-cd63-47-f6c70780afd574f] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 16:05:40,139 - INFO - Saved conversation stats
+2026-01-06 16:12:39,607 - INFO - [Agent Controller e71cc894-cd63-47-f6c70780afd574f] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 16:12:39,609 - INFO - Saved conversation stats
+2026-01-06 16:12:40,641 - INFO - ------------------------------
+2026-01-06 16:12:40,692 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 16:12:40,692 - INFO - ------------------------------
+2026-01-06 16:12:40,692 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/pylint-dev__pylint__2.15
+2026-01-06 16:12:41,348 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:41,348 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 16:12:41,966 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:41,967 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 16:12:42,586 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:42,586 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 16:12:43,207 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:43,207 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 16:12:43,830 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:43,831 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached e90702074e68e20dc8e5df5013ee3ecf22139c3e > patch.diff
+2026-01-06 16:12:44,450 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "601aa4cd07e0",
+  "working_dir": "/workspace/pylint-dev__pylint__2.15",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/pylint-dev__pylint__2.15]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 16:12:44,451 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 16:12:44,453 - INFO - [Read from /workspace/pylint-dev__pylint__2.15/patch.diff is successful.]
+diff --git a/pylint/reporters/text.py b/pylint/reporters/text.py
+index 29bd46798..9e550dc4f 100644
+--- a/pylint/reporters/text.py
++++ b/pylint/reporters/text.py
+@@ -174,16 +174,23 @@ class TextReporter(BaseReporter):
+         # Set template to the currently selected template
+         self._template = template
+ 
++        # Handle escaped braces by temporarily replacing them
++        # This prevents the regex from matching across escaped braces
++        escaped_template = template.replace("{{", "\x00LEFT_BRACE\x00").replace("}}", "\x00RIGHT_BRACE\x00")
++        
+         # Check to see if all parameters in the template are attributes of the Message
+-        arguments = re.findall(r"\{(.+?)(:.*)?\}", template)
++        arguments = re.findall(r"\{(.+?)(:.*)?\}", escaped_template)
+         for argument in arguments:
+             if argument[0] not in MESSAGE_FIELDS:
+                 warnings.warn(
+                     f"Don't recognize the argument '{argument[0]}' in the --msg-template. "
+                     "Are you sure it is supported on the current version of pylint?"
+                 )
+-                template = re.sub(r"\{" + argument[0] + r"(:.*?)?\}", "", template)
+-        self._fixed_template = template
++                # Remove unrecognized arguments from the escaped template
++                escaped_template = re.sub(r"\{" + argument[0] + r"(:.*?)?\}", "", escaped_template)
++        
++        # Restore escaped braces in the final template
++        self._fixed_template = escaped_template.replace("\x00LEFT_BRACE\x00", "{{").replace("\x00RIGHT_BRACE\x00", "}}")
+ 
+     def write_message(self, msg: Message) -> None:
+         """Convenience method to write a formatted message with class default
+
+2026-01-06 16:12:44,453 - INFO - ------------------------------
+2026-01-06 16:12:44,454 - INFO - END Runtime Completion Fn
+2026-01-06 16:12:44,454 - INFO - ------------------------------
+2026-01-06 16:12:44,454 - INFO - Got git diff for instance pylint-dev__pylint-7993:
+--------
+diff --git a/pylint/reporters/text.py b/pylint/reporters/text.py
+index 29bd46798..9e550dc4f 100644
+--- a/pylint/reporters/text.py
++++ b/pylint/reporters/text.py
+@@ -174,16 +174,23 @@ class TextReporter(BaseReporter):
+         # Set template to the currently selected template
+         self._template = template
+ 
++        # Handle escaped braces by temporarily replacing them
++        # This prevents the regex from matching across escaped braces
++        escaped_template = template.replace("{{", "\x00LEFT_BRACE\x00").replace("}}", "\x00RIGHT_BRACE\x00")
++        
+         # Check to see if all parameters in the template are attributes of the Message
+-        arguments = re.findall(r"\{(.+?)(:.*)?\}", template)
++        arguments = re.findall(r"\{(.+?)(:.*)?\}", escaped_template)
+         for argument in arguments:
+             if argument[0] not in MESSAGE_FIELDS:
+                 warnings.warn(
+                     f"Don't recognize the argument '{argument[0]}' in the --msg-template. "
+                     "Are you sure it is supported on the current version of pylint?"
+                 )
+-                template = re.sub(r"\{" + argument[0] + r"(:.*?)?\}", "", template)
+-        self._fixed_template = template
++                # Remove unrecognized arguments from the escaped template
++                escaped_template = re.sub(r"\{" + argument[0] + r"(:.*?)?\}", "", escaped_template)
++        
++        # Restore escaped braces in the final template
++        self._fixed_template = escaped_template.replace("\x00LEFT_BRACE\x00", "{{").replace("\x00RIGHT_BRACE\x00", "}}")
+ 
+     def write_message(self, msg: Message) -> None:
+         """Convenience method to write a formatted message with class default
+--------
+2026-01-06 16:12:50,618 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13497:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 16:12:50,619 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 16:12:50,619 - INFO - Logging LLM completions for instance scikit-learn__scikit-learn-13497 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/scikit-learn__scikit-learn-13497
+2026-01-06 16:12:50,619 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 16:12:50,619 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

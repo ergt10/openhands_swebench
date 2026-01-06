@@ -1,0 +1,23 @@
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716243.472582, "tool_end": 1767716244.0930064, "tool_time": 0.6204242706298828}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716244.0939605, "tool_end": 1767716244.7134109, "tool_time": 0.6194503307342529}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716244.7140265, "tool_end": 1767716245.3314335, "tool_time": 0.6174070835113525}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716245.3374677, "tool_end": 1767716245.9556413, "tool_time": 0.6181735992431641}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716245.9594128, "tool_end": 1767716246.5783088, "tool_time": 0.6188960075378418}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716246.6027238, "tool_end": 1767716249.2319229, "tool_time": 2.6291990280151367}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716249.2325618, "tool_end": 1767716249.855833, "tool_time": 0.6232712268829346}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716249.8568952, "tool_end": 1767716250.4757118, "tool_time": 0.618816614151001}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716250.476276, "tool_end": 1767716251.095171, "tool_time": 0.6188950538635254}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 0, "tool_start": 1767716251.0958288, "tool_end": 1767716251.71402, "tool_time": 0.6181912422180176}
+{"instance_id": "scikit-learn__scikit-learn-12471", "env_prepare_start": 1767715599.8093474, "env_prepare_end": 1767716251.7148635, "env_prepare_time": 651.9055161476135}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 1, "llm_start": 1767716251.7530553, "llm_first_chunk": 1767716252.1043637, "llm_end": 1767716269.0329635, "prefill_time": 0.35130834579467773, "decode_time": 16.92859983444214, "llm_total_time": 17.279908180236816}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 2, "llm_start": 1767716269.0397427, "llm_first_chunk": 1767716269.2259471, "llm_end": 1767716271.774156, "prefill_time": 0.1862044334411621, "decode_time": 2.5482089519500732, "llm_total_time": 2.7344133853912354}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 3, "llm_start": 1767716271.7771077, "llm_first_chunk": 1767716272.0851266, "llm_end": 1767716275.0759532, "prefill_time": 0.30801892280578613, "decode_time": 2.9908266067504883, "llm_total_time": 3.2988455295562744}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 1, "tool_start": 1767716275.0787652, "tool_end": 1767716275.0936635, "tool_time": 0.014898300170898438}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 4, "llm_start": 1767716275.0977337, "llm_first_chunk": 1767716275.6160834, "llm_end": 1767716278.6755536, "prefill_time": 0.5183496475219727, "decode_time": 3.0594701766967773, "llm_total_time": 3.57781982421875}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 2, "tool_start": 1767716278.6806583, "tool_end": 1767716278.6936748, "tool_time": 0.013016462326049805}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 5, "llm_start": 1767716278.698558, "llm_first_chunk": 1767716279.0233529, "llm_end": 1767716282.4620736, "prefill_time": 0.3247947692871094, "decode_time": 3.438720703125, "llm_total_time": 3.7635154724121094}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 3, "tool_start": 1767716282.468738, "tool_end": 1767716282.4872878, "tool_time": 0.018549680709838867}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 6, "llm_start": 1767716282.4956126, "llm_first_chunk": 1767716283.0529177, "llm_end": 1767716286.8555179, "prefill_time": 0.557305097579956, "decode_time": 3.802600145339966, "llm_total_time": 4.359905242919922}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 4, "tool_start": 1767716286.86165, "tool_end": 1767716287.4820662, "tool_time": 0.6204161643981934}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 7, "llm_start": 1767716287.512033, "llm_first_chunk": 1767716287.781941, "llm_end": 1767716291.8900332, "prefill_time": 0.26990795135498047, "decode_time": 4.108092308044434, "llm_total_time": 4.378000259399414}
+{"instance_id": "scikit-learn__scikit-learn-12471", "step_id": 5, "tool_start": 1767716291.8925781, "tool_end": 1767716291.8963645, "tool_time": 0.003786325454711914}

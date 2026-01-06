@@ -1,0 +1,10 @@
+2026-01-06 16:08:29,765 - INFO - [LLM registry 6a254419-3e83-4f72-a6b7-b832f710ce90]: Registering service for agent
+2026-01-06 16:08:29,801 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_7kgfyh2nqw7yr5fh_v008aov5t6vw3gr5
+2026-01-06 16:17:42,678 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_7kgfyh2nqw7yr5fh_v008aov5t6vw3gr5] build finished.
+2026-01-06 16:17:42,685 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_7kgfyh2nqw7yr5fh_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_7kgfyh2nqw7yr5fh]
+2026-01-06 16:17:42,686 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_7kgfyh2nqw7yr5fh_v008aov5t6vw3gr5, oh_v1.0.0_7kgfyh2nqw7yr5fh] built successfully
+2026-01-06 16:17:42,732 - INFO - [runtime e67683e0-df78-48-be36184492be04f] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_7kgfyh2nqw7yr5fh_v008aov5t6vw3gr5
+2026-01-06 16:17:42,902 - INFO - [runtime e67683e0-df78-48-be36184492be04f] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '38722', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 16:17:43,551 - INFO - [runtime e67683e0-df78-48-be36184492be04f] Container started: openhands-runtime-e67683e0-df78-48-be36184492be04f. VSCode URL: None
+2026-01-06 16:17:43,551 - INFO - [runtime e67683e0-df78-48-be36184492be04f] Waiting for client to become ready at http://localhost:38722...
+2026-01-06 16:18:07,780 - INFO - [runtime e67683e0-df78-48-be36184492be04f] Runtime is ready.

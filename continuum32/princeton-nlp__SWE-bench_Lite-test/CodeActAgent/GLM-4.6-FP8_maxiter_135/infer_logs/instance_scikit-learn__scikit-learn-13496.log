@@ -1,0 +1,2 @@
+2026-01-06 16:11:54,553 - INFO - [LLM registry 0f3d3c6e-567b-4b83-828c-5bb803129556]: Registering service for agent
+2026-01-06 16:11:54,588 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_va462uhsli486rwf_v008aov5t6vw3gr5

@@ -1,0 +1,55 @@
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709932.9537838, "tool_end": 1767709933.5777402, "tool_time": 0.6239564418792725}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709933.5787456, "tool_end": 1767709934.2009032, "tool_time": 0.6221575736999512}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709934.2018085, "tool_end": 1767709934.8256538, "tool_time": 0.6238453388214111}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709934.8531988, "tool_end": 1767709935.480854, "tool_time": 0.6276552677154541}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709935.4815552, "tool_end": 1767709936.1018996, "tool_time": 0.6203444004058838}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709936.1025376, "tool_end": 1767709943.2667284, "tool_time": 7.164190769195557}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709943.2675288, "tool_end": 1767709943.8897624, "tool_time": 0.6222336292266846}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709943.8908057, "tool_end": 1767709945.0201705, "tool_time": 1.1293647289276123}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709945.0209913, "tool_end": 1767709945.6424537, "tool_time": 0.621462345123291}
+{"instance_id": "django__django-11099", "step_id": 0, "tool_start": 1767709945.643325, "tool_end": 1767709946.2625365, "tool_time": 0.6192114353179932}
+{"instance_id": "django__django-11099", "env_prepare_start": 1767709008.3182666, "env_prepare_end": 1767709946.2637053, "env_prepare_time": 937.9454386234283}
+{"instance_id": "django__django-11099", "step_id": 1, "llm_start": 1767709946.3295183, "llm_first_chunk": 1767709947.225238, "llm_end": 1767709948.6769867, "prefill_time": 0.8957197666168213, "decode_time": 1.4517486095428467, "llm_total_time": 2.347468376159668}
+{"instance_id": "django__django-11099", "step_id": 2, "llm_start": 1767709948.6808982, "llm_first_chunk": 1767709948.7766318, "llm_end": 1767709950.6719463, "prefill_time": 0.095733642578125, "decode_time": 1.8953144550323486, "llm_total_time": 1.9910480976104736}
+{"instance_id": "django__django-11099", "step_id": 1, "tool_start": 1767709950.6762002, "tool_end": 1767709951.305837, "tool_time": 0.6296367645263672}
+{"instance_id": "django__django-11099", "step_id": 3, "llm_start": 1767709951.3109617, "llm_first_chunk": 1767709951.5428193, "llm_end": 1767709952.6451187, "prefill_time": 0.2318575382232666, "decode_time": 1.102299451828003, "llm_total_time": 1.3341569900512695}
+{"instance_id": "django__django-11099", "step_id": 2, "tool_start": 1767709952.647533, "tool_end": 1767709953.270101, "tool_time": 0.6225681304931641}
+{"instance_id": "django__django-11099", "step_id": 4, "llm_start": 1767709953.2748857, "llm_first_chunk": 1767709953.5017624, "llm_end": 1767709954.7012444, "prefill_time": 0.22687673568725586, "decode_time": 1.1994819641113281, "llm_total_time": 1.426358699798584}
+{"instance_id": "django__django-11099", "step_id": 3, "tool_start": 1767709954.704225, "tool_end": 1767709954.711273, "tool_time": 0.007047891616821289}
+{"instance_id": "django__django-11099", "step_id": 5, "llm_start": 1767709954.7160482, "llm_first_chunk": 1767709954.847731, "llm_end": 1767709956.3122022, "prefill_time": 0.1316828727722168, "decode_time": 1.4644711017608643, "llm_total_time": 1.596153974533081}
+{"instance_id": "django__django-11099", "step_id": 4, "tool_start": 1767709956.3264112, "tool_end": 1767709956.3344233, "tool_time": 0.008012056350708008}
+{"instance_id": "django__django-11099", "step_id": 6, "llm_start": 1767709956.3457062, "llm_first_chunk": 1767709956.5888803, "llm_end": 1767709965.9519973, "prefill_time": 0.24317407608032227, "decode_time": 9.363116979598999, "llm_total_time": 9.606291055679321}
+{"instance_id": "django__django-11099", "step_id": 5, "tool_start": 1767709965.9571364, "tool_end": 1767709965.9639533, "tool_time": 0.006816864013671875}
+{"instance_id": "django__django-11099", "step_id": 7, "llm_start": 1767709965.971147, "llm_first_chunk": 1767709966.0911727, "llm_end": 1767709967.058974, "prefill_time": 0.120025634765625, "decode_time": 0.9678013324737549, "llm_total_time": 1.0878269672393799}
+{"instance_id": "django__django-11099", "step_id": 6, "tool_start": 1767709967.063996, "tool_end": 1767709967.698208, "tool_time": 0.6342120170593262}
+{"instance_id": "django__django-11099", "step_id": 8, "llm_start": 1767709967.7125747, "llm_first_chunk": 1767709968.0722587, "llm_end": 1767709987.6782749, "prefill_time": 0.3596839904785156, "decode_time": 19.606016159057617, "llm_total_time": 19.965700149536133}
+{"instance_id": "django__django-11099", "step_id": 7, "tool_start": 1767709987.6816382, "tool_end": 1767709987.7037084, "tool_time": 0.02207016944885254}
+{"instance_id": "django__django-11099", "step_id": 9, "llm_start": 1767709987.7133245, "llm_first_chunk": 1767709988.0395901, "llm_end": 1767709989.44822, "prefill_time": 0.3262655735015869, "decode_time": 1.4086298942565918, "llm_total_time": 1.7348954677581787}
+{"instance_id": "django__django-11099", "step_id": 8, "tool_start": 1767709989.451811, "tool_end": 1767709990.575112, "tool_time": 1.1233010292053223}
+{"instance_id": "django__django-11099", "step_id": 10, "llm_start": 1767709990.5838661, "llm_first_chunk": 1767709990.731325, "llm_end": 1767710015.3646777, "prefill_time": 0.14745879173278809, "decode_time": 24.633352756500244, "llm_total_time": 24.780811548233032}
+{"instance_id": "django__django-11099", "step_id": 9, "tool_start": 1767710015.3674214, "tool_end": 1767710015.3732228, "tool_time": 0.00580143928527832}
+{"instance_id": "django__django-11099", "step_id": 11, "llm_start": 1767710015.379369, "llm_first_chunk": 1767710015.7420926, "llm_end": 1767710026.0513296, "prefill_time": 0.36272358894348145, "decode_time": 10.309237003326416, "llm_total_time": 10.671960592269897}
+{"instance_id": "django__django-11099", "step_id": 10, "tool_start": 1767710026.055767, "tool_end": 1767710026.061463, "tool_time": 0.00569605827331543}
+{"instance_id": "django__django-11099", "step_id": 12, "llm_start": 1767710026.068549, "llm_first_chunk": 1767710026.3742633, "llm_end": 1767710030.0915906, "prefill_time": 0.30571436882019043, "decode_time": 3.717327356338501, "llm_total_time": 4.023041725158691}
+{"instance_id": "django__django-11099", "step_id": 11, "tool_start": 1767710030.0949774, "tool_end": 1767710030.7137315, "tool_time": 0.6187541484832764}
+{"instance_id": "django__django-11099", "step_id": 13, "llm_start": 1767710030.72352, "llm_first_chunk": 1767710030.9103875, "llm_end": 1767710104.962465, "prefill_time": 0.18686747550964355, "decode_time": 74.05207753181458, "llm_total_time": 74.23894500732422}
+{"instance_id": "django__django-11099", "step_id": 14, "llm_start": 1767710104.9711676, "llm_first_chunk": 1767710105.156672, "llm_end": 1767710163.6915903, "prefill_time": 0.18550443649291992, "decode_time": 58.53491830825806, "llm_total_time": 58.72042274475098}
+{"instance_id": "django__django-11099", "step_id": 12, "tool_start": 1767710163.695149, "tool_end": 1767710163.6998847, "tool_time": 0.004735708236694336}
+{"instance_id": "django__django-11099", "step_id": 15, "llm_start": 1767710163.707754, "llm_first_chunk": 1767710163.949122, "llm_end": 1767710166.5223515, "prefill_time": 0.24136805534362793, "decode_time": 2.5732295513153076, "llm_total_time": 2.8145976066589355}
+{"instance_id": "django__django-11099", "step_id": 13, "tool_start": 1767710166.5260444, "tool_end": 1767710167.1452074, "tool_time": 0.6191630363464355}
+{"instance_id": "django__django-11099", "step_id": 16, "llm_start": 1767710167.156379, "llm_first_chunk": 1767710167.5151258, "llm_end": 1767710172.5787437, "prefill_time": 0.3587467670440674, "decode_time": 5.063617944717407, "llm_total_time": 5.422364711761475}
+{"instance_id": "django__django-11099", "step_id": 14, "tool_start": 1767710172.581588, "tool_end": 1767710173.2007797, "tool_time": 0.6191916465759277}
+{"instance_id": "django__django-11099", "step_id": 17, "llm_start": 1767710173.209552, "llm_first_chunk": 1767710173.4595642, "llm_end": 1767710177.179484, "prefill_time": 0.2500121593475342, "decode_time": 3.7199196815490723, "llm_total_time": 3.9699318408966064}
+{"instance_id": "django__django-11099", "step_id": 15, "tool_start": 1767710177.1823177, "tool_end": 1767710177.8017306, "tool_time": 0.619412899017334}
+{"instance_id": "django__django-11099", "step_id": 18, "llm_start": 1767710177.8109963, "llm_first_chunk": 1767710178.175719, "llm_end": 1767710181.1660116, "prefill_time": 0.36472272872924805, "decode_time": 2.990292549133301, "llm_total_time": 3.355015277862549}
+{"instance_id": "django__django-11099", "step_id": 19, "llm_start": 1767710181.1842368, "llm_first_chunk": 1767710181.467366, "llm_end": 1767710184.4730012, "prefill_time": 0.2831292152404785, "decode_time": 3.0056352615356445, "llm_total_time": 3.288764476776123}
+{"instance_id": "django__django-11099", "step_id": 20, "llm_start": 1767710184.4925885, "llm_first_chunk": 1767710184.702687, "llm_end": 1767710188.3059852, "prefill_time": 0.2100985050201416, "decode_time": 3.6032981872558594, "llm_total_time": 3.813396692276001}
+{"instance_id": "django__django-11099", "step_id": 21, "llm_start": 1767710188.3213804, "llm_first_chunk": 1767710188.5507958, "llm_end": 1767710191.6991785, "prefill_time": 0.2294154167175293, "decode_time": 3.1483826637268066, "llm_total_time": 3.377798080444336}
+{"instance_id": "django__django-11099", "step_id": 22, "llm_start": 1767710191.71942, "llm_first_chunk": 1767710191.936219, "llm_end": 1767710194.8063626, "prefill_time": 0.21679902076721191, "decode_time": 2.8701436519622803, "llm_total_time": 3.086942672729492}
+{"instance_id": "django__django-11099", "step_id": 16, "tool_start": 1767710195.5920105, "tool_end": 1767710196.2105613, "tool_time": 0.6185507774353027}
+{"instance_id": "django__django-11099", "step_id": 17, "tool_start": 1767710196.2111647, "tool_end": 1767710196.828501, "tool_time": 0.6173362731933594}
+{"instance_id": "django__django-11099", "step_id": 18, "tool_start": 1767710196.8293211, "tool_end": 1767710197.4472208, "tool_time": 0.6178996562957764}
+{"instance_id": "django__django-11099", "step_id": 19, "tool_start": 1767710197.4479172, "tool_end": 1767710198.0641062, "tool_time": 0.6161890029907227}
+{"instance_id": "django__django-11099", "step_id": 20, "tool_start": 1767710198.0649745, "tool_end": 1767710198.686625, "tool_time": 0.6216504573822021}
+{"instance_id": "django__django-11099", "step_id": 21, "tool_start": 1767710198.6877913, "tool_end": 1767710199.3057683, "tool_time": 0.6179769039154053}
+{"instance_id": "django__django-11099", "step_id": 22, "tool_start": 1767710199.306325, "tool_end": 1767710199.309076, "tool_time": 0.0027511119842529297}

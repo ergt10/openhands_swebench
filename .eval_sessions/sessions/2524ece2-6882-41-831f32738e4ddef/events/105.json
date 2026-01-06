@@ -1,0 +1,1 @@
+{"id": 105, "timestamp": "2026-01-06T16:04:45.448401", "source": "agent", "message": "Parameter 'command' is expected to be one of ['view', 'create', 'str_replace', 'insert', 'undo_edit'].", "observation": "error", "content": "Parameter 'command' is expected to be one of ['view', 'create', 'str_replace', 'insert', 'undo_edit'].", "extras": {"error_id": ""}}

@@ -1,0 +1,453 @@
+2026-01-06 14:47:05,888 - INFO - [LLM registry cd08607e-5776-4ba1-bdfb-3733fea7469a]: Registering service for agent
+2026-01-06 14:47:05,924 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_6pcgw2qjet1qidw8_v008aov5t6vw3gr5
+2026-01-06 14:57:24,041 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_6pcgw2qjet1qidw8_v008aov5t6vw3gr5] build finished.
+2026-01-06 14:57:24,055 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_6pcgw2qjet1qidw8_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_6pcgw2qjet1qidw8]
+2026-01-06 14:57:24,056 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_6pcgw2qjet1qidw8_v008aov5t6vw3gr5, oh_v1.0.0_6pcgw2qjet1qidw8] built successfully
+2026-01-06 14:57:24,164 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_6pcgw2qjet1qidw8_v008aov5t6vw3gr5
+2026-01-06 14:57:24,334 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '32990', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 14:57:25,610 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Container started: openhands-runtime-d13215b6-58e0-46-854985b82ca4817. VSCode URL: None
+2026-01-06 14:57:25,610 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Waiting for client to become ready at http://localhost:32990...
+2026-01-06 14:57:49,697 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Runtime is ready.
+2026-01-06 14:57:52,820 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 14:57:52,831 - INFO - ------------------------------
+2026-01-06 14:57:52,832 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 14:57:52,832 - INFO - ------------------------------
+2026-01-06 14:57:52,836 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-13710' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 14:57:53,462 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:53,462 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 14:57:54,081 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:54,082 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 14:57:54,699 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:54,714 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 14:57:55,335 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-13710
+export OPENHANDS_EVAL_JOB_ID=1604359052
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-13710
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:55,335 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 14:57:55,958 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:55,959 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 14:57:57,581 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__4.0
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:57,582 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 14:57:58,201 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:57:58,216 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 14:58:00,344 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (6488/6488), done.
+HEAD is now at 1bd6a7a0ac Refs #32219 -- Added admin model inline tests for verbose names.
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:00,344 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 14:58:00,966 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:00,966 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 14:58:01,585 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:58:01,585 - INFO - ------------------------------
+2026-01-06 14:58:01,586 - INFO - END Runtime Initialization Fn
+2026-01-06 14:58:01,586 - INFO - ------------------------------
+2026-01-06 14:58:01,588 - INFO - [LLM registry f4bc15a7-f40a-47dc-a634-5537e890f433]: Registering service for agent
+2026-01-06 14:58:01,603 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 14:58:01,606 - INFO - [runtime d13215b6-58e0-46-854985b82ca4817] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 14:58:01,615 - INFO - Loading user workspace microagents: []
+2026-01-06 14:58:01,615 - INFO - AgentController d13215b6-58e0-46-854985b82ca4817 - created new state. start_id: 0
+2026-01-06 14:58:01,623 - INFO - [Agent Controller d13215b6-58e0-46-854985b82ca4817] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 14:58:01,625 - INFO - Saved conversation stats
+2026-01-06 14:59:33,804 - INFO - [Agent Controller d13215b6-58e0-46-854985b82ca4817] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.AWAITING_USER_INPUT
+2026-01-06 14:59:33,805 - INFO - Saved conversation stats
+2026-01-06 14:59:33,807 - INFO - [Agent Controller d13215b6-58e0-46-854985b82ca4817] Setting agent(CodeActAgent) state from AgentState.AWAITING_USER_INPUT to AgentState.RUNNING
+2026-01-06 14:59:33,808 - INFO - Saved conversation stats
+2026-01-06 15:08:29,607 - INFO - [Agent Controller d13215b6-58e0-46-854985b82ca4817] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 15:08:29,610 - INFO - Saved conversation stats
+2026-01-06 15:08:30,508 - INFO - ------------------------------
+2026-01-06 15:08:30,508 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:08:30,508 - INFO - ------------------------------
+2026-01-06 15:08:30,509 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:08:31,133 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:31,134 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:08:31,752 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:31,753 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:08:32,372 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:32,372 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:08:32,991 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:32,991 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:08:33,615 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:33,615 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached 1bd6a7a0acc11e249fca11c017505ad39f15ebf6 > patch.diff
+2026-01-06 15:08:34,235 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "c4a0b51f4b3e",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:08:34,235 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:08:34,238 - INFO - [Read from /workspace/django__django__4.0/patch.diff is successful.]
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index dadd4acfa1..2c4126b595 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -2037,10 +2037,27 @@ class InlineModelAdmin(BaseModelAdmin):
+         self.opts = self.model._meta
+         self.has_registered_model = admin_site.is_registered(self.model)
+         super().__init__()
++        
++        # Check if verbose_name was explicitly set on this inline class or its parents
++        # (not inherited from BaseModelAdmin where it's None)
++        # We need to check if the current value is different from the model's verbose_name
++        # or if BaseModelAdmin has verbose_name=None and we have something else
++        model_verbose_name = self.model._meta.verbose_name
++        class_has_verbose_name = (
++            self.verbose_name is not None and 
++            self.verbose_name != model_verbose_name
++        )
++        
+         if self.verbose_name is None:
+             self.verbose_name = self.model._meta.verbose_name
+         if self.verbose_name_plural is None:
+-            self.verbose_name_plural = self.model._meta.verbose_name_plural
++            # If verbose_name was provided on the inline (not from model),
++            # base verbose_name_plural on that custom verbose_name
++            if class_has_verbose_name:
++                from django.utils.text import format_lazy
++                self.verbose_name_plural = format_lazy('{}s', self.verbose_name)
++            else:
++                self.verbose_name_plural = self.model._meta.verbose_name_plural
+ 
+     @property
+     def media(self):
+
+2026-01-06 15:08:34,238 - INFO - ------------------------------
+2026-01-06 15:08:34,239 - INFO - END Runtime Completion Fn
+2026-01-06 15:08:34,239 - INFO - ------------------------------
+2026-01-06 15:08:34,239 - INFO - Got git diff for instance django__django-13710:
+--------
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index dadd4acfa1..2c4126b595 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -2037,10 +2037,27 @@ class InlineModelAdmin(BaseModelAdmin):
+         self.opts = self.model._meta
+         self.has_registered_model = admin_site.is_registered(self.model)
+         super().__init__()
++        
++        # Check if verbose_name was explicitly set on this inline class or its parents
++        # (not inherited from BaseModelAdmin where it's None)
++        # We need to check if the current value is different from the model's verbose_name
++        # or if BaseModelAdmin has verbose_name=None and we have something else
++        model_verbose_name = self.model._meta.verbose_name
++        class_has_verbose_name = (
++            self.verbose_name is not None and 
++            self.verbose_name != model_verbose_name
++        )
++        
+         if self.verbose_name is None:
+             self.verbose_name = self.model._meta.verbose_name
+         if self.verbose_name_plural is None:
+-            self.verbose_name_plural = self.model._meta.verbose_name_plural
++            # If verbose_name was provided on the inline (not from model),
++            # base verbose_name_plural on that custom verbose_name
++            if class_has_verbose_name:
++                from django.utils.text import format_lazy
++                self.verbose_name_plural = format_lazy('{}s', self.verbose_name)
++            else:
++                self.verbose_name_plural = self.model._meta.verbose_name_plural
+ 
+     @property
+     def media(self):
+--------
+2026-01-06 15:08:36,868 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-15789:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:08:36,869 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:08:36,869 - INFO - Logging LLM completions for instance django__django-15789 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/django__django-15789
+2026-01-06 15:08:36,869 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:08:36,870 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

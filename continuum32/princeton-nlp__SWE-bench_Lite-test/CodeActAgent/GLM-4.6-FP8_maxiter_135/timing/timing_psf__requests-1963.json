@@ -1,0 +1,90 @@
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714799.232734, "tool_end": 1767714799.8530107, "tool_time": 0.620276689529419}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714799.8548427, "tool_end": 1767714800.47308, "tool_time": 0.6182372570037842}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714800.4737985, "tool_end": 1767714801.091834, "tool_time": 0.6180355548858643}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714801.1404862, "tool_end": 1767714801.758035, "tool_time": 0.6175487041473389}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714801.7588673, "tool_end": 1767714802.383741, "tool_time": 0.6248736381530762}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714802.3847654, "tool_end": 1767714803.0037527, "tool_time": 0.6189873218536377}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714803.005297, "tool_end": 1767714803.6232462, "tool_time": 0.6179492473602295}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714803.6319697, "tool_end": 1767714804.2563026, "tool_time": 0.6243329048156738}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714804.2580833, "tool_end": 1767714804.8857422, "tool_time": 0.6276588439941406}
+{"instance_id": "psf__requests-1963", "step_id": 0, "tool_start": 1767714804.8864503, "tool_end": 1767714805.5045707, "tool_time": 0.6181204319000244}
+{"instance_id": "psf__requests-1963", "env_prepare_start": 1767714314.7267063, "env_prepare_end": 1767714805.5055864, "env_prepare_time": 490.77888011932373}
+{"instance_id": "psf__requests-1963", "step_id": 1, "llm_start": 1767714805.5359871, "llm_first_chunk": 1767714805.8005643, "llm_end": 1767714809.648036, "prefill_time": 0.26457715034484863, "decode_time": 3.8474717140197754, "llm_total_time": 4.112048864364624}
+{"instance_id": "psf__requests-1963", "step_id": 2, "llm_start": 1767714809.7152472, "llm_first_chunk": 1767714809.921489, "llm_end": 1767714813.6192684, "prefill_time": 0.20624184608459473, "decode_time": 3.697779417037964, "llm_total_time": 3.9040212631225586}
+{"instance_id": "psf__requests-1963", "step_id": 1, "tool_start": 1767714813.640796, "tool_end": 1767714813.6548784, "tool_time": 0.01408243179321289}
+{"instance_id": "psf__requests-1963", "step_id": 3, "llm_start": 1767714813.6579115, "llm_first_chunk": 1767714813.905174, "llm_end": 1767714828.0078874, "prefill_time": 0.24726247787475586, "decode_time": 14.102713346481323, "llm_total_time": 14.349975824356079}
+{"instance_id": "psf__requests-1963", "step_id": 2, "tool_start": 1767714828.010903, "tool_end": 1767714828.0646293, "tool_time": 0.0537264347076416}
+{"instance_id": "psf__requests-1963", "step_id": 4, "llm_start": 1767714828.0699506, "llm_first_chunk": 1767714828.376449, "llm_end": 1767714831.4450326, "prefill_time": 0.30649852752685547, "decode_time": 3.0685834884643555, "llm_total_time": 3.375082015991211}
+{"instance_id": "psf__requests-1963", "step_id": 3, "tool_start": 1767714831.4476864, "tool_end": 1767714832.0670946, "tool_time": 0.619408130645752}
+{"instance_id": "psf__requests-1963", "step_id": 5, "llm_start": 1767714832.0724897, "llm_first_chunk": 1767714832.2521672, "llm_end": 1767714834.0775054, "prefill_time": 0.17967748641967773, "decode_time": 1.8253381252288818, "llm_total_time": 2.0050156116485596}
+{"instance_id": "psf__requests-1963", "step_id": 4, "tool_start": 1767714834.0799148, "tool_end": 1767714834.7007504, "tool_time": 0.620835542678833}
+{"instance_id": "psf__requests-1963", "step_id": 6, "llm_start": 1767714834.7065911, "llm_first_chunk": 1767714834.901437, "llm_end": 1767714836.6771863, "prefill_time": 0.19484591484069824, "decode_time": 1.7757492065429688, "llm_total_time": 1.970595121383667}
+{"instance_id": "psf__requests-1963", "step_id": 5, "tool_start": 1767714836.6798134, "tool_end": 1767714838.8072689, "tool_time": 2.127455472946167}
+{"instance_id": "psf__requests-1963", "step_id": 7, "llm_start": 1767714838.812182, "llm_first_chunk": 1767714839.1197581, "llm_end": 1767714842.6543224, "prefill_time": 0.30757617950439453, "decode_time": 3.534564256668091, "llm_total_time": 3.8421404361724854}
+{"instance_id": "psf__requests-1963", "step_id": 6, "tool_start": 1767714842.6587753, "tool_end": 1767714843.2811255, "tool_time": 0.6223502159118652}
+{"instance_id": "psf__requests-1963", "step_id": 8, "llm_start": 1767714843.2905211, "llm_first_chunk": 1767714843.5101266, "llm_end": 1767714845.5570538, "prefill_time": 0.2196054458618164, "decode_time": 2.0469272136688232, "llm_total_time": 2.2665326595306396}
+{"instance_id": "psf__requests-1963", "step_id": 7, "tool_start": 1767714845.560241, "tool_end": 1767714845.582992, "tool_time": 0.0227510929107666}
+{"instance_id": "psf__requests-1963", "step_id": 9, "llm_start": 1767714845.59068, "llm_first_chunk": 1767714846.089408, "llm_end": 1767714849.035006, "prefill_time": 0.49872803688049316, "decode_time": 2.9455981254577637, "llm_total_time": 3.444326162338257}
+{"instance_id": "psf__requests-1963", "step_id": 8, "tool_start": 1767714849.0377011, "tool_end": 1767714849.657255, "tool_time": 0.619553804397583}
+{"instance_id": "psf__requests-1963", "step_id": 10, "llm_start": 1767714849.6655161, "llm_first_chunk": 1767714849.8929267, "llm_end": 1767714853.1232247, "prefill_time": 0.22741055488586426, "decode_time": 3.2302980422973633, "llm_total_time": 3.4577085971832275}
+{"instance_id": "psf__requests-1963", "step_id": 9, "tool_start": 1767714853.1749558, "tool_end": 1767714853.7950463, "tool_time": 0.6200904846191406}
+{"instance_id": "psf__requests-1963", "step_id": 11, "llm_start": 1767714853.8072312, "llm_first_chunk": 1767714854.02648, "llm_end": 1767714856.7103393, "prefill_time": 0.21924877166748047, "decode_time": 2.683859348297119, "llm_total_time": 2.9031081199645996}
+{"instance_id": "psf__requests-1963", "step_id": 10, "tool_start": 1767714856.7443411, "tool_end": 1767714857.369895, "tool_time": 0.6255538463592529}
+{"instance_id": "psf__requests-1963", "step_id": 12, "llm_start": 1767714857.3814359, "llm_first_chunk": 1767714857.6071696, "llm_end": 1767714861.8322947, "prefill_time": 0.22573375701904297, "decode_time": 4.225125074386597, "llm_total_time": 4.45085883140564}
+{"instance_id": "psf__requests-1963", "step_id": 11, "tool_start": 1767714861.8406026, "tool_end": 1767714862.4626298, "tool_time": 0.6220271587371826}
+{"instance_id": "psf__requests-1963", "step_id": 13, "llm_start": 1767714862.4724054, "llm_first_chunk": 1767714862.7115805, "llm_end": 1767714865.6112266, "prefill_time": 0.23917508125305176, "decode_time": 2.899646043777466, "llm_total_time": 3.1388211250305176}
+{"instance_id": "psf__requests-1963", "step_id": 12, "tool_start": 1767714865.614764, "tool_end": 1767714866.2371721, "tool_time": 0.6224081516265869}
+{"instance_id": "psf__requests-1963", "step_id": 14, "llm_start": 1767714866.2485366, "llm_first_chunk": 1767714866.6091595, "llm_end": 1767714870.1882663, "prefill_time": 0.3606228828430176, "decode_time": 3.5791068077087402, "llm_total_time": 3.939729690551758}
+{"instance_id": "psf__requests-1963", "step_id": 13, "tool_start": 1767714870.192034, "tool_end": 1767714870.8157582, "tool_time": 0.6237242221832275}
+{"instance_id": "psf__requests-1963", "step_id": 15, "llm_start": 1767714870.8270981, "llm_first_chunk": 1767714871.0524056, "llm_end": 1767714914.4003298, "prefill_time": 0.22530746459960938, "decode_time": 43.34792423248291, "llm_total_time": 43.57323169708252}
+{"instance_id": "psf__requests-1963", "step_id": 14, "tool_start": 1767714914.4204187, "tool_end": 1767714914.425439, "tool_time": 0.0050201416015625}
+{"instance_id": "psf__requests-1963", "step_id": 16, "llm_start": 1767714914.4360669, "llm_first_chunk": 1767714914.6086528, "llm_end": 1767714916.3309193, "prefill_time": 0.17258596420288086, "decode_time": 1.722266435623169, "llm_total_time": 1.8948523998260498}
+{"instance_id": "psf__requests-1963", "step_id": 15, "tool_start": 1767714916.3341002, "tool_end": 1767714916.9540794, "tool_time": 0.6199791431427002}
+{"instance_id": "psf__requests-1963", "step_id": 17, "llm_start": 1767714916.9659567, "llm_first_chunk": 1767714917.2042737, "llm_end": 1767714923.5769844, "prefill_time": 0.23831701278686523, "decode_time": 6.372710704803467, "llm_total_time": 6.611027717590332}
+{"instance_id": "psf__requests-1963", "step_id": 16, "tool_start": 1767714923.581057, "tool_end": 1767714923.603053, "tool_time": 0.021996021270751953}
+{"instance_id": "psf__requests-1963", "step_id": 18, "llm_start": 1767714923.617669, "llm_first_chunk": 1767714923.9238021, "llm_end": 1767714929.3394294, "prefill_time": 0.3061330318450928, "decode_time": 5.4156272411346436, "llm_total_time": 5.721760272979736}
+{"instance_id": "psf__requests-1963", "step_id": 17, "tool_start": 1767714929.3713431, "tool_end": 1767714929.3893733, "tool_time": 0.018030166625976562}
+{"instance_id": "psf__requests-1963", "step_id": 19, "llm_start": 1767714929.4020193, "llm_first_chunk": 1767714929.6235476, "llm_end": 1767714932.940908, "prefill_time": 0.2215282917022705, "decode_time": 3.3173604011535645, "llm_total_time": 3.538888692855835}
+{"instance_id": "psf__requests-1963", "step_id": 18, "tool_start": 1767714932.9452317, "tool_end": 1767714932.9588761, "tool_time": 0.01364445686340332}
+{"instance_id": "psf__requests-1963", "step_id": 20, "llm_start": 1767714932.9722328, "llm_first_chunk": 1767714933.1994822, "llm_end": 1767714934.9940732, "prefill_time": 0.2272493839263916, "decode_time": 1.794590950012207, "llm_total_time": 2.0218403339385986}
+{"instance_id": "psf__requests-1963", "step_id": 19, "tool_start": 1767714935.003989, "tool_end": 1767714935.6316502, "tool_time": 0.6276612281799316}
+{"instance_id": "psf__requests-1963", "step_id": 21, "llm_start": 1767714935.6441905, "llm_first_chunk": 1767714935.975461, "llm_end": 1767714955.5994766, "prefill_time": 0.3312704563140869, "decode_time": 19.62401556968689, "llm_total_time": 19.955286026000977}
+{"instance_id": "psf__requests-1963", "step_id": 20, "tool_start": 1767714955.603428, "tool_end": 1767714955.6181278, "tool_time": 0.014699935913085938}
+{"instance_id": "psf__requests-1963", "step_id": 22, "llm_start": 1767714955.6292503, "llm_first_chunk": 1767714956.0710166, "llm_end": 1767714973.5023699, "prefill_time": 0.44176626205444336, "decode_time": 17.431353330612183, "llm_total_time": 17.873119592666626}
+{"instance_id": "psf__requests-1963", "step_id": 21, "tool_start": 1767714973.5117111, "tool_end": 1767714973.5279047, "tool_time": 0.016193628311157227}
+{"instance_id": "psf__requests-1963", "step_id": 23, "llm_start": 1767714973.5477378, "llm_first_chunk": 1767714973.8215308, "llm_end": 1767714977.0298707, "prefill_time": 0.27379298210144043, "decode_time": 3.2083399295806885, "llm_total_time": 3.482132911682129}
+{"instance_id": "psf__requests-1963", "step_id": 22, "tool_start": 1767714977.0338473, "tool_end": 1767714977.6534603, "tool_time": 0.6196129322052002}
+{"instance_id": "psf__requests-1963", "step_id": 24, "llm_start": 1767714977.7394955, "llm_first_chunk": 1767714978.0675764, "llm_end": 1767714988.4247754, "prefill_time": 0.3280808925628662, "decode_time": 10.35719895362854, "llm_total_time": 10.685279846191406}
+{"instance_id": "psf__requests-1963", "step_id": 23, "tool_start": 1767714988.4297376, "tool_end": 1767714988.4328034, "tool_time": 0.003065824508666992}
+{"instance_id": "psf__requests-1963", "step_id": 25, "llm_start": 1767714988.4554672, "llm_first_chunk": 1767714988.676535, "llm_end": 1767714991.1949956, "prefill_time": 0.2210676670074463, "decode_time": 2.518460750579834, "llm_total_time": 2.7395284175872803}
+{"instance_id": "psf__requests-1963", "step_id": 24, "tool_start": 1767714991.199855, "tool_end": 1767714991.2031243, "tool_time": 0.003269195556640625}
+{"instance_id": "psf__requests-1963", "step_id": 26, "llm_start": 1767714991.2194836, "llm_first_chunk": 1767714991.4828708, "llm_end": 1767715008.9342558, "prefill_time": 0.26338720321655273, "decode_time": 17.451385021209717, "llm_total_time": 17.71477222442627}
+{"instance_id": "psf__requests-1963", "step_id": 25, "tool_start": 1767715008.9393356, "tool_end": 1767715009.0227947, "tool_time": 0.08345913887023926}
+{"instance_id": "psf__requests-1963", "step_id": 27, "llm_start": 1767715009.0427048, "llm_first_chunk": 1767715009.3087287, "llm_end": 1767715011.1078224, "prefill_time": 0.2660238742828369, "decode_time": 1.7990937232971191, "llm_total_time": 2.065117597579956}
+{"instance_id": "psf__requests-1963", "step_id": 26, "tool_start": 1767715011.1123922, "tool_end": 1767715011.7328465, "tool_time": 0.6204543113708496}
+{"instance_id": "psf__requests-1963", "step_id": 28, "llm_start": 1767715011.7481048, "llm_first_chunk": 1767715012.417914, "llm_end": 1767715015.266832, "prefill_time": 0.669809103012085, "decode_time": 2.8489181995391846, "llm_total_time": 3.5187273025512695}
+{"instance_id": "psf__requests-1963", "step_id": 27, "tool_start": 1767715015.274759, "tool_end": 1767715017.4063106, "tool_time": 2.131551504135132}
+{"instance_id": "psf__requests-1963", "step_id": 29, "llm_start": 1767715017.4435196, "llm_first_chunk": 1767715017.735458, "llm_end": 1767715020.3548486, "prefill_time": 0.29193830490112305, "decode_time": 2.6193907260894775, "llm_total_time": 2.9113290309906006}
+{"instance_id": "psf__requests-1963", "step_id": 28, "tool_start": 1767715020.402798, "tool_end": 1767715021.0216222, "tool_time": 0.6188242435455322}
+{"instance_id": "psf__requests-1963", "step_id": 30, "llm_start": 1767715021.063789, "llm_first_chunk": 1767715021.2864795, "llm_end": 1767715023.6606212, "prefill_time": 0.22269058227539062, "decode_time": 2.3741416931152344, "llm_total_time": 2.596832275390625}
+{"instance_id": "psf__requests-1963", "step_id": 29, "tool_start": 1767715023.6641464, "tool_end": 1767715052.0235026, "tool_time": 28.35935616493225}
+{"instance_id": "psf__requests-1963", "step_id": 31, "llm_start": 1767715052.0401876, "llm_first_chunk": 1767715052.990903, "llm_end": 1767715117.3611991, "prefill_time": 0.9507153034210205, "decode_time": 64.3702962398529, "llm_total_time": 65.32101154327393}
+{"instance_id": "psf__requests-1963", "step_id": 30, "tool_start": 1767715117.3675075, "tool_end": 1767715117.3734992, "tool_time": 0.005991697311401367}
+{"instance_id": "psf__requests-1963", "step_id": 32, "llm_start": 1767715117.389157, "llm_first_chunk": 1767715117.6552486, "llm_end": 1767715119.432035, "prefill_time": 0.26609158515930176, "decode_time": 1.7767863273620605, "llm_total_time": 2.0428779125213623}
+{"instance_id": "psf__requests-1963", "step_id": 31, "tool_start": 1767715119.4380965, "tool_end": 1767715120.0585682, "tool_time": 0.620471715927124}
+{"instance_id": "psf__requests-1963", "step_id": 33, "llm_start": 1767715120.0823119, "llm_first_chunk": 1767715120.5584865, "llm_end": 1767715125.0691085, "prefill_time": 0.47617459297180176, "decode_time": 4.510622024536133, "llm_total_time": 4.986796617507935}
+{"instance_id": "psf__requests-1963", "step_id": 32, "tool_start": 1767715125.078239, "tool_end": 1767715125.0827174, "tool_time": 0.00447845458984375}
+{"instance_id": "psf__requests-1963", "step_id": 34, "llm_start": 1767715125.1076682, "llm_first_chunk": 1767715125.3816764, "llm_end": 1767715127.2144444, "prefill_time": 0.27400827407836914, "decode_time": 1.8327679634094238, "llm_total_time": 2.106776237487793}
+{"instance_id": "psf__requests-1963", "step_id": 33, "tool_start": 1767715127.2207222, "tool_end": 1767715127.8397672, "tool_time": 0.6190450191497803}
+{"instance_id": "psf__requests-1963", "step_id": 35, "llm_start": 1767715127.8663847, "llm_first_chunk": 1767715128.2166436, "llm_end": 1767715130.1799543, "prefill_time": 0.35025882720947266, "decode_time": 1.963310718536377, "llm_total_time": 2.3135695457458496}
+{"instance_id": "psf__requests-1963", "step_id": 34, "tool_start": 1767715130.1875908, "tool_end": 1767715133.8232424, "tool_time": 3.6356515884399414}
+{"instance_id": "psf__requests-1963", "step_id": 36, "llm_start": 1767715133.8420393, "llm_first_chunk": 1767715134.140526, "llm_end": 1767715136.4679596, "prefill_time": 0.29848670959472656, "decode_time": 2.3274335861206055, "llm_total_time": 2.625920295715332}
+{"instance_id": "psf__requests-1963", "step_id": 35, "tool_start": 1767715136.4730792, "tool_end": 1767715137.0926526, "tool_time": 0.6195733547210693}
+{"instance_id": "psf__requests-1963", "step_id": 37, "llm_start": 1767715137.1105072, "llm_first_chunk": 1767715137.3424518, "llm_end": 1767715149.45481, "prefill_time": 0.23194456100463867, "decode_time": 12.112358093261719, "llm_total_time": 12.344302654266357}
+{"instance_id": "psf__requests-1963", "step_id": 36, "tool_start": 1767715150.0193195, "tool_end": 1767715150.6389558, "tool_time": 0.6196362972259521}
+{"instance_id": "psf__requests-1963", "step_id": 37, "tool_start": 1767715150.6398773, "tool_end": 1767715151.2605715, "tool_time": 0.6206941604614258}
+{"instance_id": "psf__requests-1963", "step_id": 38, "tool_start": 1767715151.261607, "tool_end": 1767715151.8858187, "tool_time": 0.6242117881774902}
+{"instance_id": "psf__requests-1963", "step_id": 39, "tool_start": 1767715151.8864226, "tool_end": 1767715152.504159, "tool_time": 0.6177363395690918}
+{"instance_id": "psf__requests-1963", "step_id": 40, "tool_start": 1767715152.5049062, "tool_end": 1767715153.126779, "tool_time": 0.6218729019165039}
+{"instance_id": "psf__requests-1963", "step_id": 41, "tool_start": 1767715153.1273687, "tool_end": 1767715153.7472918, "tool_time": 0.6199231147766113}
+{"instance_id": "psf__requests-1963", "step_id": 42, "tool_start": 1767715153.7479744, "tool_end": 1767715153.7506506, "tool_time": 0.002676248550415039}

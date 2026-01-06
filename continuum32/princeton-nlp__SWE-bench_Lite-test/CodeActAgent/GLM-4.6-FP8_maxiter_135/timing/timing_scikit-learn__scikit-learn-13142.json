@@ -1,0 +1,12 @@
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716280.9290774, "tool_end": 1767716281.5481668, "tool_time": 0.6190893650054932}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716281.5487583, "tool_end": 1767716282.1657095, "tool_time": 0.6169512271881104}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716282.1662807, "tool_end": 1767716282.782747, "tool_time": 0.6164662837982178}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716282.7932997, "tool_end": 1767716283.4123917, "tool_time": 0.6190919876098633}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716283.4279437, "tool_end": 1767716284.045156, "tool_time": 0.6172122955322266}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716284.0458584, "tool_end": 1767716285.6668718, "tool_time": 1.6210134029388428}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716285.6697803, "tool_end": 1767716286.2881453, "tool_time": 0.6183650493621826}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716286.2890115, "tool_end": 1767716286.905176, "tool_time": 0.6161644458770752}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716286.9077613, "tool_end": 1767716287.526743, "tool_time": 0.6189815998077393}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 0, "tool_start": 1767716287.5272806, "tool_end": 1767716288.1437929, "tool_time": 0.6165122985839844}
+{"instance_id": "scikit-learn__scikit-learn-13142", "env_prepare_start": 1767715687.914558, "env_prepare_end": 1767716288.144728, "env_prepare_time": 600.2301700115204}
+{"instance_id": "scikit-learn__scikit-learn-13142", "step_id": 1, "llm_start": 1767716288.17252, "llm_first_chunk": 1767716288.6065083, "llm_end": 1767716293.5497172, "prefill_time": 0.4339883327484131, "decode_time": 4.943208932876587, "llm_total_time": 5.377197265625}

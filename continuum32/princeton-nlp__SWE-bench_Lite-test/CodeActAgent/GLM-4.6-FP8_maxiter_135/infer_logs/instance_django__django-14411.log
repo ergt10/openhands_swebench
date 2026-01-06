@@ -1,0 +1,1269 @@
+2026-01-06 14:58:54,117 - INFO - [LLM registry 10b569dd-058c-482b-aa57-d5a5c621cafe]: Registering service for agent
+2026-01-06 14:58:54,152 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_f160zvdz1ciohahw_v008aov5t6vw3gr5
+2026-01-06 15:04:02,199 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_f160zvdz1ciohahw_v008aov5t6vw3gr5] build finished.
+2026-01-06 15:04:02,206 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_f160zvdz1ciohahw_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_f160zvdz1ciohahw]
+2026-01-06 15:04:02,208 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_f160zvdz1ciohahw_v008aov5t6vw3gr5, oh_v1.0.0_f160zvdz1ciohahw] built successfully
+2026-01-06 15:04:02,278 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_f160zvdz1ciohahw_v008aov5t6vw3gr5
+2026-01-06 15:04:02,554 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '35898', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 15:04:02,848 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Container started: openhands-runtime-0a1d3b49-ace7-49-b4fb0ef7f25690d. VSCode URL: None
+2026-01-06 15:04:02,848 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Waiting for client to become ready at http://localhost:35898...
+2026-01-06 15:04:28,916 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Runtime is ready.
+2026-01-06 15:04:32,119 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 15:04:32,124 - INFO - ------------------------------
+2026-01-06 15:04:32,125 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 15:04:32,125 - INFO - ------------------------------
+2026-01-06 15:04:32,125 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-14411' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 15:04:32,862 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:32,889 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 15:04:33,522 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:33,524 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 15:04:34,150 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:34,172 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 15:04:34,800 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-14411
+export OPENHANDS_EVAL_JOB_ID=3073779194
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-14411
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:34,804 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 15:04:35,451 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:35,451 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 15:04:38,109 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__4.0
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:38,109 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:04:38,750 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:38,751 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 15:04:40,425 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (6462/6462), done.
+HEAD is now at fa4e963ee7 Doc'd that HttpRequest.path doesn't contain a query string.
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:40,425 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 15:04:41,090 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:41,090 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 15:04:41,258 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:04:41,259 - INFO - ------------------------------
+2026-01-06 15:04:41,259 - INFO - END Runtime Initialization Fn
+2026-01-06 15:04:41,259 - INFO - ------------------------------
+2026-01-06 15:04:41,262 - INFO - [LLM registry 66567020-d3d5-4c12-a4c2-88ccdcdf9355]: Registering service for agent
+2026-01-06 15:04:41,321 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 15:04:41,359 - INFO - [runtime 0a1d3b49-ace7-49-b4fb0ef7f25690d] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 15:04:41,365 - INFO - Loading user workspace microagents: []
+2026-01-06 15:04:41,373 - INFO - AgentController 0a1d3b49-ace7-49-b4fb0ef7f25690d - created new state. start_id: 0
+2026-01-06 15:04:41,401 - INFO - [Agent Controller 0a1d3b49-ace7-49-b4fb0ef7f25690d] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 15:04:41,404 - INFO - Saved conversation stats
+2026-01-06 15:28:03,441 - WARNING - Control flag limits hit
+2026-01-06 15:28:03,441 - ERROR - RuntimeError: Agent reached maximum iteration. Current iteration: 135, max iteration: 135
+2026-01-06 15:28:03,442 - INFO - [Agent Controller 0a1d3b49-ace7-49-b4fb0ef7f25690d] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.ERROR
+2026-01-06 15:28:03,447 - INFO - Saved conversation stats
+2026-01-06 15:28:03,447 - INFO - [Agent Controller 0a1d3b49-ace7-49-b4fb0ef7f25690d] Setting agent(CodeActAgent) state from AgentState.ERROR to AgentState.ERROR
+2026-01-06 15:28:04,222 - INFO - ------------------------------
+2026-01-06 15:28:04,223 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:28:04,223 - INFO - ------------------------------
+2026-01-06 15:28:04,223 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__4.0
+2026-01-06 15:28:04,844 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:04,844 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:28:05,463 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:05,463 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:28:06,082 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:06,082 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:28:06,722 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:06,722 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:28:07,346 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:07,346 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached fa4e963ee7e6876581b5432363603571839ba00c > patch.diff
+2026-01-06 15:28:07,964 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "a183d6c6f0bb",
+  "working_dir": "/workspace/django__django__4.0",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__4.0]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:28:07,964 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:28:07,968 - INFO - [Read from /workspace/django__django__4.0/patch.diff is successful.]
+diff --git a/django/contrib/auth/forms.py b/django/contrib/auth/forms.py
+index 20d8922799..5827445e2d 100644
+--- a/django/contrib/auth/forms.py
++++ b/django/contrib/auth/forms.py
+@@ -50,6 +50,14 @@ class ReadOnlyPasswordHashWidget(forms.Widget):
+         context['summary'] = summary
+         return context
+ 
++    def id_for_label(self, id_):
++        """
++        Return None for this widget since it doesn't render a labelable element.
++        The widget only renders a div with password hash information, not an input
++        element that can be focused, so the label shouldn't have a 'for' attribute.
++        """
++        return None
++
+ 
+ class ReadOnlyPasswordHashField(forms.Field):
+     widget = ReadOnlyPasswordHashWidget
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..a23df33a13
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,131 @@
++#!/usr/bin/env python
++"""
++Script to reproduce the ReadOnlyPasswordHashWidget label issue.
++
++The issue: AdminReadonlyField.label_tag() generates a label with 'for' attribute
++even when the widget (ReadOnlyPasswordHashWidget) doesn't render a labelable element.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import ReadOnlyPasswordHashWidget, ReadOnlyPasswordHashField
++from django.contrib.auth.models import User
++from django.contrib.admin.helpers import AdminReadonlyField
++from django import forms
++
++def test_readonly_password_hash_label_issue():
++    """Test that demonstrates the label 'for' attribute issue."""
++    print("=== Testing ReadOnlyPasswordHashWidget label issue ===")
++    
++    from django.contrib.auth.forms import UserChangeForm
++    
++    # Create a user instance
++    user = User(username='testuser')
++    user.password = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++    user.save()
++    
++    # Create the actual UserChangeForm that's used in admin
++    form = UserChangeForm(instance=user)
++    
++    # Create a mock model_admin
++    class MockModelAdmin:
++        def get_empty_value_display(self):
++            return 'None'
++    
++    # Test regular field label generation (for comparison)
++    username_field = form['username']
++    username_label = username_field.label_tag()
++    print(f"Username field label: {username_label}")
++    username_has_for = 'for=' in username_label
++    print(f"Username field has 'for': {username_has_for}")
++    
++    # Test password field label generation (this is the ReadOnlyPasswordHashField)
++    password_field = form['password']
++    password_label = password_field.label_tag()
++    print(f"Password field label: {password_label}")
++    password_has_for = 'for=' in password_label
++    print(f"Password field has 'for': {password_has_for}")
++    
++    # Get the password field widget rendering
++    password_widget_html = password_field.as_widget()
++    print(f"Password widget HTML: {password_widget_html}")
++    
++    # Check if widget contains a labelable element (input, select, textarea, button, etc.)
++    labelable_elements = ['<input', '<select', '<textarea', '<button', '<keygen']
++    has_labelable_element = any(elem in password_widget_html for elem in labelable_elements)
++    print(f"Password widget contains labelable element: {has_labelable_element}")
++    
++    # The issue: label has 'for' but no labelable element exists
++    if password_has_for and not has_labelable_element:
++        print("\n❌ ISSUE CONFIRMED: Label has 'for' attribute but no labelable element exists!")
++        return False
++    else:
++        print("\n✅ No issue found")
++        return True
++
++def test_widget_rendering():
++    """Test the widget rendering directly."""
++    print("\n=== Testing widget rendering directly ===")
++    
++    widget = ReadOnlyPasswordHashWidget()
++    value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++    
++    # Render with id attribute (this is what would be targeted by label 'for')
++    html = widget.render('password', value, {'id': 'id_password'})
++    print(f"Widget HTML: {html}")
++    
++    # Check if widget renders a labelable element
++    labelable_elements = ['<input', '<select', '<textarea', '<button', '<keygen']
++    has_labelable_element = any(elem in html for elem in labelable_elements)
++    print(f"Widget renders labelable element: {has_labelable_element}")
++    
++    return has_labelable_element
++
++if __name__ == '__main__':
++    print("Reproducing ReadOnlyPasswordHashWidget label issue...\n")
++    
++    # Test the main issue
++    issue_exists = not test_readonly_password_hash_label_issue()
++    
++    # Test widget rendering
++    widget_has_labelable = test_widget_rendering()
++    
++    print(f"\n=== SUMMARY ===")
++    print(f"Issue exists: {issue_exists}")
++    print(f"Widget has labelable element: {widget_has_labelable}")
++    
++    if issue_exists:
++        print("\nThe issue is confirmed: AdminReadonlyField generates labels with 'for' attributes")
++        print("for ReadOnlyPasswordHashWidget, but the widget doesn't render labelable elements.")
++        sys.exit(1)
++    else:
++        print("\nNo issue found.")
++        sys.exit(0)
+diff --git a/test_comprehensive.py b/test_comprehensive.py
+new file mode 100644
+index 0000000000..d5da4b343f
+--- /dev/null
++++ b/test_comprehensive.py
+@@ -0,0 +1,169 @@
++#!/usr/bin/env python
++"""
++Comprehensive test to verify the ReadOnlyPasswordHashWidget fix and existing functionality.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import (
++    ReadOnlyPasswordHashWidget, ReadOnlyPasswordHashField, UserChangeForm
++)
++from django.contrib.auth.models import User
++from django.test import TestCase, override_settings
++
++
++class ComprehensiveReadOnlyPasswordHashTest(TestCase):
++
++    def test_widget_id_for_label_returns_none(self):
++        """Test that id_for_label returns None to prevent 'for' attribute on labels."""
++        widget = ReadOnlyPasswordHashWidget()
++        self.assertIsNone(widget.id_for_label('id_password'))
++        self.assertIsNone(widget.id_for_label(None))
++        self.assertIsNone(widget.id_for_label('any_id'))
++
++    def test_widget_rendering_with_valid_password(self):
++        """Test widget rendering with a valid password hash."""
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        html = widget.render('password', value, {'id': 'id_password'})
++        
++        # Should contain the div with id
++        self.assertIn('<div id="id_password">', html)
++        # Should contain algorithm info
++        self.assertIn('pbkdf2_sha256', html)
++        # Should contain iterations info
++        self.assertIn('100000', html)
++
++    def test_widget_rendering_with_none_value(self):
++        """Test widget rendering with None value."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value=None, attrs={})
++        self.assertIn("No password set.", html)
++
++    def test_widget_rendering_with_unusable_password(self):
++        """Test widget rendering with unusable password."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value='!', attrs={})
++        self.assertIn("No password set.", html)
++
++    def test_widget_rendering_with_invalid_password(self):
++        """Test widget rendering with invalid password format."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value='invalid_hash', attrs={})
++        self.assertIn("Invalid password format or unknown hashing algorithm.", html)
++
++    def test_user_change_form_password_field_label_no_for(self):
++        """Test that UserChangeForm password field label doesn't have 'for' attribute."""
++        user = User.objects.create_user(username='testuser', password='password123')
++        form = UserChangeForm(instance=user)
++        
++        password_field = form['password']
++        password_label = password_field.label_tag()
++        
++        # Label should exist but not have 'for' attribute
++        self.assertIn('<label>', password_label)
++        self.assertIn('Password', password_label)
++        self.assertNotIn('for=', password_label)
++
++    def test_user_change_form_other_fields_have_for(self):
++        """Test that other fields in UserChangeForm still have 'for' attributes."""
++        user = User.objects.create_user(username='testuser', password='password123')
++        form = UserChangeForm(instance=user)
++        
++        # Username field should have 'for' attribute
++        username_field = form['username']
++        username_label = username_field.label_tag()
++        self.assertIn('for="id_username"', username_label)
++        
++        # Email field should have 'for' attribute
++        email_field = form['email']
++        email_label = email_field.label_tag()
++        self.assertIn('for="id_email"', email_label)
++
++    def test_readonly_password_hash_field_properties(self):
++        """Test ReadOnlyPasswordHashField properties."""
++        field = ReadOnlyPasswordHashField()
++        
++        # Should use ReadOnlyPasswordHashWidget
++        self.assertIsInstance(field.widget, ReadOnlyPasswordHashWidget)
++        
++        # Should not be required
++        self.assertFalse(field.required)
++        
++        # Should be disabled
++        self.assertTrue(field.disabled)
++
++    def test_bug_19349_bound_password_field(self):
++        """Test the specific bug mentioned in the original issue."""
++        user = User.objects.get(username='testuser')
++        form = UserChangeForm(data={}, instance=user)
++        
++        # When rendering the bound password field,
++        # ReadOnlyPasswordHashWidget needs the initial
++        # value to render correctly
++        self.assertEqual(form.initial['password'], form['password'].value())
++
++    @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.PBKDF2PasswordHasher'])
++    def test_widget_rendering_with_specific_hasher(self):
++        """Test widget rendering with specific password hasher."""
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        
++        expected_html = (
++            '<div id="id_password">'
++            '<strong>algorithm</strong>: pbkdf2_sha256'
++            '<strong>iterations</strong>: 100000'
++            '<strong>salt</strong>: a6Pucb******'
++            '<strong>hash</strong>: WmCkn9**************************************'
++            '</div>'
++        )
++        
++        html = widget.render('name', value, {'id': 'id_password'})
++        
++        # Check that all expected parts are present
++        self.assertIn('<div id="id_password">', html)
++        self.assertIn('<strong>algorithm</strong>: pbkdf2_sha256', html)
++        self.assertIn('<strong>iterations</strong>: 100000', html)
++        self.assertIn('<strong>salt</strong>: a6Pucb******', html)
++        self.assertIn('<strong>hash</strong>: WmCkn9**************************************', html)
++        self.assertIn('</div>', html)
++
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the tests
++    suite = unittest.TestLoader().loadTestsFromTestCase(ComprehensiveReadOnlyPasswordHashTest)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    # Exit with appropriate code
++    sys.exit(0 if result.wasSuccessful() else 1)
+diff --git a/test_fix.py b/test_fix.py
+new file mode 100644
+index 0000000000..7acb8df134
+--- /dev/null
++++ b/test_fix.py
+@@ -0,0 +1,103 @@
++#!/usr/bin/env python
++"""
++Test script to verify the ReadOnlyPasswordHashWidget fix works correctly.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import ReadOnlyPasswordHashWidget
++from django.test import TestCase, override_settings
++
++
++class ReadOnlyPasswordHashTest(TestCase):
++
++    def test_bug_19349_render_with_none_value(self):
++        # Rendering the widget with value set to None
++        # mustn't raise an exception.
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value=None, attrs={})
++        self.assertIn("No password set.", html)
++
++    @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.PBKDF2PasswordHasher'])
++    def test_render(self):
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        self.assertHTMLEqual(
++            widget.render('name', value, {'id': 'id_password'}),
++            """
++            <div id="id_password">
++                <strong>algorithm</strong>: pbkdf2_sha256
++                <strong>iterations</strong>: 100000
++                <strong>salt</strong>: a6Pucb******
++                <strong>hash</strong>: WmCkn9**************************************
++            </div>
++            """
++        )
++
++    def test_id_for_label_returns_none(self):
++        """Test that id_for_label returns None to prevent 'for' attribute on labels."""
++        widget = ReadOnlyPasswordHashWidget()
++        self.assertIsNone(widget.id_for_label('id_password'))
++        self.assertIsNone(widget.id_for_label(None))
++
++    def test_label_without_for_attribute(self):
++        """Test that the widget's label doesn't have a 'for' attribute."""
++        from django.contrib.auth.forms import UserChangeForm
++        from django.contrib.auth.models import User
++        
++        # Create a user instance
++        user = User(username='testuser')
++        user.password = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        user.save()
++        
++        # Create the UserChangeForm
++        form = UserChangeForm(instance=user)
++        
++        # Get the password field label
++        password_field = form['password']
++        password_label = password_field.label_tag()
++        
++        # Verify the label doesn't have a 'for' attribute
++        self.assertNotIn('for=', password_label)
++        self.assertIn('<label>', password_label)
++        self.assertIn('Password', password_label)
++
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the tests
++    suite = unittest.TestLoader().loadTestsFromTestCase(ReadOnlyPasswordHashTest)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    # Exit with appropriate code
++    sys.exit(0 if result.wasSuccessful() else 1)
+
+2026-01-06 15:28:07,969 - INFO - ------------------------------
+2026-01-06 15:28:07,969 - INFO - END Runtime Completion Fn
+2026-01-06 15:28:07,969 - INFO - ------------------------------
+2026-01-06 15:28:07,969 - INFO - Got git diff for instance django__django-14411:
+--------
+diff --git a/django/contrib/auth/forms.py b/django/contrib/auth/forms.py
+index 20d8922799..5827445e2d 100644
+--- a/django/contrib/auth/forms.py
++++ b/django/contrib/auth/forms.py
+@@ -50,6 +50,14 @@ class ReadOnlyPasswordHashWidget(forms.Widget):
+         context['summary'] = summary
+         return context
+ 
++    def id_for_label(self, id_):
++        """
++        Return None for this widget since it doesn't render a labelable element.
++        The widget only renders a div with password hash information, not an input
++        element that can be focused, so the label shouldn't have a 'for' attribute.
++        """
++        return None
++
+ 
+ class ReadOnlyPasswordHashField(forms.Field):
+     widget = ReadOnlyPasswordHashWidget
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..a23df33a13
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,131 @@
++#!/usr/bin/env python
++"""
++Script to reproduce the ReadOnlyPasswordHashWidget label issue.
++
++The issue: AdminReadonlyField.label_tag() generates a label with 'for' attribute
++even when the widget (ReadOnlyPasswordHashWidget) doesn't render a labelable element.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import ReadOnlyPasswordHashWidget, ReadOnlyPasswordHashField
++from django.contrib.auth.models import User
++from django.contrib.admin.helpers import AdminReadonlyField
++from django import forms
++
++def test_readonly_password_hash_label_issue():
++    """Test that demonstrates the label 'for' attribute issue."""
++    print("=== Testing ReadOnlyPasswordHashWidget label issue ===")
++    
++    from django.contrib.auth.forms import UserChangeForm
++    
++    # Create a user instance
++    user = User(username='testuser')
++    user.password = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++    user.save()
++    
++    # Create the actual UserChangeForm that's used in admin
++    form = UserChangeForm(instance=user)
++    
++    # Create a mock model_admin
++    class MockModelAdmin:
++        def get_empty_value_display(self):
++            return 'None'
++    
++    # Test regular field label generation (for comparison)
++    username_field = form['username']
++    username_label = username_field.label_tag()
++    print(f"Username field label: {username_label}")
++    username_has_for = 'for=' in username_label
++    print(f"Username field has 'for': {username_has_for}")
++    
++    # Test password field label generation (this is the ReadOnlyPasswordHashField)
++    password_field = form['password']
++    password_label = password_field.label_tag()
++    print(f"Password field label: {password_label}")
++    password_has_for = 'for=' in password_label
++    print(f"Password field has 'for': {password_has_for}")
++    
++    # Get the password field widget rendering
++    password_widget_html = password_field.as_widget()
++    print(f"Password widget HTML: {password_widget_html}")
++    
++    # Check if widget contains a labelable element (input, select, textarea, button, etc.)
++    labelable_elements = ['<input', '<select', '<textarea', '<button', '<keygen']
++    has_labelable_element = any(elem in password_widget_html for elem in labelable_elements)
++    print(f"Password widget contains labelable element: {has_labelable_element}")
++    
++    # The issue: label has 'for' but no labelable element exists
++    if password_has_for and not has_labelable_element:
++        print("\n❌ ISSUE CONFIRMED: Label has 'for' attribute but no labelable element exists!")
++        return False
++    else:
++        print("\n✅ No issue found")
++        return True
++
++def test_widget_rendering():
++    """Test the widget rendering directly."""
++    print("\n=== Testing widget rendering directly ===")
++    
++    widget = ReadOnlyPasswordHashWidget()
++    value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++    
++    # Render with id attribute (this is what would be targeted by label 'for')
++    html = widget.render('password', value, {'id': 'id_password'})
++    print(f"Widget HTML: {html}")
++    
++    # Check if widget renders a labelable element
++    labelable_elements = ['<input', '<select', '<textarea', '<button', '<keygen']
++    has_labelable_element = any(elem in html for elem in labelable_elements)
++    print(f"Widget renders labelable element: {has_labelable_element}")
++    
++    return has_labelable_element
++
++if __name__ == '__main__':
++    print("Reproducing ReadOnlyPasswordHashWidget label issue...\n")
++    
++    # Test the main issue
++    issue_exists = not test_readonly_password_hash_label_issue()
++    
++    # Test widget rendering
++    widget_has_labelable = test_widget_rendering()
++    
++    print(f"\n=== SUMMARY ===")
++    print(f"Issue exists: {issue_exists}")
++    print(f"Widget has labelable element: {widget_has_labelable}")
++    
++    if issue_exists:
++        print("\nThe issue is confirmed: AdminReadonlyField generates labels with 'for' attributes")
++        print("for ReadOnlyPasswordHashWidget, but the widget doesn't render labelable elements.")
++        sys.exit(1)
++    else:
++        print("\nNo issue found.")
++        sys.exit(0)
+diff --git a/test_comprehensive.py b/test_comprehensive.py
+new file mode 100644
+index 0000000000..d5da4b343f
+--- /dev/null
++++ b/test_comprehensive.py
+@@ -0,0 +1,169 @@
++#!/usr/bin/env python
++"""
++Comprehensive test to verify the ReadOnlyPasswordHashWidget fix and existing functionality.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import (
++    ReadOnlyPasswordHashWidget, ReadOnlyPasswordHashField, UserChangeForm
++)
++from django.contrib.auth.models import User
++from django.test import TestCase, override_settings
++
++
++class ComprehensiveReadOnlyPasswordHashTest(TestCase):
++
++    def test_widget_id_for_label_returns_none(self):
++        """Test that id_for_label returns None to prevent 'for' attribute on labels."""
++        widget = ReadOnlyPasswordHashWidget()
++        self.assertIsNone(widget.id_for_label('id_password'))
++        self.assertIsNone(widget.id_for_label(None))
++        self.assertIsNone(widget.id_for_label('any_id'))
++
++    def test_widget_rendering_with_valid_password(self):
++        """Test widget rendering with a valid password hash."""
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        html = widget.render('password', value, {'id': 'id_password'})
++        
++        # Should contain the div with id
++        self.assertIn('<div id="id_password">', html)
++        # Should contain algorithm info
++        self.assertIn('pbkdf2_sha256', html)
++        # Should contain iterations info
++        self.assertIn('100000', html)
++
++    def test_widget_rendering_with_none_value(self):
++        """Test widget rendering with None value."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value=None, attrs={})
++        self.assertIn("No password set.", html)
++
++    def test_widget_rendering_with_unusable_password(self):
++        """Test widget rendering with unusable password."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value='!', attrs={})
++        self.assertIn("No password set.", html)
++
++    def test_widget_rendering_with_invalid_password(self):
++        """Test widget rendering with invalid password format."""
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value='invalid_hash', attrs={})
++        self.assertIn("Invalid password format or unknown hashing algorithm.", html)
++
++    def test_user_change_form_password_field_label_no_for(self):
++        """Test that UserChangeForm password field label doesn't have 'for' attribute."""
++        user = User.objects.create_user(username='testuser', password='password123')
++        form = UserChangeForm(instance=user)
++        
++        password_field = form['password']
++        password_label = password_field.label_tag()
++        
++        # Label should exist but not have 'for' attribute
++        self.assertIn('<label>', password_label)
++        self.assertIn('Password', password_label)
++        self.assertNotIn('for=', password_label)
++
++    def test_user_change_form_other_fields_have_for(self):
++        """Test that other fields in UserChangeForm still have 'for' attributes."""
++        user = User.objects.create_user(username='testuser', password='password123')
++        form = UserChangeForm(instance=user)
++        
++        # Username field should have 'for' attribute
++        username_field = form['username']
++        username_label = username_field.label_tag()
++        self.assertIn('for="id_username"', username_label)
++        
++        # Email field should have 'for' attribute
++        email_field = form['email']
++        email_label = email_field.label_tag()
++        self.assertIn('for="id_email"', email_label)
++
++    def test_readonly_password_hash_field_properties(self):
++        """Test ReadOnlyPasswordHashField properties."""
++        field = ReadOnlyPasswordHashField()
++        
++        # Should use ReadOnlyPasswordHashWidget
++        self.assertIsInstance(field.widget, ReadOnlyPasswordHashWidget)
++        
++        # Should not be required
++        self.assertFalse(field.required)
++        
++        # Should be disabled
++        self.assertTrue(field.disabled)
++
++    def test_bug_19349_bound_password_field(self):
++        """Test the specific bug mentioned in the original issue."""
++        user = User.objects.get(username='testuser')
++        form = UserChangeForm(data={}, instance=user)
++        
++        # When rendering the bound password field,
++        # ReadOnlyPasswordHashWidget needs the initial
++        # value to render correctly
++        self.assertEqual(form.initial['password'], form['password'].value())
++
++    @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.PBKDF2PasswordHasher'])
++    def test_widget_rendering_with_specific_hasher(self):
++        """Test widget rendering with specific password hasher."""
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        
++        expected_html = (
++            '<div id="id_password">'
++            '<strong>algorithm</strong>: pbkdf2_sha256'
++            '<strong>iterations</strong>: 100000'
++            '<strong>salt</strong>: a6Pucb******'
++            '<strong>hash</strong>: WmCkn9**************************************'
++            '</div>'
++        )
++        
++        html = widget.render('name', value, {'id': 'id_password'})
++        
++        # Check that all expected parts are present
++        self.assertIn('<div id="id_password">', html)
++        self.assertIn('<strong>algorithm</strong>: pbkdf2_sha256', html)
++        self.assertIn('<strong>iterations</strong>: 100000', html)
++        self.assertIn('<strong>salt</strong>: a6Pucb******', html)
++        self.assertIn('<strong>hash</strong>: WmCkn9**************************************', html)
++        self.assertIn('</div>', html)
++
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the tests
++    suite = unittest.TestLoader().loadTestsFromTestCase(ComprehensiveReadOnlyPasswordHashTest)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    # Exit with appropriate code
++    sys.exit(0 if result.wasSuccessful() else 1)
+diff --git a/test_fix.py b/test_fix.py
+new file mode 100644
+index 0000000000..7acb8df134
+--- /dev/null
++++ b/test_fix.py
+@@ -0,0 +1,103 @@
++#!/usr/bin/env python
++"""
++Test script to verify the ReadOnlyPasswordHashWidget fix works correctly.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.auth',
++            'django.contrib.contenttypes',
++            'django.contrib.admin',
++        ],
++        SECRET_KEY='test-secret-key',
++        USE_TZ=True,
++    )
++
++django.setup()
++
++# Create database tables
++from django.core.management import call_command
++call_command('migrate', verbosity=0, interactive=False)
++
++from django.contrib.auth.forms import ReadOnlyPasswordHashWidget
++from django.test import TestCase, override_settings
++
++
++class ReadOnlyPasswordHashTest(TestCase):
++
++    def test_bug_19349_render_with_none_value(self):
++        # Rendering the widget with value set to None
++        # mustn't raise an exception.
++        widget = ReadOnlyPasswordHashWidget()
++        html = widget.render(name='password', value=None, attrs={})
++        self.assertIn("No password set.", html)
++
++    @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.PBKDF2PasswordHasher'])
++    def test_render(self):
++        widget = ReadOnlyPasswordHashWidget()
++        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        self.assertHTMLEqual(
++            widget.render('name', value, {'id': 'id_password'}),
++            """
++            <div id="id_password">
++                <strong>algorithm</strong>: pbkdf2_sha256
++                <strong>iterations</strong>: 100000
++                <strong>salt</strong>: a6Pucb******
++                <strong>hash</strong>: WmCkn9**************************************
++            </div>
++            """
++        )
++
++    def test_id_for_label_returns_none(self):
++        """Test that id_for_label returns None to prevent 'for' attribute on labels."""
++        widget = ReadOnlyPasswordHashWidget()
++        self.assertIsNone(widget.id_for_label('id_password'))
++        self.assertIsNone(widget.id_for_label(None))
++
++    def test_label_without_for_attribute(self):
++        """Test that the widget's label doesn't have a 'for' attribute."""
++        from django.contrib.auth.forms import UserChangeForm
++        from django.contrib.auth.models import User
++        
++        # Create a user instance
++        user = User(username='testuser')
++        user.password = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        user.save()
++        
++        # Create the UserChangeForm
++        form = UserChangeForm(instance=user)
++        
++        # Get the password field label
++        password_field = form['password']
++        password_label = password_field.label_tag()
++        
++        # Verify the label doesn't have a 'for' attribute
++        self.assertNotIn('for=', password_label)
++        self.assertIn('<label>', password_label)
++        self.assertIn('Password', password_label)
++
++
++if __name__ == '__main__':
++    import unittest
++    
++    # Run the tests
++    suite = unittest.TestLoader().loadTestsFromTestCase(ReadOnlyPasswordHashTest)
++    runner = unittest.TextTestRunner(verbosity=2)
++    result = runner.run(suite)
++    
++    # Exit with appropriate code
++    sys.exit(0 if result.wasSuccessful() else 1)
+--------
+2026-01-06 15:28:11,756 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.matplotlib_1776_matplotlib-23314:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:28:11,756 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:28:11,756 - INFO - Logging LLM completions for instance matplotlib__matplotlib-23314 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/matplotlib__matplotlib-23314
+2026-01-06 15:28:11,757 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:28:11,757 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.

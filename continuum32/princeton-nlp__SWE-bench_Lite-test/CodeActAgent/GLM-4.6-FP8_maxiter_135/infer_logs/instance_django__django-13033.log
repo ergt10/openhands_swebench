@@ -1,0 +1,1270 @@
+2026-01-06 14:42:54,995 - INFO - [LLM registry 46e65120-b35e-4995-a075-aae92c7a6529]: Registering service for agent
+2026-01-06 14:42:55,032 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_70ezah4scyyqi1kv_v008aov5t6vw3gr5
+2026-01-06 14:55:27,216 - INFO - Image [ghcr.io/openhands/runtime:oh_v1.0.0_70ezah4scyyqi1kv_v008aov5t6vw3gr5] build finished.
+2026-01-06 14:55:27,222 - INFO - Re-tagged image [ghcr.io/openhands/runtime:oh_v1.0.0_70ezah4scyyqi1kv_v008aov5t6vw3gr5] with more generic tag [oh_v1.0.0_70ezah4scyyqi1kv]
+2026-01-06 14:55:27,224 - INFO - Image ghcr.io/openhands/runtime with tags [oh_v1.0.0_70ezah4scyyqi1kv_v008aov5t6vw3gr5, oh_v1.0.0_70ezah4scyyqi1kv] built successfully
+2026-01-06 14:55:27,260 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_70ezah4scyyqi1kv_v008aov5t6vw3gr5
+2026-01-06 14:55:27,357 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '32104', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-06 14:55:27,862 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Container started: openhands-runtime-4bc69a97-e4bb-4a-65dc4e513243ac7. VSCode URL: None
+2026-01-06 14:55:27,862 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Waiting for client to become ready at http://localhost:32104...
+2026-01-06 14:56:00,149 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Runtime is ready.
+2026-01-06 14:56:03,279 - INFO - Successfully configured git: name=openhands, email=openhands@all-hands.dev
+2026-01-06 14:56:03,280 - INFO - ------------------------------
+2026-01-06 14:56:03,281 - INFO - BEGIN Runtime Initialization Fn
+2026-01-06 14:56:03,281 - INFO - ------------------------------
+2026-01-06 14:56:03,281 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+echo 'export SWE_INSTANCE_ID=django__django-13033' >> ~/.bashrc && echo 'export PIP_CACHE_DIR=~/.cache/pip' >> ~/.bashrc && echo "alias git='git --no-pager'" >> ~/.bashrc && git config --global core.pager "" && git config --global diff.binary false
+2026-01-06 14:56:03,903 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:03,903 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+export USER=$(whoami); echo USER=${USER} 
+2026-01-06 14:56:04,522 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+USER=root
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:04,522 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+mkdir -p /swe_util/eval_data/instances
+2026-01-06 14:56:05,140 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:05,148 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cat ~/.bashrc
+2026-01-06 14:56:05,766 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed
+
+. "/openhands/bin/env"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/openhands/micromamba/bin:$PATH"
+export PLAYWRIGHT_BROWSERS_PATH=/opt/playwright-browsers
+eval "$(/openhands/micromamba/bin/micromamba shell hook --shell bash)"
+micromamba activate openhands 2>/dev/null || true
+export ENABLE_AUTO_LINT=true
+export NO_CHANGE_TIMEOUT_SECONDS=30
+export OPENHANDS_EVAL_INSTANCE_ID=django__django-13033
+export OPENHANDS_EVAL_JOB_ID=4056987185
+export OPENHANDS_TIMING_DIR=./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/timing
+export SWE_INSTANCE_ID=django__django-13033
+export PIP_CACHE_DIR=~/.cache/pip
+alias git='git --no-pager'
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:05,767 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source ~/.bashrc
+2026-01-06 14:56:06,386 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/openhands/micromamba/envs/openhands/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /openhands/micromamba/envs/openhands/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:06,386 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+source /swe_util/instance_swe_entry.sh
+2026-01-06 14:56:09,521 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+WORKSPACE_NAME: django__django__3.2
+[The command completed with exit code 0.]
+[Current working directory: /workspace]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:09,521 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.2
+2026-01-06 14:56:10,140 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:10,141 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git reset --hard
+2026-01-06 14:56:11,767 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+Updating files: 100% (6262/6262), done.
+HEAD is now at bc522a9521 SWE-bench
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:11,768 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for remote_name in $(git remote); do git remote remove "${remote_name}"; done
+2026-01-06 14:56:12,389 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:12,389 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+which python
+2026-01-06 14:56:13,009 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+/opt/miniconda3/envs/testbed/bin/python
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 14:56:13,009 - INFO - ------------------------------
+2026-01-06 14:56:13,010 - INFO - END Runtime Initialization Fn
+2026-01-06 14:56:13,010 - INFO - ------------------------------
+2026-01-06 14:56:13,012 - INFO - [LLM registry 33eea863-6444-41a9-ace8-53de17f333b9]: Registering service for agent
+2026-01-06 14:56:13,023 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Selected repo: None, loading microagents from /workspace/.openhands/microagents (inside runtime)
+2026-01-06 14:56:13,026 - INFO - [runtime 4bc69a97-e4bb-4a-65dc4e513243ac7] Attempting to list files in repository microagents directory: /workspace/.openhands/microagents
+2026-01-06 14:56:13,028 - INFO - Loading user workspace microagents: []
+2026-01-06 14:56:13,029 - INFO - AgentController 4bc69a97-e4bb-4a-65dc4e513243ac7 - created new state. start_id: 0
+2026-01-06 14:56:13,034 - INFO - [Agent Controller 4bc69a97-e4bb-4a-65dc4e513243ac7] Setting agent(CodeActAgent) state from AgentState.LOADING to AgentState.RUNNING
+2026-01-06 14:56:13,036 - INFO - Saved conversation stats
+2026-01-06 15:06:20,397 - INFO - [Agent Controller 4bc69a97-e4bb-4a-65dc4e513243ac7] Setting agent(CodeActAgent) state from AgentState.RUNNING to AgentState.FINISHED
+2026-01-06 15:06:20,401 - INFO - Saved conversation stats
+2026-01-06 15:06:20,775 - INFO - ------------------------------
+2026-01-06 15:06:20,776 - INFO - BEGIN Runtime Completion Fn
+2026-01-06 15:06:20,777 - INFO - ------------------------------
+2026-01-06 15:06:20,777 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+cd /workspace/django__django__3.2
+2026-01-06 15:06:21,402 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:21,402 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git config --global core.pager ""
+2026-01-06 15:06:22,024 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:22,024 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+find . -type d -name .git -not -path "./.git"
+2026-01-06 15:06:22,644 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:22,651 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git add -A
+2026-01-06 15:06:23,270 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:23,270 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+for file in $(git status --porcelain | grep -E "^(M| M|\?\?|A| A)" | cut -c4-); do
+        if [ -f "$file" ] && (file "$file" | grep -q "executable" || git check-attr binary "$file" | grep -q "binary: set"); then
+            git rm -f "$file" 2>/dev/null || rm -f "$file"
+            echo "Removed: $file"
+        fi
+    done
+2026-01-06 15:06:23,893 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+bash: file: command not found
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:23,894 - INFO - **CmdRunAction (source=None, is_input=False)**
+COMMAND:
+git diff --no-color --cached a59de6e89e8dc1f3e71c9a5a5bbceb373ea5247e > patch.diff
+2026-01-06 15:06:24,513 - INFO - **CmdOutputObservation (source=None, exit code=0, metadata={
+  "exit_code": 0,
+  "pid": -1,
+  "username": "root",
+  "hostname": "7a2088476749",
+  "working_dir": "/workspace/django__django__3.2",
+  "py_interpreter_path": "/opt/miniconda3/envs/testbed/bin/python",
+  "prefix": "",
+  "suffix": "\n[The command completed with exit code 0.]"
+})**
+--BEGIN AGENT OBSERVATION--
+
+[The command completed with exit code 0.]
+[Current working directory: /workspace/django__django__3.2]
+[Python interpreter: /opt/miniconda3/envs/testbed/bin/python]
+[Command finished with exit code 0]
+--END AGENT OBSERVATION--
+2026-01-06 15:06:24,514 - INFO - FileReadAction(path='patch.diff', start=0, end=-1, thought='', action=<ActionType.READ: 'read'>, security_risk=<ActionSecurityRisk.UNKNOWN: -1>, impl_source=<FileReadSource.DEFAULT: 'default'>, view_range=None)
+2026-01-06 15:06:24,518 - INFO - [Read from /workspace/django__django__3.2/patch.diff is successful.]
+diff --git a/comprehensive_test.py b/comprehensive_test.py
+new file mode 100644
+index 0000000000..4f7bdc195c
+--- /dev/null
++++ b/comprehensive_test.py
+@@ -0,0 +1,161 @@
++#!/usr/bin/env python
++"""
++Comprehensive test for the self-referencing foreign key ordering fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class OneModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
++    oneval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++        ordering = ("-id",)
++
++
++class TwoModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)
++    twoval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++class ThreeModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    other = models.ForeignKey(OneModel, on_delete=models.CASCADE, related_name='threes')
++    threeval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++def test_case(description, qs, expected_ordering, expected_joins=1):
++    """Test a queryset and verify its SQL."""
++    sql = str(qs.query)
++    join_count = sql.count('JOIN')
++    has_expected_ordering = expected_ordering in sql
++    
++    print(f"{description}:")
++    print(f"  SQL: {sql}")
++    print(f"  Expected ordering '{expected_ordering}': {'✓' if has_expected_ordering else '✗'}")
++    print(f"  Expected {expected_joins} JOINs: {'✓' if join_count == expected_joins else '✗'} (found {join_count})")
++    
++    success = has_expected_ordering and join_count == expected_joins
++    print(f"  Result: {'✓ PASS' if success else '✗ FAIL'}")
++    print()
++    return success
++
++
++def main():
++    print("=== Comprehensive Test for Self-Referencing Foreign Key Ordering Fix ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(OneModel)
++        schema_editor.create_model(TwoModel)
++        schema_editor.create_model(ThreeModel)
++    
++    all_tests_passed = True
++    
++    # Test 1: Basic _id field ordering (the main fix)
++    all_tests_passed &= test_case(
++        "Test 1: order_by('record__root_id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" ASC',
++        1
++    )
++    
++    # Test 2: Descending _id field ordering
++    all_tests_passed &= test_case(
++        "Test 2: order_by('-record__root_id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("-record__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" DESC',
++        1
++    )
++    
++    # Test 3: Relationship ordering (should still use default ordering)
++    all_tests_passed &= test_case(
++        "Test 3: order_by('record__root')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__root"),
++        'ORDER BY T3."id" DESC',
++        2  # Should have extra JOIN for relationship ordering
++    )
++    
++    # Test 4: Relationship ordering with different related_name
++    all_tests_passed &= test_case(
++        "Test 4: order_by('other__root')",
++        ThreeModel.objects.filter(other__oneval__in=[1, 2, 3]).order_by("other__root"),
++        'ORDER BY T3."id" DESC',
++        2  # Should have extra JOIN for relationship ordering
++    )
++    
++    # Test 5: _id field ordering with different related_name
++    all_tests_passed &= test_case(
++        "Test 5: order_by('other__root_id')",
++        ThreeModel.objects.filter(other__oneval__in=[1, 2, 3]).order_by("other__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" ASC',
++        1
++    )
++    
++    # Test 6: Direct field ordering (should work normally)
++    all_tests_passed &= test_case(
++        "Test 6: order_by('record__oneval')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__oneval"),
++        'ORDER BY "test_app_onemodel"."oneval" ASC',
++        1
++    )
++    
++    # Test 7: Primary key ordering (Django optimizes this to use local column)
++    all_tests_passed &= test_case(
++        "Test 7: order_by('record__pk')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__pk"),
++        'ORDER BY "test_app_twomodel"."record_id" ASC',
++        1
++    )
++    
++    # Test 8: id field ordering (Django optimizes this to use local column)
++    all_tests_passed &= test_case(
++        "Test 8: order_by('record__id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__id"),
++        'ORDER BY "test_app_twomodel"."record_id" ASC',
++        1
++    )
++    
++    print("=== Summary ===")
++    print(f"All tests passed: {'✓ YES' if all_tests_passed else '✗ NO'}")
++    
++    return all_tests_passed
++
++
++if __name__ == "__main__":
++    success = main()
++    sys.exit(0 if success else 1)
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index abbb1e37cb..0d463d4b80 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -727,7 +727,10 @@ class SQLCompiler:
+         # If we get to this point and the field is a relation to another model,
+         # append the default ordering for that model unless it is the pk
+         # shortcut or the attribute name of the field that is specified.
+-        if field.is_relation and opts.ordering and getattr(field, 'attname', None) != name and name != 'pk':
++        if (field.is_relation and opts.ordering and 
++            getattr(field, 'attname', None) != name and 
++            name != 'pk' and 
++            not name.endswith('_id')):
+             # Firstly, avoid infinite loops.
+             already_seen = already_seen or set()
+             join_tuple = tuple(getattr(self.query.alias_map[j], 'join_cols', None) for j in joins)
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..0a3adf2cbf
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,98 @@
++#!/usr/bin/env python
++"""
++Reproduction script for self-referencing foreign key ordering issue.
++
++This script reproduces the bug described in the issue where:
++1. order_by("record__root_id") generates incorrect SQL with DESCENDING sort
++2. Unnecessary extra JOIN is created for self-referencing foreign keys
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class OneModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
++    oneval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++        ordering = ("-id",)
++
++
++class TwoModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)
++    twoval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++def main():
++    print("=== Reproducing Self-Referencing Foreign Key Ordering Issue ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(OneModel)
++        schema_editor.create_model(TwoModel)
++    
++    print("1. Testing order_by('record__root_id') - PROBLEMATIC CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("record__root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("2. Testing order_by('record__root__id') - WORKING CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("record__root__id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("3. Testing order_by('-record__root_id') - PROBLEMATIC CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("-record__root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("4. Testing annotate workaround - WORKING CASE:")
++    from django.db.models import F
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.annotate(root_id=F("record__root_id"))
++    qs = qs.order_by("root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("=== Analysis ===")
++    print("Expected behavior for case 1:")
++    print("- Should ORDER BY orion_onemodel.root_id ASC (not DESC)")
++    print("- Should have only one INNER JOIN (not LEFT OUTER JOIN)")
++    print("- Should not inherit the model's default ordering")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/test_edge_cases.py b/test_edge_cases.py
+new file mode 100644
+index 0000000000..edb2915e61
+--- /dev/null
++++ b/test_edge_cases.py
+@@ -0,0 +1,149 @@
++#!/usr/bin/env python
++"""
++Edge case tests for the self-referencing foreign key ordering fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class ModelA(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    name = models.CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        ordering = ('-name',)
++
++
++class ModelB(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    ref_a = models.ForeignKey(ModelA, on_delete=models.CASCADE)
++    custom_id_field = models.BigIntegerField()
++    
++    class Meta:
++        app_label = 'test_app'
++
++
++class ModelC(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    self_ref = models.ForeignKey("ModelC", on_delete=models.CASCADE, null=True)
++    another_self_ref = models.ForeignKey("ModelC", on_delete=models.CASCADE, null=True, related_name='other_refs')
++    
++    class Meta:
++        app_label = 'test_app'
++        ordering = ('-id',)
++
++
++def test_edge_case(description, qs, expected_contains):
++    """Test a queryset and verify its SQL contains expected string."""
++    sql = str(qs.query)
++    contains_expected = expected_contains in sql
++    
++    print(f"{description}:")
++    print(f"  SQL: {sql}")
++    print(f"  Expected to contain '{expected_contains}': {'✓' if contains_expected else '✗'}")
++    print(f"  Result: {'✓ PASS' if contains_expected else '✗ FAIL'}")
++    print()
++    return contains_expected
++
++
++def main():
++    print("=== Edge Case Tests for Self-Referencing Foreign Key Ordering Fix ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(ModelA)
++        schema_editor.create_model(ModelB)
++        schema_editor.create_model(ModelC)
++    
++    all_tests_passed = True
++    
++    # Test 1: Custom _id field (not a foreign key, so default ordering applies)
++    all_tests_passed &= test_edge_case(
++        "Test 1: order_by('ref_a__custom_id_field')",
++        ModelB.objects.order_by("ref_a__custom_id_field"),
++        'ORDER BY "test_app_modela"."name" DESC'
++    )
++    
++    # Test 2: Regular _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 2: order_by('ref_a__id')",
++        ModelB.objects.order_by("ref_a__id"),
++        'ORDER BY "test_app_modelb"."ref_a_id" ASC'
++    )
++    
++    # Test 3: Relationship field (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 3: order_by('ref_a')",
++        ModelB.objects.order_by("ref_a"),
++        'ORDER BY "test_app_modela"."name" DESC'
++    )
++    
++    # Test 4: Self-referencing _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 4: order_by('self_ref_id')",
++        ModelC.objects.order_by("self_ref_id"),
++        'ORDER BY "test_app_modelc"."self_ref_id" ASC'
++    )
++    
++    # Test 5: Self-referencing relationship (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 5: order_by('self_ref')",
++        ModelC.objects.order_by("self_ref"),
++        'ORDER BY T2."id" DESC'
++    )
++    
++    # Test 6: Another self-referencing _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 6: order_by('another_self_ref_id')",
++        ModelC.objects.order_by("another_self_ref_id"),
++        'ORDER BY "test_app_modelc"."another_self_ref_id" ASC'
++    )
++    
++    # Test 7: Another self-referencing relationship (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 7: order_by('another_self_ref')",
++        ModelC.objects.order_by("another_self_ref"),
++        'ORDER BY T2."id" DESC'
++    )
++    
++    # Test 8: Field ending with _id but not a foreign key (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 8: order_by('custom_id_field')",
++        ModelB.objects.order_by("custom_id_field"),
++        'ORDER BY "test_app_modelb"."custom_id_field" ASC'
++    )
++    
++    print("=== Summary ===")
++    print(f"All edge case tests passed: {'✓ YES' if all_tests_passed else '✗ NO'}")
++    
++    return all_tests_passed
++
++
++if __name__ == "__main__":
++    success = main()
++    sys.exit(0 if success else 1)
+
+2026-01-06 15:06:24,518 - INFO - ------------------------------
+2026-01-06 15:06:24,519 - INFO - END Runtime Completion Fn
+2026-01-06 15:06:24,519 - INFO - ------------------------------
+2026-01-06 15:06:24,519 - INFO - Got git diff for instance django__django-13033:
+--------
+diff --git a/comprehensive_test.py b/comprehensive_test.py
+new file mode 100644
+index 0000000000..4f7bdc195c
+--- /dev/null
++++ b/comprehensive_test.py
+@@ -0,0 +1,161 @@
++#!/usr/bin/env python
++"""
++Comprehensive test for the self-referencing foreign key ordering fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class OneModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
++    oneval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++        ordering = ("-id",)
++
++
++class TwoModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)
++    twoval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++class ThreeModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    other = models.ForeignKey(OneModel, on_delete=models.CASCADE, related_name='threes')
++    threeval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++def test_case(description, qs, expected_ordering, expected_joins=1):
++    """Test a queryset and verify its SQL."""
++    sql = str(qs.query)
++    join_count = sql.count('JOIN')
++    has_expected_ordering = expected_ordering in sql
++    
++    print(f"{description}:")
++    print(f"  SQL: {sql}")
++    print(f"  Expected ordering '{expected_ordering}': {'✓' if has_expected_ordering else '✗'}")
++    print(f"  Expected {expected_joins} JOINs: {'✓' if join_count == expected_joins else '✗'} (found {join_count})")
++    
++    success = has_expected_ordering and join_count == expected_joins
++    print(f"  Result: {'✓ PASS' if success else '✗ FAIL'}")
++    print()
++    return success
++
++
++def main():
++    print("=== Comprehensive Test for Self-Referencing Foreign Key Ordering Fix ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(OneModel)
++        schema_editor.create_model(TwoModel)
++        schema_editor.create_model(ThreeModel)
++    
++    all_tests_passed = True
++    
++    # Test 1: Basic _id field ordering (the main fix)
++    all_tests_passed &= test_case(
++        "Test 1: order_by('record__root_id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" ASC',
++        1
++    )
++    
++    # Test 2: Descending _id field ordering
++    all_tests_passed &= test_case(
++        "Test 2: order_by('-record__root_id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("-record__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" DESC',
++        1
++    )
++    
++    # Test 3: Relationship ordering (should still use default ordering)
++    all_tests_passed &= test_case(
++        "Test 3: order_by('record__root')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__root"),
++        'ORDER BY T3."id" DESC',
++        2  # Should have extra JOIN for relationship ordering
++    )
++    
++    # Test 4: Relationship ordering with different related_name
++    all_tests_passed &= test_case(
++        "Test 4: order_by('other__root')",
++        ThreeModel.objects.filter(other__oneval__in=[1, 2, 3]).order_by("other__root"),
++        'ORDER BY T3."id" DESC',
++        2  # Should have extra JOIN for relationship ordering
++    )
++    
++    # Test 5: _id field ordering with different related_name
++    all_tests_passed &= test_case(
++        "Test 5: order_by('other__root_id')",
++        ThreeModel.objects.filter(other__oneval__in=[1, 2, 3]).order_by("other__root_id"),
++        'ORDER BY "test_app_onemodel"."root_id" ASC',
++        1
++    )
++    
++    # Test 6: Direct field ordering (should work normally)
++    all_tests_passed &= test_case(
++        "Test 6: order_by('record__oneval')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__oneval"),
++        'ORDER BY "test_app_onemodel"."oneval" ASC',
++        1
++    )
++    
++    # Test 7: Primary key ordering (Django optimizes this to use local column)
++    all_tests_passed &= test_case(
++        "Test 7: order_by('record__pk')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__pk"),
++        'ORDER BY "test_app_twomodel"."record_id" ASC',
++        1
++    )
++    
++    # Test 8: id field ordering (Django optimizes this to use local column)
++    all_tests_passed &= test_case(
++        "Test 8: order_by('record__id')",
++        TwoModel.objects.filter(record__oneval__in=[1, 2, 3]).order_by("record__id"),
++        'ORDER BY "test_app_twomodel"."record_id" ASC',
++        1
++    )
++    
++    print("=== Summary ===")
++    print(f"All tests passed: {'✓ YES' if all_tests_passed else '✗ NO'}")
++    
++    return all_tests_passed
++
++
++if __name__ == "__main__":
++    success = main()
++    sys.exit(0 if success else 1)
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index abbb1e37cb..0d463d4b80 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -727,7 +727,10 @@ class SQLCompiler:
+         # If we get to this point and the field is a relation to another model,
+         # append the default ordering for that model unless it is the pk
+         # shortcut or the attribute name of the field that is specified.
+-        if field.is_relation and opts.ordering and getattr(field, 'attname', None) != name and name != 'pk':
++        if (field.is_relation and opts.ordering and 
++            getattr(field, 'attname', None) != name and 
++            name != 'pk' and 
++            not name.endswith('_id')):
+             # Firstly, avoid infinite loops.
+             already_seen = already_seen or set()
+             join_tuple = tuple(getattr(self.query.alias_map[j], 'join_cols', None) for j in joins)
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..0a3adf2cbf
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,98 @@
++#!/usr/bin/env python
++"""
++Reproduction script for self-referencing foreign key ordering issue.
++
++This script reproduces the bug described in the issue where:
++1. order_by("record__root_id") generates incorrect SQL with DESCENDING sort
++2. Unnecessary extra JOIN is created for self-referencing foreign keys
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class OneModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    root = models.ForeignKey("OneModel", on_delete=models.CASCADE, null=True)
++    oneval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++        ordering = ("-id",)
++
++
++class TwoModel(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    record = models.ForeignKey(OneModel, on_delete=models.CASCADE)
++    twoval = models.BigIntegerField(null=True)
++
++    class Meta:
++        app_label = 'test_app'
++
++
++def main():
++    print("=== Reproducing Self-Referencing Foreign Key Ordering Issue ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(OneModel)
++        schema_editor.create_model(TwoModel)
++    
++    print("1. Testing order_by('record__root_id') - PROBLEMATIC CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("record__root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("2. Testing order_by('record__root__id') - WORKING CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("record__root__id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("3. Testing order_by('-record__root_id') - PROBLEMATIC CASE:")
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.order_by("-record__root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("4. Testing annotate workaround - WORKING CASE:")
++    from django.db.models import F
++    qs = TwoModel.objects.filter(record__oneval__in=[1, 2, 3])
++    qs = qs.annotate(root_id=F("record__root_id"))
++    qs = qs.order_by("root_id")
++    print(f"SQL: {qs.query}")
++    print()
++    
++    print("=== Analysis ===")
++    print("Expected behavior for case 1:")
++    print("- Should ORDER BY orion_onemodel.root_id ASC (not DESC)")
++    print("- Should have only one INNER JOIN (not LEFT OUTER JOIN)")
++    print("- Should not inherit the model's default ordering")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/test_edge_cases.py b/test_edge_cases.py
+new file mode 100644
+index 0000000000..edb2915e61
+--- /dev/null
++++ b/test_edge_cases.py
+@@ -0,0 +1,149 @@
++#!/usr/bin/env python
++"""
++Edge case tests for the self-referencing foreign key ordering fix.
++"""
++
++import os
++import sys
++import django
++from django.conf import settings
++
++# Configure Django settings
++if not settings.configured:
++    settings.configure(
++        DEBUG=True,
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++        INSTALLED_APPS=[
++            'django.contrib.contenttypes',
++            'django.contrib.auth',
++        ],
++        SECRET_KEY='test-secret-key',
++    )
++    django.setup()
++
++from django.db import models
++
++
++class ModelA(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    name = models.CharField(max_length=50)
++    
++    class Meta:
++        app_label = 'test_app'
++        ordering = ('-name',)
++
++
++class ModelB(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    ref_a = models.ForeignKey(ModelA, on_delete=models.CASCADE)
++    custom_id_field = models.BigIntegerField()
++    
++    class Meta:
++        app_label = 'test_app'
++
++
++class ModelC(models.Model):
++    id = models.BigAutoField(primary_key=True)
++    self_ref = models.ForeignKey("ModelC", on_delete=models.CASCADE, null=True)
++    another_self_ref = models.ForeignKey("ModelC", on_delete=models.CASCADE, null=True, related_name='other_refs')
++    
++    class Meta:
++        app_label = 'test_app'
++        ordering = ('-id',)
++
++
++def test_edge_case(description, qs, expected_contains):
++    """Test a queryset and verify its SQL contains expected string."""
++    sql = str(qs.query)
++    contains_expected = expected_contains in sql
++    
++    print(f"{description}:")
++    print(f"  SQL: {sql}")
++    print(f"  Expected to contain '{expected_contains}': {'✓' if contains_expected else '✗'}")
++    print(f"  Result: {'✓ PASS' if contains_expected else '✗ FAIL'}")
++    print()
++    return contains_expected
++
++
++def main():
++    print("=== Edge Case Tests for Self-Referencing Foreign Key Ordering Fix ===\n")
++    
++    # Create tables
++    from django.db import connection
++    with connection.schema_editor() as schema_editor:
++        schema_editor.create_model(ModelA)
++        schema_editor.create_model(ModelB)
++        schema_editor.create_model(ModelC)
++    
++    all_tests_passed = True
++    
++    # Test 1: Custom _id field (not a foreign key, so default ordering applies)
++    all_tests_passed &= test_edge_case(
++        "Test 1: order_by('ref_a__custom_id_field')",
++        ModelB.objects.order_by("ref_a__custom_id_field"),
++        'ORDER BY "test_app_modela"."name" DESC'
++    )
++    
++    # Test 2: Regular _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 2: order_by('ref_a__id')",
++        ModelB.objects.order_by("ref_a__id"),
++        'ORDER BY "test_app_modelb"."ref_a_id" ASC'
++    )
++    
++    # Test 3: Relationship field (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 3: order_by('ref_a')",
++        ModelB.objects.order_by("ref_a"),
++        'ORDER BY "test_app_modela"."name" DESC'
++    )
++    
++    # Test 4: Self-referencing _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 4: order_by('self_ref_id')",
++        ModelC.objects.order_by("self_ref_id"),
++        'ORDER BY "test_app_modelc"."self_ref_id" ASC'
++    )
++    
++    # Test 5: Self-referencing relationship (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 5: order_by('self_ref')",
++        ModelC.objects.order_by("self_ref"),
++        'ORDER BY T2."id" DESC'
++    )
++    
++    # Test 6: Another self-referencing _id field (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 6: order_by('another_self_ref_id')",
++        ModelC.objects.order_by("another_self_ref_id"),
++        'ORDER BY "test_app_modelc"."another_self_ref_id" ASC'
++    )
++    
++    # Test 7: Another self-referencing relationship (should apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 7: order_by('another_self_ref')",
++        ModelC.objects.order_by("another_self_ref"),
++        'ORDER BY T2."id" DESC'
++    )
++    
++    # Test 8: Field ending with _id but not a foreign key (should not apply default ordering)
++    all_tests_passed &= test_edge_case(
++        "Test 8: order_by('custom_id_field')",
++        ModelB.objects.order_by("custom_id_field"),
++        'ORDER BY "test_app_modelb"."custom_id_field" ASC'
++    )
++    
++    print("=== Summary ===")
++    print(f"All edge case tests passed: {'✓ YES' if all_tests_passed else '✗ NO'}")
++    
++    return all_tests_passed
++
++
++if __name__ == "__main__":
++    success = main()
++    sys.exit(0 if success else 1)
+--------
+2026-01-06 15:06:31,451 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-15400:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-06 15:06:31,451 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-06 15:06:31,451 - INFO - Logging LLM completions for instance django__django-15400 to ./continuum32/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_135/llm_completions/django__django-15400
+2026-01-06 15:06:31,452 - INFO - Config file not found: config.toml. Error: [Errno 2] No such file or directory: 'config.toml'
+2026-01-06 15:06:31,452 - INFO - Config file not found: [Errno 2] No such file or directory: 'config.toml'. Toml values have not been applied.
