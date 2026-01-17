@@ -4,6 +4,8 @@ import json
 import os
 import tempfile
 import time
+import urllib.error
+import urllib.request
 import zlib
 from typing import Any, Literal
 
@@ -51,6 +53,8 @@ from openhands.core.config import (
     get_llm_config_arg,
     get_llms_for_routing_config,
     get_model_routing_config_arg,
+    load_from_env,
+    load_from_toml,
 )
 from openhands.core.config.condenser_config import NoOpCondenserConfig
 from openhands.core.config.utils import get_condenser_config_arg
@@ -75,6 +79,20 @@ BenchMode = Literal['swe', 'swt', 'swt-ci']
 
 # Global variable to track dataset type
 DATASET_TYPE = 'SWE-bench'
+CONFIG_FILE: str | None = None
+_CLEANUP_RUNTIME_IMAGE: bool | None = None
+
+
+def _resolve_cleanup_runtime_image() -> bool:
+    global _CLEANUP_RUNTIME_IMAGE
+    if _CLEANUP_RUNTIME_IMAGE is not None:
+        return _CLEANUP_RUNTIME_IMAGE
+    cfg = OpenHandsConfig()
+    if CONFIG_FILE:
+        load_from_toml(cfg, CONFIG_FILE)
+    load_from_env(cfg, os.environ)
+    _CLEANUP_RUNTIME_IMAGE = cfg.sandbox.cleanup_runtime_image
+    return _CLEANUP_RUNTIME_IMAGE
 
 
 def set_dataset_type(dataset_name: str) -> str:
@@ -136,6 +154,45 @@ def _write_timing_record(
             f.write(json.dumps(record) + '\n')
     except Exception:
         logger.warning('Failed to write timing record', exc_info=True)
+
+
+def _release_thunderreact_program(program_id: str, base_url: str | None) -> None:
+    """Best-effort release for ThunderReact router programs.
+
+    ThunderReact extracts program_id from request payload, and expects release
+    via POST /programs/release with {"program_id": "..."}.
+    """
+    if not base_url or not program_id:
+        return
+
+    # base_url is usually ".../v1" for OpenAI-compatible servers.
+    router_base = base_url.rstrip('/')
+    if router_base.endswith('/v1'):
+        router_base = router_base[:-3]
+    router_base = router_base.rstrip('/')
+    release_url = f'{router_base}/programs/release'
+
+    data = json.dumps({'program_id': str(program_id)}).encode('utf-8')
+    req = urllib.request.Request(
+        release_url,
+        data=data,
+        headers={'Content-Type': 'application/json'},
+        method='POST',
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            resp.read()
+    except urllib.error.HTTPError as e:
+        # If not using ThunderReact, this endpoint won't exist; ignore 404s.
+        if e.code != 404:
+            logger.debug(
+                f'Failed to release ThunderReact program {program_id}: HTTP {e.code}',
+                exc_info=True,
+            )
+    except Exception:
+        logger.debug(
+            f'Failed to release ThunderReact program {program_id}', exc_info=True
+        )
 
 
 def get_instruction(instance: pd.Series, metadata: EvalMetadata) -> MessageAction:
@@ -256,8 +313,8 @@ def get_config(
     sandbox_config.base_container_image = base_container_image
     sandbox_config.enable_auto_lint = True
     sandbox_config.use_host_network = False
-    # Clean up per-instance container and runtime image after completion to reduce disk usage.
-    sandbox_config.cleanup_runtime_image = True
+    # Prefer config.toml/env for runtime image cleanup behavior.
+    sandbox_config.cleanup_runtime_image = _resolve_cleanup_runtime_image()
     # Add platform to the sandbox config to solve issue 4401
     sandbox_config.platform = 'linux/amd64'
     sandbox_config.remote_runtime_resource_factor = get_instance_resource_factor(
@@ -648,11 +705,13 @@ def process_instance(
 ) -> EvalOutput:
     config = get_config(instance, metadata)
     instance_id = instance.instance_id
+    program_id = instance_id
     job_id = _make_instance_job_id(instance_id, runtime_failure_count)
     job_id_str = str(job_id)
     timing_dir = os.path.join(metadata.eval_output_dir, 'timing')
     os.environ['OPENHANDS_EVAL_INSTANCE_ID'] = instance_id
     os.environ['OPENHANDS_EVAL_JOB_ID'] = job_id_str
+    os.environ['OPENHANDS_EVAL_PROGRAM_ID'] = program_id
     os.environ['OPENHANDS_TIMING_DIR'] = timing_dir
 
     # Setup the logger properly, so you can run multi-processing to parallelize the evaluation
@@ -674,6 +733,7 @@ def process_instance(
 
     metadata = copy.deepcopy(metadata)
     metadata.details['job_id'] = job_id
+    metadata.details['program_id'] = program_id
     metadata.details['runtime_failure_count'] = runtime_failure_count
     metadata.details['remote_runtime_resource_factor'] = (
         config.sandbox.remote_runtime_resource_factor
@@ -684,6 +744,7 @@ def process_instance(
         **(config.sandbox.runtime_startup_env_vars or {}),
         'OPENHANDS_EVAL_INSTANCE_ID': instance_id,
         'OPENHANDS_EVAL_JOB_ID': job_id_str,
+        'OPENHANDS_EVAL_PROGRAM_ID': program_id,
         'OPENHANDS_TIMING_DIR': timing_dir,
     }
 
@@ -739,7 +800,11 @@ def process_instance(
             f'Got git diff for instance {instance.instance_id}:\n--------\n{git_patch}\n--------'
         )
     finally:
-        runtime.close()
+        try:
+            runtime.close()
+        finally:
+            # Best-effort release for ThunderReact router.
+            _release_thunderreact_program(program_id, metadata.llm_config.base_url)
     # ==========================================
 
     # ======= Attempt to evaluate the agent's edits =======
@@ -834,6 +899,7 @@ if __name__ == '__main__':
     )
 
     args, _ = parser.parse_known_args()
+    CONFIG_FILE = args.config_file
 
     # NOTE: It is preferable to load datasets from huggingface datasets and perform post-processing
     # so we don't need to manage file uploading to OpenHands's repo

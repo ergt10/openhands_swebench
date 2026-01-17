@@ -617,8 +617,10 @@ class DockerRuntime(ActionExecutionClient):
         close_prefix = (
             CONTAINER_NAME_PREFIX if rm_all_containers else self.container_name
         )
+        # Always stop and remove containers to avoid accumulation.
+        stop_and_remove_containers(close_prefix)
+
         if self.config.sandbox.cleanup_runtime_image:
-            stop_and_remove_containers(close_prefix)
             # Also remove the runtime image and related cache tags to reclaim disk space.
             # NOTE: this forces rebuilding the runtime image next time.
             try:
@@ -660,8 +662,6 @@ class DockerRuntime(ActionExecutionClient):
                     'warning',
                     f'Failed to remove runtime image {self.runtime_container_image}: {e}',
                 )
-        else:
-            stop_all_containers(close_prefix)
         self._release_port_locks()
 
     def _release_port_locks(self) -> None:

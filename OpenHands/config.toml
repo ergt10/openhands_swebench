@@ -1,15 +1,19 @@
 [llm]
-model = "/mnt/shared/models/GLM-4.6-FP8"
+model = "/data/models/Qwen3-235B-A22B-Instruct-2507"
 custom_llm_provider = "openai"
-base_url = "http://127.0.0.1:8100/v1"
+base_url = "http://127.0.0.1:8300/v1"
 api_key = "dummy"
 temperature = 0.0
 native_tool_calling = false
 
 [llm.vllm_local]
-model = "/mnt/shared/models/GLM-4.6-FP8"
+model = "/data/models/Qwen3-235B-A22B-Instruct-2507"
 custom_llm_provider = "openai"
-base_url = "http://127.0.0.1:8100/v1"
+base_url = "http://127.0.0.1:8300/v1"
 api_key = "dummy"
 temperature = 0.0
 native_tool_calling = false
+
+[sandbox]
+rm_all_containers = true
+cleanup_runtime_image = false

@@ -335,6 +335,9 @@ class LLM(RetryMixin, DebugMixin):
                 # Forward job_id when present (used for per-instance request tracing).
                 if 'job_id' in extra_body_for_timing:
                     should_forward_extra_body = True
+                # Forward program_id when present (e.g., ThunderReact router).
+                if 'program_id' in extra_body_for_timing:
+                    should_forward_extra_body = True
 
             if 'litellm_proxy' not in self.config.model and not should_forward_extra_body:
                 kwargs.pop('extra_body', None)

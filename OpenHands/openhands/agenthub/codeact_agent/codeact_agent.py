@@ -245,6 +245,11 @@ class CodeActAgent(Agent):
             # NOTE: LiteLLM's OpenAI request schema validates `job_id` as a string,
             # so keep it as a string even if it contains digits.
             extra_body['job_id'] = str(job_id_str)
+        program_id = os.environ.get('OPENHANDS_EVAL_PROGRAM_ID') or instance_id
+        if program_id:
+            # ThunderReact router parses program_id from request payload. Put it in extra_body
+            # so it can be forwarded as an extra request field to OpenAI-compatible servers.
+            extra_body['program_id'] = str(program_id)
         params['extra_body'] = extra_body
         response = self.llm.completion(**params)
         logger.debug(f'Response from LLM: {response}')
