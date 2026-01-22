@@ -271,10 +271,12 @@ class State:
         return None
 
     def to_llm_metadata(self, model_name: str, agent_name: str) -> dict:
+        # NOTE: Some OpenAI-compatible servers validate this field as a non-null string.
+        # In headless/eval runs `user_id` is often None, so fall back to session_id.
         metadata = {
             'session_id': self.session_id,
             'trace_version': openhands.__version__,
-            'trace_user_id': self.user_id,
+            'trace_user_id': self.user_id or self.session_id or 'unknown',
             'tags': [
                 f'model:{model_name}',
                 f'agent:{agent_name}',
