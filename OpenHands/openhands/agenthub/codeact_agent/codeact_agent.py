@@ -226,13 +226,15 @@ class CodeActAgent(Agent):
             if instance_id:
                 self.instance_id = instance_id
         if instance_id:
-            metadata['instance_id'] = instance_id
+            metadata['instance_id'] = str(instance_id)
             # When running evaluation (instance_id is set by the evaluator),
             # enable timing (LLM wrapper will stream internally for prefill/decode).
-            metadata['eval_timing'] = True
+            # NOTE: Some OpenAI-compatible servers validate `metadata` values as strings.
+            metadata['eval_timing'] = 'true'
         # A stable per-conversation step index
         try:
-            metadata['step_id'] = state.get_local_step()
+            # NOTE: Some OpenAI-compatible servers validate `metadata` values as strings.
+            metadata['step_id'] = str(state.get_local_step())
         except Exception:
             # Be resilient if State implementation changes
             pass

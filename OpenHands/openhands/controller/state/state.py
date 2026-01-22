@@ -273,16 +273,20 @@ class State:
     def to_llm_metadata(self, model_name: str, agent_name: str) -> dict:
         # NOTE: Some OpenAI-compatible servers validate this field as a non-null string.
         # In headless/eval runs `user_id` is often None, so fall back to session_id.
+        #
+        # NOTE: Some OpenAI-compatible servers also validate `metadata.tags` as a string
+        # (not a list). Keep it as a compact string for maximum compatibility.
+        tags = [
+            f'model:{model_name}',
+            f'agent:{agent_name}',
+            f'web_host:{os.environ.get("WEB_HOST", "unspecified")}',
+            f'openhands_version:{openhands.__version__}',
+        ]
         metadata = {
             'session_id': self.session_id,
             'trace_version': openhands.__version__,
             'trace_user_id': self.user_id or self.session_id or 'unknown',
-            'tags': [
-                f'model:{model_name}',
-                f'agent:{agent_name}',
-                f'web_host:{os.environ.get("WEB_HOST", "unspecified")}',
-                f'openhands_version:{openhands.__version__}',
-            ],
+            'tags': ','.join(tags),
         }
         return metadata
 
