@@ -184,6 +184,10 @@ def main() -> int:
         cleanup_openhands_containers()
         cleanup_openhands_runtime_images()
         return 130
+
+    # Normal completion: best-effort cleanup for parity with timeout/interrupt paths.
+    cleanup_openhands_containers()
+    cleanup_openhands_runtime_images()
     return 0
 
 

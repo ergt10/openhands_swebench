@@ -11,7 +11,7 @@ import urllib.request
 from pathlib import Path
 from typing import Dict
 
-WORKER_COUNTS = [24]
+WORKER_COUNTS = [24,48,72,96]
 VLLM_PORT = 8100
 RUN_TIMEOUT_SECONDS = 70 * 60 
 METRIC_NAMES = [

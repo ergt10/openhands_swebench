@@ -1,1 +1,0 @@
-{"id": 82, "timestamp": "2026-01-06T14:40:52.952919", "source": "agent", "message": "Missing required parameters for function 'execute_bash': {'command'}", "observation": "error", "content": "Missing required parameters for function 'execute_bash': {'command'}", "extras": {"error_id": ""}}

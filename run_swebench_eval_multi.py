@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run swe_bench eval sequentially with multiple worker counts."""
 
+import argparse
 import json
 import os
 import signal
@@ -130,97 +131,132 @@ def stop_thunderreact_router(proc: subprocess.Popen | None, log_fp: object | Non
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(
+        description='Run swe-bench eval sequentially across worker counts and rollouts.'
+    )
+    parser.add_argument(
+        '--num-rollouts',
+        type=int,
+        default=int(os.environ.get('NUM_ROLLOUTS', '1')),
+        help='Run the same set of instances this many times (each rollout writes to a distinct output dir).',
+    )
+    parser.add_argument(
+        '--worker-counts',
+        type=str,
+        default=None,
+        help='Comma-separated worker counts to run (default: built-in WORKER_COUNTS).',
+    )
+    args = parser.parse_args()
+    if args.num_rollouts < 1:
+        raise SystemExit('--num-rollouts must be >= 1')
+
     repo_root = Path(__file__).resolve().parent
     base_env = os.environ.copy()
     base_env['EVAL_SKIP_MAXIMUM_RETRIES_EXCEEDED'] = 'true'
+    worker_counts = WORKER_COUNTS
+    if args.worker_counts:
+        worker_counts = [int(x) for x in args.worker_counts.split(',') if x.strip()]
     try:
-        for workers in WORKER_COUNTS:
+        for workers in worker_counts:
             # 写入仓库根目录，避免落在 OpenHands 子目录影响源码哈希
-            output_dir = repo_root / f'TRnew_{workers}'
+            base_output_dir = repo_root / f'TRnew_{workers}'
+            router_dir = base_output_dir / 'router'
             router_proc = None
             router_log = None
             try:
-                router_proc, router_log = start_thunderreact_router(output_dir)
+                router_proc, router_log = start_thunderreact_router(router_dir)
 
-                before_metrics = fetch_vllm_metrics()
+                for rollout_idx in range(1, args.num_rollouts + 1):
+                    # Each rollout writes to a distinct directory so OpenHands doesn't skip
+                    # "finished instances" from a previous rollout.
+                    rollout_dir = base_output_dir / f'rollout_{rollout_idx:03d}'
+                    rollout_dir.mkdir(parents=True, exist_ok=True)
 
-                cmd = [
-                    sys.executable,
-                    '-m',
-                    'evaluation.benchmarks.swe_bench.run_infer',
-                    '--config-file',
-                    str(repo_root / 'OpenHands' / 'config.toml'),
-                    '--llm-config',
-                    'vllm_local',
-                    '--agent-cls',
-                    'CodeActAgent',
-                    '--dataset',
-                    'princeton-nlp/SWE-bench_Lite',
-                    '--split',
-                    'test',
-                    '--max-iterations',
-                    '50',
-                    '--eval-num-workers',
-                    str(workers),
-                    '--eval-output-dir',
-                    str(output_dir),
-                ]
-                print(f'Running eval with {workers} workers -> {output_dir}')
-                timed_out = False
-                interrupted = False
-                try:
-                    run_with_timeout(
-                        cmd, env=base_env, timeout_seconds=RUN_TIMEOUT_SECONDS
-                    )
-                except subprocess.TimeoutExpired:
-                    timed_out = True
+                    before_metrics = fetch_vllm_metrics()
+
+                    cmd = [
+                        sys.executable,
+                        '-m',
+                        'evaluation.benchmarks.swe_bench.run_infer',
+                        '--config-file',
+                        str(repo_root / 'OpenHands' / 'config.toml'),
+                        '--llm-config',
+                        'vllm_local',
+                        '--agent-cls',
+                        'CodeActAgent',
+                        '--dataset',
+                        'princeton-nlp/SWE-bench_Lite',
+                        '--split',
+                        'test',
+                        '--max-iterations',
+                        '50',
+                        '--eval-num-workers',
+                        str(workers),
+                        '--eval-output-dir',
+                        str(rollout_dir),
+                        '--eval-note',
+                        f'rollout_{rollout_idx:03d}',
+                    ]
                     print(
-                        f'Run with {workers} workers exceeded {RUN_TIMEOUT_SECONDS}s, killing and cleaning containers...'
+                        f'Running eval with {workers} workers, rollout {rollout_idx}/{args.num_rollouts} -> {rollout_dir}'
                     )
-                except KeyboardInterrupt:
-                    interrupted = True
-                    print(
-                        'Interrupted (Ctrl+C). Collecting metrics and cleaning containers...'
-                    )
+                    timed_out = False
+                    interrupted = False
+                    try:
+                        run_with_timeout(
+                            cmd, env=base_env, timeout_seconds=RUN_TIMEOUT_SECONDS
+                        )
+                    except subprocess.TimeoutExpired:
+                        timed_out = True
+                        print(
+                            f'Run with {workers} workers (rollout {rollout_idx}) exceeded {RUN_TIMEOUT_SECONDS}s, killing and cleaning containers...'
+                        )
+                    except KeyboardInterrupt:
+                        interrupted = True
+                        print(
+                            'Interrupted (Ctrl+C). Collecting metrics and cleaning containers...'
+                        )
 
-                after_metrics: Dict[str, float] = {}
-                diff: Dict[str, float] = {}
-                computed: Dict[str, float | None] = {}
-                metrics_error: str | None = None
-                try:
-                    after_metrics = fetch_vllm_metrics()
-                    diff, computed = summarize_metrics(before_metrics, after_metrics)
-                except Exception as e:
-                    metrics_error = str(e)
-                    # Still write a JSON artifact for bookkeeping/debugging.
-                    after_metrics = {}
-                    diff = {}
-                    computed = {}
+                    after_metrics: Dict[str, float] = {}
+                    diff: Dict[str, float] = {}
+                    computed: Dict[str, float | None] = {}
+                    metrics_error: str | None = None
+                    try:
+                        after_metrics = fetch_vllm_metrics()
+                        diff, computed = summarize_metrics(before_metrics, after_metrics)
+                    except Exception as e:
+                        metrics_error = str(e)
+                        # Still write a JSON artifact for bookkeeping/debugging.
+                        after_metrics = {}
+                        diff = {}
+                        computed = {}
 
-                metrics_path = output_dir / 'vllm_metrics.json'
-                with metrics_path.open('w') as f:
-                    json.dump(
-                        {
-                            'workers': workers,
-                            'timed_out': timed_out,
-                            'interrupted': interrupted,
-                            'run_timeout_seconds': RUN_TIMEOUT_SECONDS,
-                            'before': before_metrics,
-                            'after': after_metrics,
-                            'diff': diff,
-                            'computed': computed,
-                            'metrics_error': metrics_error,
-                        },
-                        f,
-                        indent=2,
-                    )
-                print(f'Wrote metrics to {metrics_path}')
-                if timed_out:
-                    cleanup_openhands_containers()
-                    continue
-                if interrupted:
-                    cleanup_openhands_containers()
-                    return 130
+                    metrics_path = rollout_dir / 'vllm_metrics.json'
+                    with metrics_path.open('w') as f:
+                        json.dump(
+                            {
+                                'workers': workers,
+                                'rollout_idx': rollout_idx,
+                                'num_rollouts': args.num_rollouts,
+                                'timed_out': timed_out,
+                                'interrupted': interrupted,
+                                'run_timeout_seconds': RUN_TIMEOUT_SECONDS,
+                                'before': before_metrics,
+                                'after': after_metrics,
+                                'diff': diff,
+                                'computed': computed,
+                                'metrics_error': metrics_error,
+                            },
+                            f,
+                            indent=2,
+                        )
+                    print(f'Wrote metrics to {metrics_path}')
+                    if timed_out:
+                        cleanup_openhands_containers()
+                        continue
+                    if interrupted:
+                        cleanup_openhands_containers()
+                        return 130
             finally:
                 stop_thunderreact_router(router_proc, router_log)
     except KeyboardInterrupt:

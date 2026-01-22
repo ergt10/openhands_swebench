@@ -1,1 +1,0 @@
-{"id": 111, "timestamp": "2026-01-06T16:00:49.061239", "source": "agent", "message": "Missing required parameters for function 'execute_bash': {'security_risk'}", "observation": "error", "content": "Missing required parameters for function 'execute_bash': {'security_risk'}", "extras": {"error_id": ""}}
