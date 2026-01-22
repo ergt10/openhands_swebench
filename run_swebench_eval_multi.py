@@ -165,98 +165,88 @@ def main() -> int:
             router_log = None
             try:
                 router_proc, router_log = start_thunderreact_router(router_dir)
+                before_metrics = fetch_vllm_metrics()
 
-                for rollout_idx in range(1, args.num_rollouts + 1):
-                    # Each rollout writes to a distinct directory so OpenHands doesn't skip
-                    # "finished instances" from a previous rollout.
-                    rollout_dir = base_output_dir / f'rollout_{rollout_idx:03d}'
-                    rollout_dir.mkdir(parents=True, exist_ok=True)
-
-                    before_metrics = fetch_vllm_metrics()
-
-                    cmd = [
-                        sys.executable,
-                        '-m',
-                        'evaluation.benchmarks.swe_bench.run_infer',
-                        '--config-file',
-                        str(repo_root / 'OpenHands' / 'config.toml'),
-                        '--llm-config',
-                        'vllm_local',
-                        '--agent-cls',
-                        'CodeActAgent',
-                        '--dataset',
-                        'princeton-nlp/SWE-bench_Lite',
-                        '--split',
-                        'test',
-                        '--max-iterations',
-                        '50',
-                        '--eval-num-workers',
-                        str(workers),
-                        '--eval-output-dir',
-                        str(rollout_dir),
-                        '--eval-note',
-                        f'rollout_{rollout_idx:03d}',
-                    ]
+                cmd = [
+                    sys.executable,
+                    '-m',
+                    'evaluation.benchmarks.swe_bench.run_infer',
+                    '--config-file',
+                    str(repo_root / 'OpenHands' / 'config.toml'),
+                    '--llm-config',
+                    'vllm_local',
+                    '--agent-cls',
+                    'CodeActAgent',
+                    '--dataset',
+                    'princeton-nlp/SWE-bench_Lite',
+                    '--split',
+                    'test',
+                    '--max-iterations',
+                    '50',
+                    '--eval-num-workers',
+                    str(workers),
+                    '--eval-output-dir',
+                    str(base_output_dir),
+                    '--num-rollouts',
+                    str(args.num_rollouts),
+                ]
+                print(
+                    f'Running eval with {workers} workers, num_rollouts={args.num_rollouts} -> {base_output_dir}'
+                )
+                timed_out = False
+                interrupted = False
+                try:
+                    run_with_timeout(cmd, env=base_env, timeout_seconds=RUN_TIMEOUT_SECONDS)
+                except subprocess.TimeoutExpired:
+                    timed_out = True
                     print(
-                        f'Running eval with {workers} workers, rollout {rollout_idx}/{args.num_rollouts} -> {rollout_dir}'
+                        f'Run with {workers} workers exceeded {RUN_TIMEOUT_SECONDS}s, killing and cleaning containers...'
                     )
-                    timed_out = False
-                    interrupted = False
-                    try:
-                        run_with_timeout(
-                            cmd, env=base_env, timeout_seconds=RUN_TIMEOUT_SECONDS
-                        )
-                    except subprocess.TimeoutExpired:
-                        timed_out = True
-                        print(
-                            f'Run with {workers} workers (rollout {rollout_idx}) exceeded {RUN_TIMEOUT_SECONDS}s, killing and cleaning containers...'
-                        )
-                    except KeyboardInterrupt:
-                        interrupted = True
-                        print(
-                            'Interrupted (Ctrl+C). Collecting metrics and cleaning containers...'
-                        )
+                except KeyboardInterrupt:
+                    interrupted = True
+                    print(
+                        'Interrupted (Ctrl+C). Collecting metrics and cleaning containers...'
+                    )
 
-                    after_metrics: Dict[str, float] = {}
-                    diff: Dict[str, float] = {}
-                    computed: Dict[str, float | None] = {}
-                    metrics_error: str | None = None
-                    try:
-                        after_metrics = fetch_vllm_metrics()
-                        diff, computed = summarize_metrics(before_metrics, after_metrics)
-                    except Exception as e:
-                        metrics_error = str(e)
-                        # Still write a JSON artifact for bookkeeping/debugging.
-                        after_metrics = {}
-                        diff = {}
-                        computed = {}
+                after_metrics: Dict[str, float] = {}
+                diff: Dict[str, float] = {}
+                computed: Dict[str, float | None] = {}
+                metrics_error: str | None = None
+                try:
+                    after_metrics = fetch_vllm_metrics()
+                    diff, computed = summarize_metrics(before_metrics, after_metrics)
+                except Exception as e:
+                    metrics_error = str(e)
+                    # Still write a JSON artifact for bookkeeping/debugging.
+                    after_metrics = {}
+                    diff = {}
+                    computed = {}
 
-                    metrics_path = rollout_dir / 'vllm_metrics.json'
-                    with metrics_path.open('w') as f:
-                        json.dump(
-                            {
-                                'workers': workers,
-                                'rollout_idx': rollout_idx,
-                                'num_rollouts': args.num_rollouts,
-                                'timed_out': timed_out,
-                                'interrupted': interrupted,
-                                'run_timeout_seconds': RUN_TIMEOUT_SECONDS,
-                                'before': before_metrics,
-                                'after': after_metrics,
-                                'diff': diff,
-                                'computed': computed,
-                                'metrics_error': metrics_error,
-                            },
-                            f,
-                            indent=2,
-                        )
-                    print(f'Wrote metrics to {metrics_path}')
-                    if timed_out:
-                        cleanup_openhands_containers()
-                        continue
-                    if interrupted:
-                        cleanup_openhands_containers()
-                        return 130
+                metrics_path = base_output_dir / 'vllm_metrics.json'
+                with metrics_path.open('w') as f:
+                    json.dump(
+                        {
+                            'workers': workers,
+                            'num_rollouts': args.num_rollouts,
+                            'timed_out': timed_out,
+                            'interrupted': interrupted,
+                            'run_timeout_seconds': RUN_TIMEOUT_SECONDS,
+                            'before': before_metrics,
+                            'after': after_metrics,
+                            'diff': diff,
+                            'computed': computed,
+                            'metrics_error': metrics_error,
+                        },
+                        f,
+                        indent=2,
+                    )
+                print(f'Wrote metrics to {metrics_path}')
+                if timed_out:
+                    cleanup_openhands_containers()
+                    continue
+                if interrupted:
+                    cleanup_openhands_containers()
+                    return 130
             finally:
                 stop_thunderreact_router(router_proc, router_log)
     except KeyboardInterrupt:

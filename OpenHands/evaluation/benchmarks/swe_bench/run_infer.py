@@ -1,6 +1,7 @@
 import asyncio
 import copy
 import json
+import multiprocessing as mp
 import os
 import tempfile
 import time
@@ -13,6 +14,7 @@ import pandas as pd
 import toml
 from datasets import load_dataset
 from jinja2 import Environment, FileSystemLoader
+from tqdm import tqdm
 
 import openhands.agenthub
 from evaluation.benchmarks.swe_bench.binary_patch_utils import (
@@ -31,6 +33,7 @@ from evaluation.utils.shared import (
     EvalException,
     EvalMetadata,
     EvalOutput,
+    _process_instance_wrapper_mp,
     assert_and_raise,
     check_maximum_retries_exceeded,
     codeact_user_response,
@@ -42,6 +45,7 @@ from evaluation.utils.shared import (
     prepare_dataset,
     reset_logger_for_multiprocessing,
     run_evaluation,
+    update_progress,
     update_llm_config_for_completions_logging,
 )
 from openhands.controller.state.state import State
@@ -872,7 +876,7 @@ def filter_dataset(dataset: pd.DataFrame, filter_column: str) -> pd.DataFrame:
     skip_ids = os.environ.get('SKIP_IDS', '').split(',')
     if len(skip_ids) > 0:
         logger.info(f'Filtering {len(skip_ids)} tasks from "SKIP_IDS"...')
-        return dataset[~dataset[filter_column].isin(skip_ids)]
+    return dataset[~dataset[filter_column].isin(skip_ids)]
     return dataset
 
 
@@ -897,9 +901,17 @@ if __name__ == '__main__':
         choices=['swe', 'swt', 'swt-ci'],
         help="mode to run the evaluation, either 'swe', 'swt', or 'swt-ci'",
     )
+    parser.add_argument(
+        '--num-rollouts',
+        type=int,
+        default=int(os.environ.get('NUM_ROLLOUTS', '1')),
+        help='Number of rollouts to run per instance (each rollout writes to a distinct output.jsonl).',
+    )
 
     args, _ = parser.parse_known_args()
     CONFIG_FILE = args.config_file
+    if args.num_rollouts < 1:
+        raise ValueError('--num-rollouts must be >= 1')
 
     # NOTE: It is preferable to load datasets from huggingface datasets and perform post-processing
     # so we don't need to manage file uploading to OpenHands's repo
@@ -961,20 +973,24 @@ if __name__ == '__main__':
     dataset_description = (
         args.dataset.replace('/', '__') + '-' + args.split.replace('/', '__')
     )
-    metadata = make_metadata(
-        llm_config,
-        dataset_description,
-        args.agent_cls,
-        args.max_iterations,
-        args.eval_note,
-        args.eval_output_dir,
-        details=details,
-        agent_config=agent_config,
-        condenser_config=condenser_config,
-    )
+    base_note = args.eval_note
+    if args.num_rollouts == 1:
+        metadata = make_metadata(
+            llm_config,
+            dataset_description,
+            args.agent_cls,
+            args.max_iterations,
+            base_note,
+            args.eval_output_dir,
+            details=details,
+            agent_config=agent_config,
+            condenser_config=condenser_config,
+        )
 
-    output_file = os.path.join(metadata.eval_output_dir, 'output.jsonl')
-    print(f'### OUTPUT FILE: {output_file} ###')
+        output_file = os.path.join(metadata.eval_output_dir, 'output.jsonl')
+        print(f'### OUTPUT FILE: {output_file} ###')
+    else:
+        metadata = None
 
     # Run evaluation in iterative mode:
     # If a rollout fails to output AgentFinishAction, we will try again until it succeeds OR total 3 attempts have been made.
@@ -985,7 +1001,10 @@ if __name__ == '__main__':
         os.environ.get('ITERATIVE_EVAL_MODE_MAX_ATTEMPTS', '3')
     )
 
-    if not ITERATIVE_EVAL_MODE:
+    if args.num_rollouts > 1 and ITERATIVE_EVAL_MODE:
+        raise ValueError('ITERATIVE_EVAL_MODE is not supported with --num-rollouts > 1')
+
+    if args.num_rollouts == 1 and not ITERATIVE_EVAL_MODE:
         # load the dataset
         instances = prepare_dataset(swe_bench_tests, output_file, args.eval_n_limit)
         if len(instances) > 0 and not isinstance(
@@ -1005,7 +1024,7 @@ if __name__ == '__main__':
             * 60,  # 8 hour PER instance should be more than enough
             max_retries=5,
         )
-    else:
+    elif args.num_rollouts == 1 and ITERATIVE_EVAL_MODE:
         critic = AgentFinishedCritic()
 
         def get_cur_output_file_path(attempt: int) -> str:
@@ -1120,3 +1139,114 @@ if __name__ == '__main__':
         )
         # Check if any instances reached maximum retries
         check_maximum_retries_exceeded(metadata.eval_output_dir)
+    else:
+        # Streaming rollouts mode: run multiple rollouts without a global "wait for all 300"
+        # barrier between rollouts. Each rollout writes to a distinct output.jsonl.
+        #
+        # This is useful for sampling multiple stochastic rollouts (temperature > 0).
+        # We keep per-rollout outputs separate to preserve unique instance_id per file
+        # and maintain compatibility with downstream harnesses (e.g., eval_infer.py).
+        rollout_metadatas: list[EvalMetadata] = []
+        output_files: dict[str, str] = {}
+        output_fps: dict[str, Any] = {}
+        try:
+            for rollout_idx in range(1, args.num_rollouts + 1):
+                rollout_note = f'rollout_{rollout_idx:03d}'
+                if base_note:
+                    rollout_note = f'{base_note}_{rollout_note}'
+                rollout_details = dict(details)
+                rollout_details['rollout_idx'] = rollout_idx
+                rollout_details['num_rollouts'] = args.num_rollouts
+                rollout_meta = make_metadata(
+                    llm_config,
+                    dataset_description,
+                    args.agent_cls,
+                    args.max_iterations,
+                    rollout_note,
+                    args.eval_output_dir,
+                    details=rollout_details,
+                    agent_config=agent_config,
+                    condenser_config=condenser_config,
+                )
+                rollout_metadatas.append(rollout_meta)
+                out_file = os.path.join(rollout_meta.eval_output_dir, 'output.jsonl')
+                output_files[rollout_meta.eval_output_dir] = out_file
+                print(f'### OUTPUT FILE (rollout {rollout_idx}): {out_file} ###')
+
+            # Select the base set of instances once for all rollouts (deterministic sampling).
+            base_instances = swe_bench_tests
+            if args.eval_n_limit and args.eval_n_limit > 0:
+                base_instances = base_instances.sample(
+                    min(args.eval_n_limit, len(base_instances)),
+                    random_state=42,
+                    replace=False,
+                )
+
+            # For each rollout, skip instances already present in that rollout's output.jsonl.
+            finished_ids_by_eval_dir: dict[str, set[str]] = {}
+            for eval_dir, out_file in output_files.items():
+                finished: set[str] = set()
+                if os.path.exists(out_file):
+                    try:
+                        with open(out_file, 'r') as f:
+                            for line in f:
+                                if not line.strip():
+                                    continue
+                                data = json.loads(line)
+                                finished.add(str(data.get('instance_id', '')))
+                    except Exception:
+                        logger.warning(
+                            f'Failed to read existing output file for resume: {out_file}',
+                            exc_info=True,
+                        )
+                finished_ids_by_eval_dir[eval_dir] = finished
+
+            # Build a task stream: rollout_001 instances, then rollout_002 instances, ...
+            # This removes the *completion barrier* between rollouts while keeping outputs separated.
+            def task_iter():
+                for rollout_meta in rollout_metadatas:
+                    finished = finished_ids_by_eval_dir.get(rollout_meta.eval_output_dir, set())
+                    for _, instance in base_instances.iterrows():
+                        instance_id = str(instance.instance_id)
+                        if instance_id in finished:
+                            continue
+                        yield (
+                            process_instance,
+                            instance,
+                            rollout_meta,
+                            True,  # use_mp
+                            5,  # max_retries
+                            8 * 60 * 60,  # timeout_seconds per instance
+                        )
+
+            total_tasks = sum(
+                max(0, len(base_instances) - len(finished_ids_by_eval_dir.get(m.eval_output_dir, set())))
+                for m in rollout_metadatas
+            )
+            pbar = tqdm(total=total_tasks, desc='Rollout tasks processed')
+
+            # Lazily open all output files.
+            for eval_dir, out_file in output_files.items():
+                os.makedirs(eval_dir, exist_ok=True)
+                output_fps[eval_dir] = open(out_file, 'a')
+
+            with mp.Pool(args.eval_num_workers) as pool:
+                for result in pool.imap_unordered(_process_instance_wrapper_mp, task_iter()):
+                    try:
+                        if result.metadata and result.metadata.eval_output_dir in output_fps:
+                            fp = output_fps[result.metadata.eval_output_dir]
+                        else:
+                            # Fallback to the first rollout file if metadata is missing
+                            fp = next(iter(output_fps.values()))
+                        update_progress(result, pbar, fp)
+                    except Exception:
+                        logger.error('Failed to write result', exc_info=True)
+                        pbar.update(1)
+        finally:
+            for fp in output_fps.values():
+                try:
+                    fp.close()
+                except Exception:
+                    pass
+            for rollout_meta in rollout_metadatas:
+                check_maximum_retries_exceeded(rollout_meta.eval_output_dir)
