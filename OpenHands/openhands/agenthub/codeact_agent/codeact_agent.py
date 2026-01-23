@@ -37,6 +37,8 @@ from openhands.events.event import Event
 from openhands.llm.llm_utils import check_tools
 from openhands.memory.condenser import Condenser
 from openhands.memory.condenser.condenser import Condensation, View
+import os
+
 from openhands.memory.conversation_memory import ConversationMemory
 from openhands.runtime.plugins import (
     AgentSkillsRequirement,
@@ -67,13 +69,24 @@ class CodeActAgent(Agent):
 
     """
 
-    sandbox_plugins: list[PluginRequirement] = [
-        # NOTE: AgentSkillsRequirement need to go before JupyterRequirement, since
-        # AgentSkillsRequirement provides a lot of Python functions,
-        # and it needs to be initialized before Jupyter for Jupyter to use those functions.
-        AgentSkillsRequirement(),
-        JupyterRequirement(),
-    ]
+    # Allow disabling the Jupyter plugin in environments where it flakes (e.g.,
+    # rootless Docker) to prevent container startup failures.
+    _DISABLE_JUPYTER = os.environ.get('DISABLE_JUPYTER_PLUGIN', '').lower() in (
+        '1',
+        'true',
+        'yes',
+    )
+
+    sandbox_plugins: list[PluginRequirement] = (
+        [AgentSkillsRequirement()]
+        if _DISABLE_JUPYTER
+        else [
+            # NOTE: AgentSkillsRequirement needs to go before JupyterRequirement,
+            # because it installs Python helpers that Jupyter depends on.
+            AgentSkillsRequirement(),
+            JupyterRequirement(),
+        ]
+    )
 
     def __init__(self, config: AgentConfig, llm_registry: LLMRegistry) -> None:
         """Initializes a new instance of the CodeActAgent class.
