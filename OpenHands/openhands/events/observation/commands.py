@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from dataclasses import dataclass, field
 from typing import Any, Self
@@ -63,10 +64,15 @@ class CmdOutputMetadata(BaseModel):
                 json.loads(match.group(1).strip())  # Try to parse as JSON
                 matches.append(match)
             except json.JSONDecodeError:
-                logger.warning(
-                    f'Failed to parse PS1 metadata: {match.group(1)}. Skipping.',
-                    exc_info=True,
-                )
+                # These failures are non-fatal; optionally silence the warning.
+                if os.environ.get('SKIP_PS1_METADATA_WARN', '').lower() not in (
+                    '1',
+                    'true',
+                    'yes',
+                ):
+                    logger.warning(
+                        f'Failed to parse PS1 metadata: {match.group(1)}. Skipping.',
+                    )
                 continue  # Skip if not valid JSON
         return matches
 

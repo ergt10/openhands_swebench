@@ -1,6 +1,9 @@
 import os
 import platform
 import typing
+import tempfile
+import time
+from contextlib import contextmanager
 from functools import lru_cache
 from typing import Callable
 from uuid import UUID
@@ -48,7 +51,18 @@ from openhands.utils.async_utils import call_sync_from_async
 from openhands.utils.shutdown_listener import add_shutdown_listener
 from openhands.utils.tenacity_stop import stop_if_should_exit
 
+# fcntl is only available on Unix; Docker runtime here assumes a Unix host.
+try:
+    import fcntl  # type: ignore
+
+    HAS_FCNTL = True
+except ImportError:  # pragma: no cover
+    HAS_FCNTL = False
+
 CONTAINER_NAME_PREFIX = 'openhands-runtime-'
+CONTAINER_INIT_LOCK_PATH = os.path.join(
+    tempfile.gettempdir(), 'openhands_container_init.lock'
+)
 
 EXECUTION_SERVER_PORT_RANGE = (30000, 39999)
 VSCODE_PORT_RANGE = (40000, 49999)
@@ -78,6 +92,39 @@ def _is_retryablewait_until_alive_error(exception: Exception) -> bool:
             httpx.ReadTimeout,
         ),
     )
+
+
+@contextmanager
+def _container_init_lock(timeout: float = 600.0):
+    """Serialize container init across workers with a file lock."""
+    if not HAS_FCNTL:
+        # On non-Unix, just yield (better than raising), though we don't expect this path here.
+        yield
+        return
+
+    os.makedirs(os.path.dirname(CONTAINER_INIT_LOCK_PATH), exist_ok=True)
+    fd = os.open(CONTAINER_INIT_LOCK_PATH, os.O_CREAT | os.O_RDWR)
+    start = time.time()
+    acquired = False
+    try:
+        while time.time() - start < timeout:
+            try:
+                fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                acquired = True
+                os.write(fd, b'locked\n')
+                os.fsync(fd)
+                break
+            except OSError:
+                time.sleep(0.05)
+        if not acquired:
+            raise TimeoutError('Timeout waiting for container init lock')
+        yield
+    finally:
+        try:
+            if acquired:
+                fcntl.flock(fd, fcntl.LOCK_UN)
+        finally:
+            os.close(fd)
 
 
 class DockerRuntime(ActionExecutionClient):
@@ -396,7 +443,7 @@ class DockerRuntime(ActionExecutionClient):
 
         return overlay_mounts
 
-    def init_container(self) -> None:
+    def _init_container_inner(self) -> None:
         self.log('debug', 'Preparing to start container...')
         self.set_runtime_status(RuntimeStatus.STARTING_RUNTIME)
 
@@ -598,6 +645,10 @@ class DockerRuntime(ActionExecutionClient):
             )
 
         self.check_if_alive()
+
+    def init_container(self) -> None:
+        with _container_init_lock():
+            self._init_container_inner()
 
     def close(self, rm_all_containers: bool | None = None) -> None:
         """Closes the DockerRuntime and associated objects
