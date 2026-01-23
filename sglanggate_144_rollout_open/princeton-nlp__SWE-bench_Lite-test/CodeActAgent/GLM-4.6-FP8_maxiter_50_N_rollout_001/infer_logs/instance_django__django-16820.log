@@ -1,0 +1,871 @@
+2026-01-23 05:31:34,971 - INFO - [LLM registry 7fb2c0a1-2310-47b8-a129-fe88be78746b]: Registering service for agent
+2026-01-23 05:31:43,431 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:31:43,441 - INFO - [runtime 61a53cad-68c0-49-8b04f501e1e2a4d] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:31:43,481 - INFO - [runtime 61a53cad-68c0-49-8b04f501e1e2a4d] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '36310', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-23 05:32:26,613 - INFO - [runtime 61a53cad-68c0-49-8b04f501e1e2a4d] Container started: openhands-runtime-61a53cad-68c0-49-8b04f501e1e2a4d. VSCode URL: None
+2026-01-23 05:32:26,614 - INFO - [runtime 61a53cad-68c0-49-8b04f501e1e2a4d] Waiting for client to become ready at http://localhost:36310...
+2026-01-23 05:34:37,783 - ERROR - ----------
+Error in instance [django__django-16820]: RetryError[<Future at 0x7f58c2e5a990 state=finished raised RemoteProtocolError>]. Stacktrace:
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/action_execution/action_execution_client.py", line 129, in _send_action_server_request
+    return send_request(self.session, method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/utils/request.py", line 44, in send_request
+    response = session.request(method, url, timeout=timeout, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/http_session.py", line 54, in request
+    return _get_client().request(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 208, in connect
+    await call_sync_from_async(self.wait_until_alive)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 600, in wait_until_alive
+    self.check_if_alive()
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/action_execution/action_execution_client.py", line 134, in check_if_alive
+    response = self._send_action_server_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7f58c2e5a990 state=finished raised RemoteProtocolError>]
+
+----------[The above error occurred. Retrying... (attempt 1 of 5)]----------
+
+2026-01-23 05:34:42,785 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16820:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-23 05:34:42,786 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-23 05:34:42,787 - INFO - Logging LLM completions for instance django__django-16820 to ../sglanggate_144_rollout_open/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_50_N_rollout_001/llm_completions/django__django-16820
+2026-01-23 05:34:42,790 - WARNING - Model routing config section [model_routing] not found in config.toml
+2026-01-23 05:34:42,799 - INFO - [LLM registry 82fdee4b-1b2c-465b-a564-775b6100e8ac]: Registering service for agent
+2026-01-23 05:34:43,760 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:34:43,766 - INFO - [runtime eb1428a0-ab6c-4a-5518bd6f148bfce] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:34:52,686 - INFO - [runtime eb1428a0-ab6c-4a-5518bd6f148bfce] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '33966', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-23 05:35:03,842 - INFO - [runtime eb1428a0-ab6c-4a-5518bd6f148bfce] Container started: openhands-runtime-eb1428a0-ab6c-4a-5518bd6f148bfce. VSCode URL: None
+2026-01-23 05:35:03,844 - INFO - [runtime eb1428a0-ab6c-4a-5518bd6f148bfce] Waiting for client to become ready at http://localhost:33966...
+2026-01-23 05:37:13,992 - ERROR - ----------
+Error in instance [django__django-16820]: RetryError[<Future at 0x7f5958063260 state=finished raised RemoteProtocolError>]. Stacktrace:
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/action_execution/action_execution_client.py", line 129, in _send_action_server_request
+    return send_request(self.session, method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/utils/request.py", line 44, in send_request
+    response = session.request(method, url, timeout=timeout, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/http_session.py", line 54, in request
+    return _get_client().request(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 208, in connect
+    await call_sync_from_async(self.wait_until_alive)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 600, in wait_until_alive
+    self.check_if_alive()
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/action_execution/action_execution_client.py", line 134, in check_if_alive
+    response = self._send_action_server_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7f5958063260 state=finished raised RemoteProtocolError>]
+
+----------[The above error occurred. Retrying... (attempt 2 of 5)]----------
+
+2026-01-23 05:37:18,996 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16820:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-23 05:37:18,997 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-23 05:37:18,998 - INFO - Logging LLM completions for instance django__django-16820 to ../sglanggate_144_rollout_open/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_50_N_rollout_001/llm_completions/django__django-16820
+2026-01-23 05:37:19,001 - WARNING - Model routing config section [model_routing] not found in config.toml
+2026-01-23 05:37:19,009 - INFO - [LLM registry b34e47a8-0701-42d5-ad05-57992c22425a]: Registering service for agent
+2026-01-23 05:37:19,771 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:37:19,776 - INFO - [runtime 0f98fa9d-5961-42-1029e395df8e379] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:38:20,029 - ERROR - ----------
+Error in instance [django__django-16820]: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60). Stacktrace:
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 275, in _raise_for_status
+    response.raise_for_status()
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.43/containers/openhands-runtime-0f98fa9d-5961-42-1029e395df8e379/json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 181, in connect
+    await call_sync_from_async(self._attach_to_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 553, in _attach_to_container
+    self.container = self.docker_client.containers.get(self.container_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 793, in inspect_container
+    return self._result(
+           ^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 281, in _result
+    self._raise_for_status(response)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 277, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.43/containers/openhands-runtime-0f98fa9d-5961-42-1029e395df8e379/json: Not Found ("No such container: openhands-runtime-0f98fa9d-5961-42-1029e395df8e379")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 193, in connect
+    await call_sync_from_async(self.init_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 404, in init_container
+    self._host_port, self._host_port_lock = self._find_available_port_with_lock(
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 735, in _find_available_port_with_lock
+    if self._is_port_in_use_docker(port):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 689, in _is_port_in_use_docker
+    containers = self.docker_client.containers.list()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 1018, in list
+    containers.append(self.get(r['Id']))
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 794, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 44, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 246, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+
+----------[The above error occurred. Retrying... (attempt 3 of 5)]----------
+
+2026-01-23 05:38:25,031 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16820:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-23 05:38:25,033 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-23 05:38:25,033 - INFO - Logging LLM completions for instance django__django-16820 to ../sglanggate_144_rollout_open/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_50_N_rollout_001/llm_completions/django__django-16820
+2026-01-23 05:38:25,035 - WARNING - Model routing config section [model_routing] not found in config.toml
+2026-01-23 05:38:25,043 - INFO - [LLM registry 07fcfb33-6c32-4d98-af56-49c1c0cd3549]: Registering service for agent
+2026-01-23 05:38:25,763 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:38:25,768 - INFO - [runtime 9fea9098-7696-46-e184c374ad0cbd1] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:41:05,390 - INFO - [runtime 9fea9098-7696-46-e184c374ad0cbd1] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '36901', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-23 05:42:10,701 - ERROR - [runtime 9fea9098-7696-46-e184c374ad0cbd1] Error: Instance openhands-runtime-9fea9098-7696-46-e184c374ad0cbd1 FAILED to start container!
+
+2026-01-23 05:43:11,804 - ERROR - ----------
+Error in instance [django__django-16820]: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60). Stacktrace:
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 275, in _raise_for_status
+    response.raise_for_status()
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.43/containers/openhands-runtime-9fea9098-7696-46-e184c374ad0cbd1/json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 181, in connect
+    await call_sync_from_async(self._attach_to_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 553, in _attach_to_container
+    self.container = self.docker_client.containers.get(self.container_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 793, in inspect_container
+    return self._result(
+           ^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 281, in _result
+    self._raise_for_status(response)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 277, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.43/containers/openhands-runtime-9fea9098-7696-46-e184c374ad0cbd1/json: Not Found ("No such container: openhands-runtime-9fea9098-7696-46-e184c374ad0cbd1")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 193, in connect
+    await call_sync_from_async(self.init_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 549, in init_container
+    self.close()
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 621, in close
+    stop_and_remove_containers(close_prefix)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/containers.py", line 26, in stop_and_remove_containers
+    containers = docker_client.containers.list(all=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 1018, in list
+    containers.append(self.get(r['Id']))
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 794, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 44, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 246, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+
+----------[The above error occurred. Retrying... (attempt 4 of 5)]----------
+
+2026-01-23 05:43:16,806 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16820:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-23 05:43:16,807 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-23 05:43:16,808 - INFO - Logging LLM completions for instance django__django-16820 to ../sglanggate_144_rollout_open/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_50_N_rollout_001/llm_completions/django__django-16820
+2026-01-23 05:43:16,811 - WARNING - Model routing config section [model_routing] not found in config.toml
+2026-01-23 05:43:16,821 - INFO - [LLM registry 08ecdc63-a69d-4cfd-aa0c-8cdd5d8b51b9]: Registering service for agent
+2026-01-23 05:43:18,115 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:43:18,123 - INFO - [runtime e1a0d837-17aa-43-54f5115629e72c1] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:44:30,386 - ERROR - ----------
+Error in instance [django__django-16820]: 404 Client Error for http+docker://localhost/v1.43/containers/5ba05f9a157e5e153cfb9c398f9ac80ac0164c799dc7d947a7cd60b1f08ee389/json: Not Found ("No such container: 5ba05f9a157e5e153cfb9c398f9ac80ac0164c799dc7d947a7cd60b1f08ee389"). Stacktrace:
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 275, in _raise_for_status
+    response.raise_for_status()
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.43/containers/5ba05f9a157e5e153cfb9c398f9ac80ac0164c799dc7d947a7cd60b1f08ee389/json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 193, in connect
+    await call_sync_from_async(self.init_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 404, in init_container
+    self._host_port, self._host_port_lock = self._find_available_port_with_lock(
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 735, in _find_available_port_with_lock
+    if self._is_port_in_use_docker(port):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 689, in _is_port_in_use_docker
+    containers = self.docker_client.containers.list()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 1018, in list
+    containers.append(self.get(r['Id']))
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 793, in inspect_container
+    return self._result(
+           ^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 281, in _result
+    self._raise_for_status(response)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 277, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.43/containers/5ba05f9a157e5e153cfb9c398f9ac80ac0164c799dc7d947a7cd60b1f08ee389/json: Not Found ("No such container: 5ba05f9a157e5e153cfb9c398f9ac80ac0164c799dc7d947a7cd60b1f08ee389")
+
+----------[The above error occurred. Retrying... (attempt 5 of 5)]----------
+
+2026-01-23 05:44:35,406 - INFO - Using instance container image: docker.io/swebench/sweb.eval.x86_64.django_1776_django-16820:latest. Please make sure this image exists. Submit an issue on https://github.com/OpenHands/OpenHands if you run into any issues.
+2026-01-23 05:44:35,407 - INFO - Resource mapping for princeton-nlp__SWE-bench_Lite-test not found.
+2026-01-23 05:44:35,408 - INFO - Logging LLM completions for instance django__django-16820 to ../sglanggate_144_rollout_open/princeton-nlp__SWE-bench_Lite-test/CodeActAgent/GLM-4.6-FP8_maxiter_50_N_rollout_001/llm_completions/django__django-16820
+2026-01-23 05:44:35,411 - WARNING - Model routing config section [model_routing] not found in config.toml
+2026-01-23 05:44:35,461 - INFO - [LLM registry e8490aa7-29b6-42b4-9e1c-1dedff3f8089]: Registering service for agent
+2026-01-23 05:44:40,623 - INFO - Building image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:44:40,718 - INFO - [runtime 43cf4c43-dd9a-48-bf7d4a7ba2218cb] Starting runtime with image: ghcr.io/openhands/runtime:oh_v1.0.0_ep0132y3e7ebe7o0_bs16xbkzfobtrhhz
+2026-01-23 05:45:03,684 - INFO - [runtime 43cf4c43-dd9a-48-bf7d4a7ba2218cb] Starting server with command: ['/openhands/micromamba/bin/micromamba', 'run', '-n', 'openhands', 'poetry', 'run', 'python', '-u', '-m', 'openhands.runtime.action_execution_server', '39401', '--working-dir', '/workspace', '--plugins', 'agent_skills', 'jupyter', '--username', 'root', '--user-id', '0', '--no-enable-browser']
+2026-01-23 05:46:35,600 - ERROR - [runtime 43cf4c43-dd9a-48-bf7d4a7ba2218cb] Error: Instance openhands-runtime-43cf4c43-dd9a-48-bf7d4a7ba2218cb FAILED to start container!
+
+2026-01-23 05:47:36,024 - ERROR - UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 275, in _raise_for_status
+    response.raise_for_status()
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.43/containers/openhands-runtime-43cf4c43-dd9a-48-bf7d4a7ba2218cb/json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 181, in connect
+    await call_sync_from_async(self._attach_to_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 553, in _attach_to_container
+    self.container = self.docker_client.containers.get(self.container_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 793, in inspect_container
+    return self._result(
+           ^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 281, in _result
+    self._raise_for_status(response)
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 277, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.43/containers/openhands-runtime-43cf4c43-dd9a-48-bf7d4a7ba2218cb/json: Not Found ("No such container: openhands-runtime-43cf4c43-dd9a-48-bf7d4a7ba2218cb")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/utils/shared.py", line 414, in _process_instance_wrapper
+    result = process_instance_func(instance, metadata, use_mp, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/evaluation/benchmarks/swe_bench/run_infer.py", line 758, in process_instance
+    call_async_from_sync(runtime.connect)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 51, in call_async_from_sync
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 41, in run
+    return asyncio.run(arun())
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 34, in arun
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 193, in connect
+    await call_sync_from_async(self.init_container)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 17, in call_sync_from_async
+    result = await coro
+             ^^^^^^^^^^
+  File "/home/junxiong/.local/share/uv/python/cpython-3.12.9-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/utils/async_utils.py", line 16, in <lambda>
+    coro = loop.run_in_executor(None, lambda: fn(*args, **kwargs))
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 549, in init_container
+    self.close()
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/docker_runtime.py", line 621, in close
+    stop_and_remove_containers(close_prefix)
+  File "/home/junxiong/ziyang/openhands_swebench/OpenHands/openhands/runtime/impl/docker/containers.py", line 26, in stop_and_remove_containers
+    containers = docker_client.containers.list(all=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 1018, in list
+    containers.append(self.get(r['Id']))
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/models/containers.py", line 954, in get
+    resp = self.client.api.inspect_container(container_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/container.py", line 794, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/utils/decorators.py", line 44, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/docker/api/client.py", line 246, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junxiong/ziyang/openhands_swebench/.venv/lib/python3.12/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
